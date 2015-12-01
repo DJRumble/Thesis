@@ -1,0 +1,311 @@
+\documentclass[a4paper, 11pt]{report}
+\usepackage[top=45mm, bottom=20mm]{geometry}
+% Uni says 20cm top and bottom
+% Uni says font size 12 standard.
+%LEFT RIGHT ARE IN TEXT MARGIN BIT
+
+%% Package declarations.
+%\usepackage{ethesis}
+\usepackage{natbib}
+%\usepackage{palatino}
+%\usepackage{times}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{caption}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{txfonts} % This seems to fix the font at the same time
+\usepackage{lscape} % Allows landscape tables
+\usepackage{longtable}
+\usepackage{units}
+\usepackage{rotating}
+\usepackage{color}
+\usepackage[titletoc]{appendix}
+\usepackage{enumitem}
+
+\usepackage[grey]{quotchap}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=false, pdfborder={0 0 0},}
+
+
+% My definitions
+\newcommand{\epsa}{\ensuremath{\varepsilon} Indi A}
+\newcommand{\eps}{\ensuremath{\varepsilon} Indi}
+\newcommand{\epsb}{\ensuremath{\varepsilon} Indi Ba, Bb}
+\newcommand{\epsba}{\ensuremath{\varepsilon} Indi Ba}
+\newcommand{\epsbb}{\ensuremath{\varepsilon} Indi Bb}
+\newcommand{\micron}{\,\ensuremath{\mu}\rm{m}}
+\newcommand{\mjup}{\,\ensuremath{\rm{M_{Jup}}}}
+
+\newcommand{\magnit}{\mbox{$^{\mbox{\rm\tiny m}}$}}                   % magnitudes
+\newcommand{\kmpers}{\mbox{\,km\,s$^{-1}$}}           % km s-1
+\newcommand{\cmpers}{\mbox{\,cm\,s$^{-1}$}}           % cm s-1
+\newcommand{\eg}{\mbox{\hbox{e.g.,}}}             % e.g. in italics
+\newcommand{\etal}{\mbox{et al.}}         % et al. in italics
+\newcommand{\cf}{\mbox{\hbox{\it cf.}}}               % cf. in italics
+\newcommand{\idest}{\mbox{\hbox{\it i.e.}}}           % i.e. in italics
+
+%\newcommand{\arcmin}{\mbox{.\ensuremath{\mkern-4mu^\prime}}}%    % fractional arcminute symbol: 0.'0
+%\newcommand{\arcsec}{\mbox{\ensuremath{.\!\!^{\prime\prime}}}}%  % fractional arcsecond %symbol: 0.''0
+
+%can remove these fi required
+\newcommand{\arcsec}{\mbox{\ensuremath{^{\prime\prime}}}}%  % arcsecond symbol: 0''
+\newcommand{\arcmin}{\mbox{\ensuremath{^{\prime}}}}%  % arcsecond 
+\newcommand{\fdg}{\mbox{\ensuremath{.\!\!^\circ}}}%             % fractional degree symbol:     0.°0
+\newcommand{\arcdeg}{\ensuremath{^{\circ}}}%                    % degree symbol:  °
+\newcommand{\sun}{\ensuremath{\odot}}%                          % sun symbol
+\newcommand{\apj}{ApJ}%                                         % Journal abbreviations
+\newcommand{\apjs}{ApJS}
+\newcommand{\apjl}{ApJL}
+\newcommand{\aap}{A{\&}A}
+\newcommand{\aaps}{A{\&}AS}
+\newcommand{\mnras}{MNRAS}
+\newcommand{\jrasc}{JRASC}
+\newcommand{\nat}{Nature}
+\newcommand{\aj}{AJ}
+\newcommand{\na}{NA}
+\newcommand{\araa}{ARAA}
+\newcommand{\pasp}{PASP}
+\def\pasa{PASA}
+\newcommand{\pasj}{PASJ. \,}
+\def\fcp{Fund. Cosmic Physics}
+\newcommand{\Teff}{\ensuremath{T_{\mathrm{eff}}}}%              % T_eff
+\newcommand{\logg}{\ensuremath{\log g}}%                        % log g
+\newcommand{\bv}{\ensuremath{B\!-\!V}}%                         % B-V
+\newcommand{\ub}{\ensuremath{U\!-\!B}}%                         % U-B
+\newcommand{\vr}{\ensuremath{V\!-\!R}}%                         % V-R
+\newcommand{\ur}{\ensuremath{U\!-\!R}}%                         % U-R
+\newcommand{\asppix}{\mbox{\arcsec\,pixel$^{-1}$}}           % " pixel-1
+\newcommand{\msun}{\,M$_{\ensuremath{\odot}}$}                    % " M_sun
+\newcommand{\Msun}{\mbox{$M_{\mathrm{\odot}}$}}
+\newcommand{\Mdot}{\mbox{$\dot M$}}
+\newcommand{\Menv}{\mbox{$M_\mathrm{env}$}}
+\newcommand{\Pdot}{\mbox{$\dot P$}}
+\newcommand{\Tbol}{\mbox{$T_\mathrm{bol}$}}
+\newcommand{\Tdust}{\mbox{$T_\mathrm{d}$}}
+\newcommand{\Lbol}{\mbox{$L_\mathrm{bol}$}}
+\newcommand{\Lsun}{\mbox{$L_{\odot}$}}
+\newcommand{\Fco}{\mbox{$F_\mathrm{CO}$}}
+\newcommand{\prob}{\hbox{P}}
+\newcommand{\jh }[1]{{\bf #1}}
+\newcommand{\Bin}{\mbox{\hbox{Bin}}\,}
+\newcommand{\Spitzer}{{\em Spitzer}}
+\newcommand{\SpitzerGB}{SGBS}
+\newcommand{\SpitzerYC}{SYC}
+\newcommand{\UCHII}{UCH\,\textsc{ii}}
+\newcommand{\HII}{H\,\textsc{ii}}
+%USE THIS COMMAND FOR TEXT, not sure this works...
+\newcommand\ion[2]{#1$\;${\scshape{#2}}}%                       % ion, i.e.,CII = \ion{C}{ii}
+%USE THES FOR MATHS
+\newcommand\mion[2]{\mbox{#1\,{\footnotesize #2}}}      % HI properly spaced
+%\newcommand{\HI}{\mbox{H\,{\footnotesize I}}}       % HI properly spaced
+%\newcommand{\HII}{\mbox{H\,{\footnotesize II}}}       % HII properly spaced
+%\newcommand{\CI}{\mbox{C\,{\footnotesize I}}}       % CI properly spaced
+%\newcommand{\CII}{\mbox{C\,{\footnotesize II}}}       % CI properly spaced
+
+\include{aas_macros}
+
+%%ARP's macros:
+\def\ps{$\rm km \,s^{-1}\,kpc^{-1}$}
+\def\lv{\emph{l-v} }
+\def\xy{\emph{x-y} }
+%\def\arcdeg{$^\circ$}
+\def\kms{\,km\,s$^{-1}$}
+\newcommand{\sech}{\mathrm{sech} \,}
+\def\H2{$\rm H_2$}
+\def\torus{\textsc{torus}}
+\def\phantom{\textsc{phantom}}
+\def\sphng{\textsc{sphng}}
+\def\Robs{$R_{\rm obs}$}
+\def\Vobs{$V_{\rm obs}$}
+\def\lobs{$l_{\rm obs}$}
+
+
+%% Set page margins.
+%% University rules: 3cm = LHS, 3cm = RHS, uni reg.
+%% Top,  bottom are in geometry
+% A4 is 21cm wide, 29.7cm high, uni reg, 29.7-2-2 = 25.7 text height?
+\setlength{\textheight}{24cm}
+
+%21cm - 3cm - 3cm = 15 (textwidth)
+\setlength{\textwidth}{15cm}
+% Latex counts margins from a 1 inch offset.
+% 4cm = 1.5748 inches.
+% 3cm = 1.1811 inches
+\setlength{\oddsidemargin}{0.1811in}
+
+
+
+\voffset=-1truecm
+
+%% Set text spacing.
+\onehalfspacing
+%\doublespacing
+%\singlespacing
+
+%% Set paragraph indentation.
+\setlength{\parindent}{30pt}
+
+
+%% From eric, who got it from scw, who got it from dan price. Not sure what it does...
+\pagestyle{fancy}
+\fancyhead[RO,LE]{\leftmark}
+\fancyfoot[C]{\thepage}
+\fancyhf{}
+\fancyhf[HLE,HRO]{\slshape\thepage}
+\fancyhf[HLO]{\slshape\rightmark}
+\fancyhf[HRE]{\slshape\leftmark}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhf[FLE,FRO]{\hfill\slshape\thepage}}
+
+%% Tell natbib to put paper references into the index.
+\citeindextrue
+
+%% Generate the index.
+\makeindex
+
+%% Define commands to correctly include graph files from the ark. Default to
+%% the bounding box for a single plot.      
+%\newcommand{\graph}[2][82 80 530 670]
+%{\includegraphics[angle=90, width=13cm, bb=#1]{#2}}
+%\newcommand{\graphtwo}[2][20 80 567tt 680]
+%{\includegraphics[angle=90, width=\columnwidth, bb=#1]{#2}}
+%\newcommand{\graphthree}[2][20 110 600 720]
+%{\includegraphics[angle=90, width=\columnwidth, bb=#1]{#2}}
+%\newcommand{\graphfour}[2][25 73 550 695]
+%{\includegraphics[angle=90, width=\columnwidth, bb=#1]{#2}}
+
+
+%% Make some dotted lines for a signature and date.
+\newcommand{\signed}{
+   \begin{flushright}
+   \begin{tabular}{rl}
+   \\
+   \\
+   Signed: & \makebox[2in]{\dotfill}\\
+           & Mr~D. J. Rumble\
+   \\
+   Date:   & \makebox[1.2in]{\dotfill}\\
+   \end{tabular}
+   \end{flushright}
+}
+
+% Copyright declaration.
+\newcommand{\statement}{
+
+   \begin{quote}\small
+
+   Submitted by Mr Damian Rumble to the University of Exeter as a thesis for
+   the degree of Doctor of Philosophy in Physics, April, 2016. 
+
+   This thesis is available for Library use on the understanding that it is
+   copyright material and that no quotation from the thesis may be published
+   without proper acknowledgement. 
+
+   I certify that all material in this thesis which is not my own work has been
+   identified and that no material has previously been submitted and approved
+   for the award of a degree by this or any other University.
+
+   \end{quote}
+   \signed
+}
+   
+% Set the titlepage properties.   
+\author{Damian Jack Rumble\\ \vspace{0.5in}}
+
+%\title{{\Huge $\mathcal{S}$piral $\mathcal{P}$atterns, $\mathcal{S}$pectral $\mathcal{P}$rofiles, \\ \& $\mathcal{S}$mall $\mathcal{P}$lanets:}
+
+%\title{{\Huge $\mathcal{T}$he $\mathcal{M}$orphology of the $\mathcal{M}$ilky $\mathcal{W}$ay}
+\title{{\Huge The influence of radiative feedback on star-formation}
+ \vspace{0.5in}
+\\ in the James Clerk Maxwell Telescope Gould Belt Survey of nearby star-forming regions. \large \vspace{0.5in}
+%\includegraphics[angle=0, width=13cm,trim=0cm 5cm 0cm 0cm]{ThesisTop}
+%\\ Smaller text?
+% \\ \vspace{0.5in}   PUT THIS BACK IN IF YOU REMOVE THE PICTURE.
+ }
+\date{\statement}
+
+   
+% Start of thesis!
+\begin{document}
+
+   % Print the titlepage.
+   \maketitle
+      
+   % Abstract: shoudld be approximately 300 words.
+  \pagenumbering{roman} % Roman numerals
+  \setcounter{page}{1}
+   \include{ab/abstract}
+
+   % Print the contents tables.
+   \tableofcontents
+   \listoffigures
+   \listoftables
+
+   % Declarations where work is derived from published papers.
+   \include{declaration}
+
+   % Acknowledgements.
+  \include{acknowledgements}
+
+  \pagenumbering{arabic} % Roman numerals
+   % Count title page as page 1 onwards.
+  \setcounter{page}{1}
+
+   % Introductory chapter.
+   \include{c1/intro} 
+
+   % The JCMT Gould Belt Survey of star forming regions
+   \include{c2/chapter2}
+
+   % CO observations of star-forming regions
+   \include{c3/chapter3}
+ 
+   % Free-Free contamination
+   \include{c4/chapter4} 
+   
+   % Temperate mapping
+   \include{c5/chapter5} 
+   
+   % Radiative heating in Serpens MWC 297 region
+   \include{c6/chapter6}  
+ 
+   % Radiative heating in W40 Complex
+   \include{c7/chapter7} 
+   
+   % Radiative heating in JCMT GBS
+   \include{c8/chapter8} 
+ 
+   %Conclusions and future work
+   \include{cF/conclusions}
+  
+   % Generate the bibliography
+   \bibliographystyle{/Users/damian/Documents/Thesis_et_al/mnras/mn2e}
+   \bibliography{/Users/damian/Documents/Thesis_et_al/bibliography}
+ 
+   %Appendices
+   \begin{appendices}
+     % SPH with h(rho)
+     %\include{a1/appendix1}
+     % Derivation of schmidt spheroid forces
+     %\include{a2/appendix2}
+     % Exoplanet transmission spectra
+     %\include{a3/appendix3}
+   \end{appendices}
+
+   % Generate the index.
+   \printindex
+
+% End of thesis!   
+\end{document}

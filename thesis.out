@@ -1,0 +1,170 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Content \(to be sorted\)}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Radiative Transfer Theory}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.2.1}{Dust}{section.1.2}% 4
+\BOOKMARK [2][-]{subsection.1.2.2}{Dust models/assumptions - opacity}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.3}{Jayliegh Jeans limit}{section.1.2}% 6
+\BOOKMARK [1][-]{section.1.3}{Protostars}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.3.1}{Jeans mass/stability}{section.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.3.2}{SED models}{section.1.3}% 9
+\BOOKMARK [2][-]{subsection.1.3.3}{Classification: Alpha}{section.1.3}% 10
+\BOOKMARK [2][-]{subsection.1.3.4}{Classification: Bolometeric Luminosity}{section.1.3}% 11
+\BOOKMARK [2][-]{subsection.1.3.5}{Classification: Bolometeric temperature}{section.1.3}% 12
+\BOOKMARK [2][-]{subsection.1.3.6}{Classification: Colour diagrams}{section.1.3}% 13
+\BOOKMARK [2][-]{subsection.1.3.7}{Evolution/timescale: MvsL diagrams}{section.1.3}% 14
+\BOOKMARK [2][-]{subsection.1.3.8}{IMF/CMFs}{section.1.3}% 15
+\BOOKMARK [1][-]{section.1.4}{Radiative feedback}{chapter.1}% 16
+\BOOKMARK [2][-]{subsection.1.4.1}{OB stars}{section.1.4}% 17
+\BOOKMARK [2][-]{subsection.1.4.2}{Winds}{section.1.4}% 18
+\BOOKMARK [2][-]{subsection.1.4.3}{RDI}{section.1.4}% 19
+\BOOKMARK [2][-]{subsection.1.4.4}{HII regions}{section.1.4}% 20
+\BOOKMARK [2][-]{subsection.1.4.5}{Jets}{section.1.4}% 21
+\BOOKMARK [2][-]{subsection.1.4.6}{Radiative heating by OB stars}{section.1.4}% 22
+\BOOKMARK [1][-]{section.1.5}{Accretion}{chapter.1}% 23
+\BOOKMARK [2][-]{subsection.1.5.1}{Discs}{section.1.5}% 24
+\BOOKMARK [2][-]{subsection.1.5.2}{Envelopes}{section.1.5}% 25
+\BOOKMARK [1][-]{section.1.6}{Emission}{chapter.1}% 26
+\BOOKMARK [2][-]{subsection.1.6.1}{IR}{section.1.6}% 27
+\BOOKMARK [2][-]{subsection.1.6.2}{Submm}{section.1.6}% 28
+\BOOKMARK [2][-]{subsection.1.6.3}{Radio}{section.1.6}% 29
+\BOOKMARK [2][-]{subsection.1.6.4}{X-ray}{section.1.6}% 30
+\BOOKMARK [1][-]{section.1.7}{Properties}{chapter.1}% 31
+\BOOKMARK [2][-]{subsection.1.7.1}{Flux/photometery}{section.1.7}% 32
+\BOOKMARK [2][-]{subsection.1.7.2}{Mass}{section.1.7}% 33
+\BOOKMARK [2][-]{subsection.1.7.3}{Column density}{section.1.7}% 34
+\BOOKMARK [2][-]{subsection.1.7.4}{Volume density}{section.1.7}% 35
+\BOOKMARK [2][-]{subsection.1.7.5}{Proper motion}{section.1.7}% 36
+\BOOKMARK [2][-]{subsection.1.7.6}{Extinction}{section.1.7}% 37
+\BOOKMARK [1][-]{section.1.8}{Molecular Line emission}{chapter.1}% 38
+\BOOKMARK [2][-]{subsection.1.8.1}{CO}{section.1.8}% 39
+\BOOKMARK [2][-]{subsection.1.8.2}{Masers}{section.1.8}% 40
+\BOOKMARK [2][-]{subsection.1.8.3}{Other}{section.1.8}% 41
+\BOOKMARK [1][-]{section.1.9}{Triggered/none triggered star formation?}{chapter.1}% 42
+\BOOKMARK [0][-]{chapter.2}{The JCMT Gould Belt Survey of star forming regions}{}% 43
+\BOOKMARK [1][-]{section.2.1}{Observational astronomy}{chapter.2}% 44
+\BOOKMARK [2][-]{subsection.2.1.1}{Observing in submillimetre}{section.2.1}% 45
+\BOOKMARK [2][-]{subsection.2.1.2}{SCUBA-2}{section.2.1}% 46
+\BOOKMARK [2][-]{subsection.2.1.3}{Data reduction}{section.2.1}% 47
+\BOOKMARK [2][-]{subsection.2.1.4}{Calibration}{section.2.1}% 48
+\BOOKMARK [2][-]{subsection.2.1.5}{Related surveys - 2MASS/Spitzer/Herschel}{section.2.1}% 49
+\BOOKMARK [1][-]{section.2.2}{Data enhancement}{chapter.2}% 50
+\BOOKMARK [2][-]{subsection.2.2.1}{Selection}{section.2.2}% 51
+\BOOKMARK [2][-]{subsection.2.2.2}{Mosiacs}{section.2.2}% 52
+\BOOKMARK [2][-]{subsection.2.2.3}{Filtering}{section.2.2}% 53
+\BOOKMARK [2][-]{subsection.2.2.4}{Clumpfinding}{section.2.2}% 54
+\BOOKMARK [2][-]{subsection.2.2.5}{FINDBACK}{section.2.2}% 55
+\BOOKMARK [2][-]{subsection.2.2.6}{FELLWALKER}{section.2.2}% 56
+\BOOKMARK [1][-]{section.2.3}{Statistical noise}{chapter.2}% 57
+\BOOKMARK [2][-]{subsection.2.3.1}{Methods}{section.2.3}% 58
+\BOOKMARK [1][-]{section.2.4}{GBS regions}{chapter.2}% 59
+\BOOKMARK [2][-]{subsection.2.4.1}{Serpens MWC 297}{section.2.4}% 60
+\BOOKMARK [2][-]{subsection.2.4.2}{Serpens South}{section.2.4}% 61
+\BOOKMARK [2][-]{subsection.2.4.3}{Serpens Main}{section.2.4}% 62
+\BOOKMARK [2][-]{subsection.2.4.4}{Serpens NH3 and VV Ser}{section.2.4}% 63
+\BOOKMARK [2][-]{subsection.2.4.5}{W40 Complex}{section.2.4}% 64
+\BOOKMARK [2][-]{subsection.2.4.6}{Serpens East}{section.2.4}% 65
+\BOOKMARK [2][-]{subsection.2.4.7}{Other}{section.2.4}% 66
+\BOOKMARK [0][-]{chapter.3}{CO observations of star-forming regions}{}% 67
+\BOOKMARK [1][-]{section.3.1}{Introduction to CO contamination and outflows}{chapter.3}% 68
+\BOOKMARK [1][-]{section.3.2}{HARP}{chapter.3}% 69
+\BOOKMARK [1][-]{section.3.3}{CO reduction}{chapter.3}% 70
+\BOOKMARK [1][-]{section.3.4}{CO observations}{chapter.3}% 71
+\BOOKMARK [2][-]{subsection.3.4.1}{PPV Clouds}{section.3.4}% 72
+\BOOKMARK [2][-]{subsection.3.4.2}{Outflows}{section.3.4}% 73
+\BOOKMARK [1][-]{section.3.5}{CO contamination of SCUBA-2 850m}{chapter.3}% 74
+\BOOKMARK [2][-]{subsection.3.5.1}{Literature}{section.3.5}% 75
+\BOOKMARK [2][-]{subsection.3.5.2}{Methodology}{section.3.5}% 76
+\BOOKMARK [1][-]{section.3.6}{Contamination in the Serpens MWC 297}{chapter.3}% 77
+\BOOKMARK [1][-]{section.3.7}{Contamination in the the W40 complex}{chapter.3}% 78
+\BOOKMARK [2][-]{subsection.3.7.1}{Cloud velocities}{section.3.7}% 79
+\BOOKMARK [2][-]{subsection.3.7.2}{Outflow analysis}{section.3.7}% 80
+\BOOKMARK [1][-]{section.3.8}{Conclusions}{chapter.3}% 81
+\BOOKMARK [0][-]{chapter.4}{Free-Free contamination}{}% 82
+\BOOKMARK [1][-]{section.4.1}{Introduction to thermal breemstralung emission}{chapter.4}% 83
+\BOOKMARK [1][-]{section.4.2}{Hii observations}{chapter.4}% 84
+\BOOKMARK [1][-]{section.4.3}{UCHii observations}{chapter.4}% 85
+\BOOKMARK [2][-]{subsection.4.3.1}{Jets}{section.4.3}% 86
+\BOOKMARK [1][-]{section.4.4}{Free-free contribution to SCUBA-2}{chapter.4}% 87
+\BOOKMARK [2][-]{subsection.4.4.1}{Direct methods}{section.4.4}% 88
+\BOOKMARK [2][-]{subsection.4.4.2}{Indirect methods}{section.4.4}% 89
+\BOOKMARK [1][-]{section.4.5}{The free-free contribution in Serpens MWC 297 results and discussion.}{chapter.4}% 90
+\BOOKMARK [1][-]{section.4.6}{The free-free contribution in the W40 complex results and discussion.}{chapter.4}% 91
+\BOOKMARK [1][-]{section.4.7}{Conclusions}{chapter.4}% 92
+\BOOKMARK [0][-]{chapter.5}{Temperature mapping}{}% 93
+\BOOKMARK [1][-]{section.5.1}{Introduction to the temperature equation}{chapter.5}% 94
+\BOOKMARK [2][-]{subsection.5.1.1}{Submillimetre Flux ratio}{section.5.1}% 95
+\BOOKMARK [2][-]{subsection.5.1.2}{Beta}{section.5.1}% 96
+\BOOKMARK [2][-]{subsection.5.1.3}{Alpha}{section.5.1}% 97
+\BOOKMARK [2][-]{subsection.5.1.4}{Temperature}{section.5.1}% 98
+\BOOKMARK [1][-]{section.5.2}{Dual beam method}{chapter.5}% 99
+\BOOKMARK [2][-]{subsection.5.2.1}{The JCMT beam \(primary and secondary\)}{section.5.2}% 100
+\BOOKMARK [2][-]{subsection.5.2.2}{Gaussian beam convolution}{section.5.2}% 101
+\BOOKMARK [2][-]{subsection.5.2.3}{4 component dual beam convolution method}{section.5.2}% 102
+\BOOKMARK [1][-]{section.5.3}{Propagation of error}{chapter.5}% 103
+\BOOKMARK [2][-]{subsection.5.3.1}{Analytical calculation}{section.5.3}% 104
+\BOOKMARK [2][-]{subsection.5.3.2}{Monte-Carlo method}{section.5.3}% 105
+\BOOKMARK [1][-]{section.5.4}{Testing Dual beam method}{chapter.5}% 106
+\BOOKMARK [1][-]{section.5.5}{Kernel method}{chapter.5}% 107
+\BOOKMARK [2][-]{subsection.5.5.1}{Convolution kernel}{section.5.5}% 108
+\BOOKMARK [2][-]{subsection.5.5.2}{Beam model/beam map}{section.5.5}% 109
+\BOOKMARK [2][-]{subsection.5.5.3}{Preparing the Kernel}{section.5.5}% 110
+\BOOKMARK [1][-]{section.5.6}{Propagation of error}{chapter.5}% 111
+\BOOKMARK [2][-]{subsection.5.6.1}{Monte-Carlo method}{section.5.6}% 112
+\BOOKMARK [1][-]{section.5.7}{Testing Kernel method}{chapter.5}% 113
+\BOOKMARK [2][-]{subsection.5.7.1}{Pixel size problem}{section.5.7}% 114
+\BOOKMARK [1][-]{section.5.8}{Comparing ratio methods}{chapter.5}% 115
+\BOOKMARK [1][-]{section.5.9}{Calculating temperature}{chapter.5}% 116
+\BOOKMARK [2][-]{subsection.5.9.1}{Edge effects}{section.5.9}% 117
+\BOOKMARK [2][-]{subsection.5.9.2}{Comparison with alternative methods}{section.5.9}% 118
+\BOOKMARK [1][-]{section.5.10}{The impact of CO contamination}{chapter.5}% 119
+\BOOKMARK [1][-]{section.5.11}{The impact of the free-free contribution}{chapter.5}% 120
+\BOOKMARK [0][-]{chapter.6}{Radiative heating in Serpens MWC 297 region}{}% 121
+\BOOKMARK [1][-]{section.6.1}{Temperature maps of Serpens MWC 297}{chapter.6}% 122
+\BOOKMARK [1][-]{section.6.2}{The SCUBA-2 clump catalogue}{chapter.6}% 123
+\BOOKMARK [2][-]{subsection.6.2.1}{Fellwalker parameters}{section.6.2}% 124
+\BOOKMARK [2][-]{subsection.6.2.2}{Mass}{section.6.2}% 125
+\BOOKMARK [2][-]{subsection.6.2.3}{Jeans mass}{section.6.2}% 126
+\BOOKMARK [1][-]{section.6.3}{The SCUBA-2 YSO catalogue}{chapter.6}% 127
+\BOOKMARK [2][-]{subsection.6.3.1}{YSO distribution}{section.6.3}% 128
+\BOOKMARK [2][-]{subsection.6.3.2}{SCUBA-2 YSOcs}{section.6.3}% 129
+\BOOKMARK [2][-]{subsection.6.3.3}{Spectral energy distributions}{section.6.3}% 130
+\BOOKMARK [2][-]{subsection.6.3.4}{YSO classification}{section.6.3}% 131
+\BOOKMARK [1][-]{section.6.4}{Discussion}{chapter.6}% 132
+\BOOKMARK [2][-]{subsection.6.4.1}{The state of star formation in Serpens MWC 297}{section.6.4}% 133
+\BOOKMARK [2][-]{subsection.6.4.2}{What does SCUBA-2 tell us about the star MWC 297?}{section.6.4}% 134
+\BOOKMARK [2][-]{subsection.6.4.3}{Is there evidence for radiative feedback in Serpens MWC 297?}{section.6.4}% 135
+\BOOKMARK [1][-]{section.6.5}{Conclusion}{chapter.6}% 136
+\BOOKMARK [0][-]{chapter.7}{Radiative heating in W40 Complex}{}% 137
+\BOOKMARK [1][-]{section.7.1}{Temperature maps of the W40 complex}{chapter.7}% 138
+\BOOKMARK [1][-]{section.7.2}{The SCUBA-2 clump catalogue}{chapter.7}% 139
+\BOOKMARK [2][-]{subsection.7.2.1}{Clumpfinding analysis}{section.7.2}% 140
+\BOOKMARK [2][-]{subsection.7.2.2}{Clump Temperatures}{section.7.2}% 141
+\BOOKMARK [2][-]{subsection.7.2.3}{Clump column density and mass}{section.7.2}% 142
+\BOOKMARK [2][-]{subsection.7.2.4}{Clump Stability}{section.7.2}% 143
+\BOOKMARK [2][-]{subsection.7.2.5}{YSO distribution}{section.7.2}% 144
+\BOOKMARK [1][-]{section.7.3}{Discussion}{chapter.7}% 145
+\BOOKMARK [2][-]{subsection.7.3.1}{What evidence is there of radiative feedback heating the clumps in the W40 complex?}{section.7.3}% 146
+\BOOKMARK [2][-]{subsection.7.3.2}{External heating}{section.7.3}% 147
+\BOOKMARK [2][-]{subsection.7.3.3}{Internal heating}{section.7.3}% 148
+\BOOKMARK [2][-]{subsection.7.3.4}{What is the state of star-formation in the W40 complex?}{section.7.3}% 149
+\BOOKMARK [2][-]{subsection.7.3.5}{First generation star-formation}{section.7.3}% 150
+\BOOKMARK [2][-]{subsection.7.3.6}{Second generation star-formation}{section.7.3}% 151
+\BOOKMARK [2][-]{subsection.7.3.7}{What evidence is there of radiative feedback influencing star-formation in the W40 complex?}{section.7.3}% 152
+\BOOKMARK [1][-]{section.7.4}{Conclusion}{chapter.7}% 153
+\BOOKMARK [0][-]{chapter.8}{Radiative heating in JCMT GBS}{}% 154
+\BOOKMARK [1][-]{section.8.1}{Temperature maps of the JCMT GBS}{chapter.8}% 155
+\BOOKMARK [1][-]{section.8.2}{Catalogues}{chapter.8}% 156
+\BOOKMARK [2][-]{subsection.8.2.1}{OB stars}{section.8.2}% 157
+\BOOKMARK [2][-]{subsection.8.2.2}{YSO populations}{section.8.2}% 158
+\BOOKMARK [1][-]{section.8.3}{The SCUBA-2 clump catalogue}{chapter.8}% 159
+\BOOKMARK [2][-]{subsection.8.3.1}{Clumpfinding analysis}{section.8.3}% 160
+\BOOKMARK [2][-]{subsection.8.3.2}{Clump Temperatures}{section.8.3}% 161
+\BOOKMARK [2][-]{subsection.8.3.3}{Clump column density and mass}{section.8.3}% 162
+\BOOKMARK [2][-]{subsection.8.3.4}{Clump Stability}{section.8.3}% 163
+\BOOKMARK [2][-]{subsection.8.3.5}{YSO distribution}{section.8.3}% 164
+\BOOKMARK [1][-]{section.8.4}{Global analysis}{chapter.8}% 165
+\BOOKMARK [2][-]{subsection.8.4.1}{Do populations of OB stars influence clump temperature?}{section.8.4}% 166
+\BOOKMARK [2][-]{subsection.8.4.2}{Do populations of YSOs influence clump temperature?}{section.8.4}% 167
+\BOOKMARK [2][-]{subsection.8.4.3}{How do SCUBA-2 temperatures compare to Herschel temperatures?}{section.8.4}% 168
+\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 169
+\BOOKMARK [1][-]{section.9.1}{Further work}{chapter.9}% 170

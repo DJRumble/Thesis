@@ -1,0 +1,254 @@
+\chapter{Temperature mapping}
+\label{ch:chapter5}
+
+\section{Introduction to the temperature equation}
+\subsection{Submillimetre Flux ratio}
+%MWC 297
+Using the ratio of 450\,$\micron$ and 850\,$\micron$ fluxes from SCUBA-2, 
+we develop a method that utilises the two frequency observations of the same 
+region where the ratio depends partly on the dust temperature ($T_{\mathrm{d}}$) 
+via the Planck function and also on the dust opacity spectral index, $\beta$ 
+(a dimensionless term dependent on the grain model as proposed by 
+\citeauthor{Hildebrand:1983fy}\,\citeyear{Hildebrand:1983fy}), as described by 
+\begin{equation}
+\frac{S_{\mathrm{450}}}{S_{\mathrm{850}}} = \left ( \frac{850}{450} \right )^{3+\beta }\left ( \frac{\exp(hc/\lambda _{\mathrm{850}}k_{\mathrm{B}}T_{\mathrm{d}})-1}{\exp(hc/\lambda _{\mathrm{450}}k_{\mathrm{B}}T_{\mathrm{d}})-1} \right ), \label{eqn:temp}
+\end{equation}
+otherwise referred to as `the temperature equation' \citep{Reid:2005ly}.
+%MWC 297
+There is no analytical solution for temperature and so pixel values are inferred from 
+a lookup table. The method by which temperature maps are made can be split into 
+two distinct parts: creating maps of flux ratio from input 450\,$\micron$ and 850\,$\micron$ 
+data and building temperature maps based on the ratio maps. Both methods were 
+discussed by \cite{Hatchell:2013ij}, for here on referred to as the H13 method. 
+We focus on the development of this method and the additional features that have 
+been incorporated.
+
+\subsection{Beta}
+%MWC 297
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.35]{/Users/damian/Documents/Thesis_et_al/images/20131228_FluxRatio.pdf}
+\caption{Flux ratio as a function of temperature as described by Equation \ref{eqn:temp}. The temperature range is that commonly observed in protostellar cores.} \label{fig:SR_temp}
+\end{centering}
+\end{figure} 
+%MWC 297
+Temperature is known to influence the process by which dust grains coagulate 
+and form icy mantles and therefore the value of $\beta$. Observations by 
+\cite{Ubach:2012fk} have shown decreases in $\beta$ in protoplanetary disks 
+but for the most part there is little evidence that $\beta$ changes significantly in 
+pre/protostellar cores \citep{Schnee:2014uq}. \cite{Sadavoy:2013qf} fitted 
+\emph{Herschel} 160\,$\micron$ to 500\,$\micron$ data with SCUBA-2 data in 
+the Perseus B1 region  and concluded that $\beta$ is approximately 2.0 in 
+extended, filamentary regions whereas it takes a lower value of approximately 
+1.6 towards dense protostellar cores. 
+%MWC 297
+Figure~\ref{fig:SR_temp} describes how small changes in $\beta$ lead to a 
+large range of flux ratios, especially at higher temperatures. For ratios of 3, 7 
+and 9, a $\beta$ of 1.6 would return temperatures of 8.9, 25.4 and 85\,K whereas 
+a $\beta$ of 2.0 would return temperatures of 7.6, 15.7 and 25\,K. Higher ratios 
+indicate heating above that available from the Interstellar Radiation Field (ISRF) 
+for any reasonable value of $\beta$. 
+%MWC 297
+Removing the requirement for the uncertainty in $\beta$ requires data at additional 
+wavelengths, for example 250\,$\micron$ and 350\,$\micron$ as observed by 
+\emph{Herschel}. Reconciling the angular scales of \emph{Herschel} observations 
+with those of SCUBA-2 is a non-trivial process and goes beyond the scope of this paper. 
+%MWC 297
+Smaller values of $\beta$ are found to be consistent with grain growth which only 
+occurs sufficiently close to compact structures \citep{Ossenkopf:1994vn}. 
+\cite{Stutz:2010hq} used the dominance of extended structure to that of compact 
+structure to argue for a uniform, higher value of $\beta$. Likewise \cite{Hatchell:2013ij} 
+assumed a constant $\beta$, arguing that variation in temperature dominates to that 
+of $\beta$ in NGC1333. On this basis we adopt a uniform $\beta$ of 1.8, a value 
+consistent with the popular OH5 dust model proposed by \cite{Ossenkopf:1994vn} 
+and studies of dense cores with \emph{Planck}, \emph{Herschel} and SCUBA-2 
+\citep{Stutz:2010hq, Juvela:2011ys, Sadavoy:2013qf}. We note that in this regime an 
+apparent fall in temperature towards the centre of a core might be symptomatic of 
+low $\beta$ values and therefore we cannot be as certain about the temperatures 
+at these points.
+
+
+\subsection{Alpha}
+\subsection{Temperature}
+
+
+
+\section{Dual beam method}
+\subsection{The JCMT beam (primary and secondary)}
+
+%FROM MWC 297
+The JCMT beam can be modelled as two Gaussian components \citep{Drabek:2012uq, 
+Dempsey:2013uq}. The primary (or main) beam contains the bulk of the signal and is 
+well described by a Gaussian, $G_{\mathrm{MB}}$, but in addition to this there is also 
+a secondary beam which is much wider and lower in amplitude, $G_{\mathrm{SB}}$. 
+Together they make up the 2-component beam of the telescope, 
+%FROM MWC 297
+\begin{equation}
+G_{\mathrm{total}}=a G_{\mathrm{MB}} + b G_{\mathrm{SB}}, \label{eqn:effbeam} 
+\end{equation}
+where $a$ and $b$ are relative amplitude, listed in Table~\ref{table:beams} 
+alongside the FWHM, $\theta$, of the primary (MB) and secondary (SB) beams.   
+%FROM MWC 297
+%\begin{table}
+%\caption{JCMT beam properties}
+%\label{table:beams}
+%\begin{center}
+%\centering
+%\begin{tabular}{l | p{1cm} | p{1cm}  }
+%		&	450\,$\micron$ &	850\,$\micron$ \\
+%	\hline
+%	$\theta_{\mathrm{MB}}$ &	7.9\arcsec\	&	13.0\arcsec\		\\
+%	$\theta_{\mathrm{SB}}$	&	25.0\arcsec\	&	48.0\arcsec\		\\	
+%	$a$	&	0.94	&	0.98		\\
+%	$b$	&	0.06	&	0.02		\\
+%	Pixel size&	4\arcsec\	&	6\arcsec\		\\
+%	\hline
+%\end{tabular}
+%\end{center}
+%JCMT beam Full Width Half Maximum ($\theta$) and relative amplitudes from \cite{Dempsey:2013uq} Table 1. Pixel sizes are those chosen by the JCMT SGBS data reduction team.
+
+\subsection{Gaussian beam convolution}
+%MWC 297
+We introduce a secondary beam component into the H13 method, which previously 
+assumed that the secondary component was negligible. This adds complexity 
+to the convolution process as it requires convolution of the data with a normalised 
+Gaussian of the form of the JCMT beam's primary and secondary components for 
+the alternative wavelength. The primary component at 850\,\micron\ is then scaled with 
+%MWC 297
+\begin{equation}
+\frac{a_{\mathrm{450}}\theta _{\mathrm{MB_{\mathrm{450}}}}^{2}}{a _{\mathrm{450}}\theta _{\mathrm{MB_{\mathrm{450}}}}^{2}+b _{\mathrm{450}}\theta _{\mathrm{SB_{\mathrm{450}}}}^{2}}, \label{eqn:scaleMB}
+\end{equation}
+%MWC 297
+and likewise 
+%MWC 297
+\begin{equation}
+\frac{b_{\mathrm{450}}\theta _{\mathrm{SB_{\mathrm{450}}}}^{2}}{a_{\mathrm{450}}\theta _{\mathrm{MB_{\mathrm{450}}}}^{2}+b_{\mathrm{450}}\theta _{\mathrm{SB_{\mathrm{450}}}}^{2}}, \label{eqn:scaleSB}
+\end{equation} 
+for the secondary component. The 450\,$\micron$ map is convolved with the 850\,$\micron$ 
+beam is a similar way. Corresponding parts are then summed together for 450\,$\micron$ and 
+850\,$\micron$ data separately to construct the convolved maps with an effective beam size of 
+19.9\arcsec\ as shown in Figure~\ref{fig:mwc}.
+
+
+\subsection{4 component dual beam convolution method}
+%MWC 297
+\begin{figure(}
+\begin{center}
+\includegraphics[scale=0.5]{/Users/damian/Documents/Thesis_et_al/images/temp_flowchart_simple.pdf}
+\caption{A flow chart providing a simplified description of the ratio mapping process}
+\label{fig:flow}
+\end{center}
+\end{figure*}
+
+%MWC 297
+Free parameters of our method are limited to $\beta$ (which we set at 1.8). Input 
+450\,$\micron$ and 850\,$\micron$ flux density data (scaled in Jy/pixel) have fixed 
+noise levels. Other fixed parameters which are used in the beam convolution 
+include: the pixel area per  map, FWHM of the primary ($\theta_{\mathrm{MB}}$) 
+and secondary ($\theta_{\mathrm{SB}}$) beams and beam amplitudes all of which 
+are measured by \cite{Dempsey:2013uq} and given in Table \ref{table:beams}.
+%MWC 297
+Input maps are first convolved with the JCMT beam (Equation 1) at the alternate 
+wavelength to match resolution. Pixel size is taken into account in this process.
+The 450\,$\micron$ fluxes are then regridded onto the 850\,$\micron$ pixel grid. 
+Data are then masked leaving only 5$\sigma$ detections or higher. 450\,$\micron$ 
+fluxes are then divided by 850\,$\micron$ fluxes to create a map of flux ratio.
+%MWC 297
+Whereas the H13 method made a noise cut based on the variance array calculated 
+during data reduction, our model introduces a cut based on a single noise estimate, 
+following the method introduced by \cite{Salji:2013kx}. The data are masked to remove 
+pixels which carry astronomical signal. The remaining pixels are placed in a histogram 
+of intensity and a Gaussian is fitted to the distribution, from which a standard deviation, 
+$\sigma$,  can be extracted as the noise level. This calculation is a robust form of 
+measuring statistical noise that includes residual sky fluctuations.
+%MWC 297
+%TJW calculated flux in units per beam beam which necessititated a calibration factor and an associated error of 5 to 10per cent depending on wavelength \citep{Dempsey:2013uq} however since then GBS Internal Release 1 standard has revised the units of input data array to units per pixel which eliminates this necessary calbriation and source of statisical error. As a result the improved error derived from the noise level can be propagated through the various process with the model to produce new error arrays. 
+%MWC 297
+The inclusion of the secondary beam was found to decrease temperatures by between 5 per cent and 
+9 per cent with the coldest regions experiencing the largest drop in temperature and warmest the least. 
+%MWC 297
+Applying a 5$\sigma$ cut based on the original 450\,$\micron$ data to mask uncertain regions of 
+large scale structure after the beam convolution can lead to spuriously high values around the 
+edges of our maps where fluxes from pixels below the threshold are contributing to those above, 
+producing false positives. These `edge effects' are mitigated by clipping but we advise that 
+where the highest temperature pixels meet the map edges these data be regarded with a degree of scepticism. 
+%MWC 297
+%Our model produces more reliable temperatures as a result of using the full beam whereas 
+%the H13 method does not. For point sources, such as YSOs and prestellar cores, our results 
+%show that the effect of the secondary beam is non-negligible, having an ameliorating effect 
+%on ratio and temperature. Flux from individual pixels is spread out over a wider area through 
+%convolution. At the 5$\sigma$ noise level we observe how unreliable data can encroach on 
+%reliable data and produce artefacts known as `edge effects'. The offset in values of $\alpha$ 
+%and $\beta$ between 450\,$\micron$ and 850\,$\micron$ listed in Table~\ref{table:beams} 
+%produces contrasting beam profiles. Where underlying large scale structure encroaches on 
+%significant data, we see a substantial divergence in fluxes in favour of exceptionally larger flux 
+%ratios, resulting unrealistically high temperatures in these regions. 
+%MWC 297
+%the impact of these artefacts can be reduced through careful clipping of the data. Large scale structure regions 
+%are inherently less dense than point-like dense cores and therefore often fall bellow the 5$\sigma$ noise level 
+%and are cut from the maps. As these regions do not hold significant observations, it is not a concern that they 
+%also contain artefacts. We cannot rule out all instances with this method as much of the SCUBA-2 data covers regions 
+%of significant large-scale star-forming clouds. We cannot further adapt our processes to mitigate these effects, 
+%however as this paper mainly studies YSOs which are point-like, the effect of these artefacts are unlikely to encroach 
+%in these cases and we proceed with the proviso that a degree of scepticism should be cast towards 
+%high temperature data on the edges of large scale regions. 
+%MWC 297
+Ratio maps are converted to temperature maps using Equation \ref{eqn:temp} 
+implemented as a look-up table as there is no analytical solution. The H13 method 
+subsequently cuts pixels with an arbitrary uncertainty in temperature of greater 
+than 5.5\,K. We replace this with a cut of pixels of an uncertainty in temperature 
+(calculated from the noise level propagated through the method described in 
+Section 3.1) of greater than 5 per cent. 
+
+\section{Propagation of error}
+\subsection{Analytical calculation}
+\subsection{Monte-Carlo method}
+\section{Testing Dual beam method}
+\section{Kernel method}
+\subsection{Convolution kernel}
+\subsection{Beam model/beam map}
+\subsection{Preparing the Kernel}
+\section{Propagation of error}
+\subsection{Monte-Carlo method}
+\section{Testing Kernel method}
+\subsection{Pixel size problem}
+\section{Comparing ratio methods}
+\section{Calculating temperature}
+\subsection{Edge effects}
+\subsection{Comparison with alternative methods}
+\section{The impact of CO contamination}
+\section{The impact of the free-free contribution}
+%MWC297
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=0.7]{20140718_MWC297_tempcomp.jpeg}
+\caption{Temperature maps of MWC 297 from the ratio of 450\,$\micron$ and 850\,$\micron$ emission pre (\emph{left}) and post (\emph{right}) free-free 
+contamination subtraction. Contours are at 11, 25 and 38\,K. The location of MWC 297 is marked with a star.}
+\label{fig:Tcomp}
+\end{center}
+\end{figure*}
+%MWC297
+Figure~\ref{fig:contamination} presents the 850\,$\micron$ before and after subtraction. Figure~\ref{fig:Tcomp} presents the impact of free-free emission on temperature maps of the region. Even with the free-free emission subtracted, a large, extended submillimetre clump remains, though its peak is offset from the location of MWC 297 by 24.2\arcsec\ (approximately 6,000\,AU).
+%MWC 297
+The impact of this contamination on the temperature maps is remarkable. The power law of $\alpha = 1.03\pm0.02$ that describes free-free emission from both an UCH\textrm{II} region and jet outflows produces greater flux at 850\,$\micron$ than 450\,$\micron$. Free-free dominates the flux and this results in artificially lower ratios and therefore lower temperatures. This is consistent with the cold spot seen in Figure \ref{fig:Tcomp}a at the location of the UCH\textrm{II} region, with a temperature of approximately 11\,K. We can conclude that free-free emission may contaminate submillimetre temperature maps where cold spots are coincident with hot OB stars.
+%MWC 297
+The 5$\sigma$ level of 82\,mJy and 11\,mJy means that flux is too uncertain to be detected at 450$\micron$ and therefore it is not possible to calculate reliable temperatures of the residual circumstellar envelope/disk around the star. 
+%MWC297
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=0.7]{/Users/damian/Documents/Thesis_et_al/images/20140718_MWC297_tempcomp.pdf}
+\caption{Temperature maps of MWC 297 from the ratio of 450\,$\micron$ and 850\,$\micron$ emission pre (\emph{left}) and post (\emph{right}) free-free 
+contamination subtraction. Contours are at 11, 25 and 38\,K. The location of MWC 297 is marked with a star.}
+\label{fig:Tcomp}
+\end{center}
+\end{figure*}
+%MWC 297
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=0.7]{/Users/damian/Documents/Thesis_et_al/images/20140618_mwc297_contamination.pdf}
+\caption{IR1 SCUBA-2 850\,$\micron$ data before \emph{left} and after \emph{right} removal of free-free contamination from an UCH\textrm{II} region and polar jets/winds (represented by the point source contours in the \emph{left} plot). SCUBA-2 contours are at 0.011, 0.022, 0.033 and 0.055 Jy/pixel (corresponding to 5, 10, 15 and 25 $\sigma$ detection limits). 6\,cm VLA contours (red) from Sandell (private comm.) at 0.002, 0.005, 0.02, 0.072, 0.083 Jy/beam are overlaid on the left hand panel. The location of MWC 297 is marked with a star. Beam sizes are shown at the bottom of the image (VLA CnD config. \emph{left} and JCMT \emph{right}.) }
+\label{fig:contamination}
+\end{center}
+\end{figure*}
+
+

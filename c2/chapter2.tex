@@ -1,0 +1,445 @@
+\chapter{The JCMT Gould Belt Survey of star forming regions}
+\label{ch:chapter2}
+
+\section{Observational astronomy}
+\subsection{Observing in submillimetre}
+\subsection{SCUBA-2}
+
+Our work builds on analytical techniques developed for SCUBA data \citep{Johnstone:2000fk, Kirk:2006vn, Sadavoy:2010ve} 
+to analyse SCUBA-2 data at the same wavelengths. SCUBA-2 represents a significant improvement over 
+its predecessor as it has an array of 10,000 pixels, as opposed to 128. Practically this gives the instrument a 
+much wider field of view and allows larger regions to be observed quicker and to greater depth. Restricted 
+to SCUBA, larger regions of star formation, for example Orion \citep{Nutter:2007ys} and Perseus 
+\citep{Hatchell:2007qf}, were prioritised over the low mass Serpens MWC 297 region.
+
+The JCMT GBS extends the coverage of the local star-forming regions over those mapped by SCUBA. SCUBA-2 
+also offers much greater quality and quantity of 450\,$\micron$ data, as a result of improved array technology and 
+reduction techniques pioneered by \cite{Holland:2006uq, Holland:2013fk}, \cite{Dempsey:2013uq} and 
+\cite{Chapin:2013vn}. \cite{Mitchell:2001ve} is able to construct partial temperature maps from SCUBA 450\,$\micron$ 
+and 850\,$\micron$ data but is limited to general statements about the region as a result of high noise estimates at 
+450\,$\micron$. \cite{Reid:2005ly} go further in their use of 450\,$\micron$ data to analyse clump temperature but 
+only obtain results for 54\,per cent of the clumps they detect in 850\,$\micron$. Calculated temperatures become 
+increasingly unreliable at higher values to the extent they can only define a lower limit of 30\,K for temperatures 
+above this value. 
+
+%This survey is deeper than most SCUBA studies, this is demonstrated through an order of magnitude improvement in completeness with one out every three clumps we detect being the below the completeness limit of 0.4 $M_\odot$ specified by \cite{Johnstone:2000fk}.
+
+The lower noise levels and wider coverage at 450\,$\micron$ from SCUBA-2 offer improved quality and 
+quantity to the extent that temperature maps can be constructed for many features in star-forming regions.
+
+\subsection{Data reduction}
+%FROM MWC 297
+The data were reduced using an iterative map-making technique (\texttt{makemap} 
+in {\sc smurf}, \citeauthor{Chapin:2013vn} \citeyear{Chapin:2013vn}, 
+\citeauthor{Jenness:2013fk} \citeyear{Jenness:2013fk}), and gridded to 6\arcsec\ 
+pixels at 850\,$\micron$, 4\arcsec\ pixels at 450\,$\micron$.  
+The iterations were halted when the map pixels, on average, changed by 
+$<$0.1\,per cent of the estimated map rms. The initial reductions of each individual 
+scan were coadded to form a mosaic from which a signal-to-noise mask was 
+produced for each region.  This was combined with \emph{Herschel} 500\,$\micron$ 
+emission at greater than 2\,Jy/beam to include all potential emission regions. 
+The final mosaic was produced from a second reduction using this mask to define 
+areas of emission. Detection of emission structure and calibration accuracy
+are robust within the masked regions, and are uncertain outside of the masked 
+region. %The reduced map and mask are shown in Figure \ref{fig:maps}.
+%FROM MWC 297
+A spatial filter of 600\arcsec\ is used in the reduction, which means that flux 
+recovery is robust for sources with a Gaussian Full Width Half Maximum (FWHM) 
+less than 2.5\arcmin. Sources between 2.5\arcmin\ and 7.5\arcmin\ will be 
+detected, but both the flux and the size are underestimated because Fourier 
+components with scales greater than 5\arcmin\ are removed by the filtering 
+process. Detection of sources larger than 7.5\arcmin\ is dependent on the 
+mask used for reduction.
+%FROM MWC 297
+The data presented in Figure~\ref{fig:maps} are initially calibrated in units of pW 
+and are converted to Jy per pixel using Flux Conversion Factors (FCFs) derived 
+by \cite{Dempsey:2013uq} from the average values of JCMT calibrators. 
+By correcting for the pixel area, it is possible to convert maps of units Jy/pixel 
+to Jy/beam using 
+\begin{equation}
+S_{\textup{beam}} = S_{\textup{pixel}}\frac{\textup{FCF}_{\textup{peak}}}{\textup{FCF}_{\textup{arcsec}}}\frac{1}{\textup{Pixel area}}.
+\label{eqn:pixelFCF} 
+\end{equation}
+%\begin{equation}
+%S_{\textup{pixel}} = S_{\textup{beam}}\frac{\textup{Pixel area}}{\textup{Beam area}}
+%\label{eqn:pixelgen} 
+%\end{equation}
+%FROM MWC 297
+FCF$_{\mathrm{arcsec}}$ = 2.34$\pm$0.08 and 4.71$\pm$0.5 Jy/pW/arcsec$^{2}$, 
+at 850\,$\micron$ and 450\,$\micron$ respectively, and FCF$_{\mathrm{peak}}$ = 537$\pm$26 
+and 491$\pm$67 Jy/pW at 850\,$\micron$ and 450\,$\micron$ respectively. The PONG 
+scan pattern leads to lower noise in the map centre and overlap regions, while data 
+reduction and emission artefacts can lead to small variations in the noise over the whole 
+map. 
+
+\subsection{Calibration}
+\subsection{Related surveys - 2MASS/Spitzer/Herschel}
+
+%5.8\arcsec (70\,$\micron$), 7.1\arcsec (100\,$\micron$), 11.2\arcsec (160\,$\micron$), 18.2\arcsec (250\,$\micron$), 25.0\arcsec (350\,$\micron$) and 36.4\arcsec (500\,$\micron$) with \emph{Herschel} \citep{Aniano:2011fk}. 
+
+\section{Data enhancement}
+\subsection{Selection}
+%FROM MWC 297
+\begin{figure*}[t!]
+\begin{centering}
+\includegraphics[scale=0.35]{/Users/damian/Documents/Thesis_et_al/images/20130912_rms_tau_450.pdf}\includegraphics[scale=0.35]{/Users/damian/Documents/Thesis_et_al/images/20130912_rms_tau_850.pdf}
+\caption{Plots of optical depth due to water vapour, tau, as a function of noise level of the data in the 6 component scans of MWC 297 at 450\,$\micron$  \emph{(left)} and 850\,$\micron$ \emph{(right)}. Tau is measured at two frequencies, 225GHz  \emph{(red)} and 186GHz \emph{(blue)}. Note how the majority of points are on linear trend (within measured errors), with the exception of one scan 450$\microns$ which was subsequently rejected from the final mosaic.} \label{fig:tau}
+\end{centering}
+\end{figure*} 
+%FROM MWC 297
+Of the six scans observed, three were selected for the final mosiac at each wavelength. This selection reflects a number of factors. In one case observed flaws were attributed to bolometer failures in one 850\,$\micron$ case and weather conditions where the opacity was significantly off trend in both $\tau_{225}$ and $\tau_{186}$ bands for a 450\,$\micron$ case (Figure~\ref{fig:tau}). Both scans were removed. 
+%FROM MWC 297
+A perceived `temperature gradient' remained in the preliminary results and was unexplained by contemporary understanding of star formation. We devised a test for reliability of the data, comparing a pixel in one scan to the mean of the remaining five. Where this pixel was greater than three standard deviations from the mean it was flagged as `anomalous'. Typical fraction of anomalies due to statistical noise within the data reduction masks of MWC 297 region were $~3per cent$ and $~6per cent$ for 450\,$\micron$ and 850\,$\micron$. Two out of five scans were rejected from 450\,$\micron$ with fractions of $7per cent$ and $10per cent$ and two out of five scans were rejected from 850\,$\micron$ with fractions of $17per cent$ and $50per cent$. 
+%FROM MWC 297
+The omission of half of the components has a none negligible effect on the background $1\sigma$ noise level of the maps, causing it to increase from $16.8$/$2.18$ to $20.9$/$2.62$ mJy per 4\arcsec\ /6\arcsec\  pixel, 450\,$\micron$/850\,$\micron$ respectively. 
+
+\subsection{Mosiacs}
+\subsection{Filtering}
+\subsection{Clumpfinding}
+\subsection{FINDBACK}
+\subsection{FELLWALKER}
+
+%A simplified approach to a `clump' in the ISM models it as a sphere of gas with a Gaussian-like density profile. It is not feasible to constrain a real radius of the volume of this clumps and instead we turn to an artificial, \emph{effective radius}. The effective radius is smaller than reality as it measures from the centre of the clump to where the density profile drops below the noise level as opposed to where the density becomes indistinguishable from the ISM. The inevitable consequence of a smaller clump radius is a smaller integrated flux for the clump. Whilst effective radius does not provide a real measure of clamp mass, it does provide a mechanism for defining a lower limit on the mass of the clump by defining a minimum clump size. 
+
+Clumps do not have well defined boundaries within the ISM. We use the signal to noise 
+ratio to define a boundary at an \emph{effective radius}. The boundary is determined 
+by the \textsc{starlink} \textsc{CUPID} package for the detection and analysis of objects 
+\citep{Berry:2013uq}, specifically the \textsc{fellwalker} algorithm which assigns pixels to 
+a given region based on positive gradient towards a common emission peak. This method 
+has greater consistency over parameter space than other algorithms (Watson 
+\citeyear{watson:2010pc}, \cite{Berry:2014vn}). \textsc{fellwalker} was developed by 
+\cite{Berry:2007vn}, and the 2D version of the algorithm used here considers a pixel in the data 
+above the noise level parameter and then compares its value to the adjacent pixels. \textsc{fellwalker} then moves on to 
+the adjacent pixel which provides the greatest positive gradient. This process continues 
+until the peak is reached - when this happens all the pixels in the `route' are assigned 
+an index and the algorithm is repeated with a new pixel. All `routes' that reach the same 
+peak are assigned the same index and form the `clump'.  Clump-finding algorithms, 
+such as this, have been used by \cite{Johnstone:2000fk}, \cite{Hatchell:2005fk}, \cite{Kirk:2006vn} 
+and \cite{Hatchell:2007qf} to define the extent of clumps for the purposes of measuring 
+clump mass. 
+
+%A simplified approach to a `clump' in the ISM models it as a sphere of gas with a Gaussian-like density profile. In this scenario a radius would exist where the density of the clump becomes indistinguishable from a constant density ISM and this forms the basis for the calculation of Jeans masses and lengths. Ideally this radius could be used to define an area from which the total flux could be observed and subsequently be used to calculate mass of the clump. Observations of clumps show they are rarely spherical or any regular volume. Density profile varies depending on how evolved the clumps and whether it has started collapsing to form a protostar or not and the ISM is not constant level. In addition to these problems, observational data comes with a maximum level of statistical noise in the flux, under which uncertainty is too high for reliable data. 
+
+
+\section{Statistical noise}
+\subsection{Methods}
+\section{GBS regions}
+
+%family portrait
+\begin{figure*}[t!]
+\begin{centering}
+\includegraphics[scale=0.7]{images/map_aquila_rift_B10.pdf}
+\caption{A visual extinction map of the whole Serpens/Aquila region derived from 2MASS data. Of particular interest are the Serpens Main and W40/Serpens South region. Note that whilst these two last regions appears as one continuous feature on this map, they are thought to be separate features (labeled respectively with the circle and star). The dashed rectangle indicates an area examined by Herschel and discussed by \cite{Bontemps:2010fk} } \label{fig:11}
+\end{centering}
+\end{figure*} 
+
+%FROM MWC 297
+This study uses data from the JCMT Gould Belt Survey (GBS) of nearby star-forming regions \citep{WardThompson:2007ve}. 
+The survey maps all major low and intermediate-mass star-forming regions within 0.5 kpc. The JCMT GBS provides some of the 
+deepest maps of star forming regions where $A_v > 3$  with a target sensitivity of 3 mJy beam$^{-1}$ at 850\,$\micron$ and 12 mJy 
+beam$^{-1}$ at 450\,$\micron$. The improved resolution of the JCMT also allows for more detailed study of large scale 
+structures such as filaments, protostellar envelopes, extended cloud structure and morphology down to the Jeans length.
+
+In this section, the basic properties of each region are presented and studies at a variety of wavelengths are discussed to highlight the diversity of astrophysics in the Aquila-rift. This is an elongated region of extinction at $l~=~28^{\circ}$. Studies by \cite{Straizys:2003nx} have calculated a distance of 225 $\pm$ 55 pc for the `extinction wall' of the region. The rift itself is a vast dust feature spanning approximately $5\,^{\circ}$ in length and is clearly visible in figure \ref{fig:11} \citep{Bontemps:2010fk}. 
+
+Serpens Main, Ammonia and South are vast, complex systems with filaments and well defined core regions within the clouds. Star formation here is thought to have started from the spontaneous collapse of the molecular clouds under gravity - hereby referred to as \emph{`classical'} star formation. It is fairly ubiquitous that these regions with contain a core region of the most dense, cold gas with filaments off shoots. These regions are grouped such that they do not feature isolated collapse or obvious previous generations of stars that may be influencing the environment from which they are formed, for example with a Photo-Dissociative region (PDR).
+
+W40, MWC297 and VV Ser regions of Serpens-Aquila are smaller and fundamentally different to the classical star forming regions. That is to say each region is synonymous with some existing MS stars which have recently formed from the natal cloud and are thought to be in someway influencing star formation in the region. MWC297 and VV Ser contain isolated, young MS or Zero Age Main Sequence (ZAMS) stars. W40 contains a developed OB association of 3 ionising stars which are responsible for a large DPR. Together they are designated as potentially \emph{`triggered'} star forming regions.
+
+The rift is the common cloud that Serpens Main, Ammonia and VV Ser are all part of, therefore the distance of 225$\pm$55pc is carried through for the distance to Serpens South as the regions are physically connected, Figure \ref{fig:serpensIR} shows the regions in relation to each other. In addition to this, South also has similar Local Standard of Rest velocity (~6$km^{-1}$) as Main and $NH_3$ \citep{Gutermuth:2008fk}.  Observations of Serpens South are complicated by the presence of W40 which is projected on the same part of the sky as South. There has been considerable debate over its distance of W40 relative to South. From this point on it is assumed that W40 is at a distance of ~600pc and is therefor not physically connected to South. 
+
+Finally, other notable regions of Serpens-Aquila are discussed, namely this is a poorly studied Eastern region. [EXPAND AND INCLUDE N]
+
+I summarise the regions here. 
+
+\begin{itemize}
+\item \textbf{Serpens Main} is located approximately \emph{$\alpha$: 18 29 55 $\delta$: +01 13 00} (Galactic coordinates is l = $32\,^{\circ}$ and b = $5\,^{\circ}$) at a distance of $230\pm20$ps \citep{Eiroa:2008ta} with an approximate depth of 80 pc. 
+\item \textbf{Serpens Ammonia} (from now on $NH_3$) is located 45' to the south of Serpens Main \citep{Djupvik:2006fk} and is undergoing many similar star formation processes to its `sister' region to the north. 
+\item \textbf{Serpens South} is one half of the Aquila-Rift Molecular cloud complex located at  approximately \emph{$\alpha$:18 30 03, $\delta$:-02 01 58.2}  (l = $28\,^{\circ}$ and b = $5\,^{\circ}$). It is located approximately $3\,^{\circ}$ south of the previous discuss Serpens Main region.
+\item \textbf{W40} is coincident with Serpens South and is composed of three components; a large cold molecular cloud, a powerful HII region (S2-64) driven by a three star OB association and a embedded stellar cluster. 
+\item \textbf{Serpens MWC 297} is an important, isolated intermediate mass ZAMS star to the south east of W40 at  \emph{$\alpha$: 18 27 40.6 $\delta$: -03 50 11}.
+%\item \textbf{VV Serpens} is a young UX Variable Orion Star located at \emph{$\alpha$: 18 28 48 $\delta$: +00 08 40} roughly 20' to the south of Serpens $NH_3$.
+\item \textbf{Serpens East} is the most prominent of several smaller eastern regions located approximately \emph{$\alpha$: 18 37 30 $\delta$: -01 40 00}.
+\item \textbf{Serpens North} is the most prominent of several smaller eastern regions located approximately \emph{$\alpha$: 18 37 30 $\delta$: -01 40 00}.
+\end{itemize}
+
+Spatial distribution has been analysed by various authors for various regions through the means of a quantifiable ratio between the number of PMS to protostars in a given part of the cloud, for example, the core. Here I conduct a similar analysis, the results of which are shown in Table \ref{table:ratio}. Ratios are calculated for the entire map as a control and then for two different sized cores. These areas are shown on the YSO maps for each region above as the blue dotted and solid lines. Each area is defined by an arbitrary flux level such that a sensible core region is defined. There is a mixed bag of results to compare this directly to as some areas have been studied in this fashion whereas others have not and there are few limits places on the boundary conditions. The results obtained here will be discussed relative to the literature results in the discussion section with the main focus being on trends as opposed to actual data. 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{l | p{1cm} p{1cm}  p{1cm}  p{1cm}  p{1cm}  }
+	Region	&	Whole map	&	0.03Jy per beam	&	0.1Jy per beam 	&	0.25Jy per beam	&	0.3Jy per beam\\
+	\hline
+	Main		&	0.26			&	-			&	0.92			&	1.62			&	-		\\
+	$NH_3$	&	0.13			&	-			&	1.13			&	7.00			&	-		\\	
+	South	&				&	5.70			&	-			&	-			&	19.00	\\
+	MWC297	&	0.10			&	-			&	n/a			&	0.40			&	-		\\
+\end{tabular}
+\caption{Results of analysis of ratio of protostars to pre-main sequence stars for the whole maps and the core region, defined by an arbitrary flux level. [UPDATE]}
+\label{table:ratio}
+\end{table}
+
+
+%FROM MWC 297
+\subsection{Serpens MWC 297}
+
+\begin{figure*}
+\begin{centering}
+\includegraphics[scale=0.7]{/Users/damian/Documents/Thesis_et_al/images/20140718_MWC297_s450+s850_final.pdf}
+\caption{SCUBA-2 450\,$\micron$ (\emph{left}) and 850\,$\micron$ (\emph{right}) data. Contours show 5$\sigma$ and 15$\sigma$ levels in both cases: levels are at 0.082, 0.25 Jy/ 4\arcsec\ pixel and 0.011, 0.033 Jy/ 6\arcsec\ pixel  at 450\,\micron\ and 850\,\micron\ respectively. The blue outer contour shows the data reduction mask for the region, based on \emph{Herschel} 500\,$\micron$ observations. Noise levels increase towards the edges of the map on account of the mapping method outlined in Section 2.1.} \label{fig:maps}
+\end{centering}
+\end{figure*} 
+
+Serpens MWC 297 region is a region of low mass star formation associated with the B star MWC 297 and 
+considered to be part of the larger Serpens-Aquila star forming complex (Figure \ref{fig:maps}). 
+
+%FROM MWC 297
+Serpens MWC 297 was observed with SCUBA-2 \citep{Holland:2013fk} on the 5th and 
+8th of July 2012 as part of the JCMT Gould Belt Survey (GBS, \citeauthor{WardThompson:2007ve} 
+\citeyear{WardThompson:2007ve}) MJLSG33 SCUBA-2 Serpens Campaign 
+\citep{Holland:2013fk}. One scan was taken on the 5th at 12:55 UT in good 
+Band 2 with 225 GHz opacity $\tau_{\mathrm{225}} = 0.04-0.06$. Five further scans 
+taken on the 8th between 07:23 and 11:31 UT in poor Band 2, $\tau_{\mathrm{225}} 
+= 0.07-0.11$.
+%FROM MWC 297
+Continuum observations at 850\,$\micron$ and 450\,$\micron$ were made using 
+fully sampled 30\arcmin\ diameter circular regions (PONG1800 mapping mode, 
+\citeauthor{Chapin:2013vn} \citeyear{Chapin:2013vn}) centered on RA(J2000) = 
+$18^{h}$ $28^{m}$ $13^{s}.8$, Dec. (J2000) = $-03^{\circ}$ $44'$ 1.7\arcsec.
+%FROM MWC 297
+Typical noise levels were 0.0165 and 0.0022 Jy per pixel at 450\,$\micron$ and 
+850\,$\micron$ respectively.
+
+The exact distance to the star MWC 297 is a matter of debate. Preliminary 
+estimates of the distance to the star were put at $450\hbox{ pc}$ by \cite{Canto:1984dq} and $530\pm70\hbox{ pc}$ 
+by \cite{Bergner:1988bh}. \cite{Drew:1997qf} used a revised spectral class of B1.5Ve to calculate a closer distance of 
+$250 \pm 50\hbox{ pc}$ which is in line with the value of $225\pm55\hbox{ pc}$ derived by \cite{Straizys:2003nx} for 
+the minimum distance to the extinction wall of the whole Serpens-Aquila rift of which the star MWC 297 is thought to be a part. 
+The distance to the Serpens-Aquila rift was originally put at a distance of $250 \pm 50\hbox{ pc}$ due to association with 
+Serpens Main, a well constrained star forming region the north of MWC 297; however, recent work by \cite{Dzib:2010dq,Dzib:2011cr} 
+has placed Serpens Main at $429\pm2 \hbox{ pc}$ using parallax. \cite{Maury:2011ys} argues that previous methods measured 
+the foreground part of the rift and that Serpens Main is part of a separate star forming region positioned further back. 
+On this basis, we adopt a distance of $d = 250\pm50\hbox{ pc}$ to the Aquila rift and the Serpens MWC 297 region \citep{Sandell:2011dz}. 
+
+%FROM MWC 297
+The star MWC 297 is an isolated, intermediate mass Zero Age Main Sequence (ZAMS) star located to the south east of Serpens South at RA(J2000) = $18^{h}$ 
+$27^{m}$ $40^{s}.6$, Dec. (J2000) = $-03^{\circ}$ $50'$ 11\arcsec. \cite{Drew:1997qf} noted that MWC 297 has strong reddening 
+due to foreground extinction ($A_V$ = 8) and particularly strong Balmer line emission. The star has been much studied as an 
+example of a classic Herbig AeBe star, defined by \cite{Herbig:1960eu}, \cite{Hillenbrand:1992kl} and \cite{Mannings:1994kx} 
+as an intermediate mass (1.5 to 10\,$M_{\odot}$) equivalent of classical T-Tauri star, typically a Class III pre-main sequence 
+star of spectral type A or B. 
+
+%FROM MWC 297
+Herbig AeBe stars are strongly associated with circumstellar gas and dust with a wide range of temperatures. \cite{Berrilli:1992cr} 
+and \cite{di-Francesco:1994dq,  di-Francesco:1998fk} find evidence of an extended disk/circumstellar envelope around the star MWC 297. 
+Radio observations constrain disk size to $< 100$\,AU and also find evidence for free-free emission at the poles that suggest the 
+presence of polar winds or jets \citep{Skinner:1993bh, Malbet:2007zr, Manoj:2007ly}. MWC 297 is in a loose binary system 
+with an A2 star, hereafter referred to as \emph{OSCA}, which has been identified as a source of X-ray emission \citep{Vink:2005uq, 
+Damiani:2006ve}. In addition to MWC 297, there is also a large nebulosity, Sh2-62 which occupies the same space on the sky \citep{Sharpless:1959hc}. \cite{Drew:1997qf} compare the radial velocities of the star and the HII region \cite{Fich:1990tg} and find they are significantly different, suggesting that a physical association is unlikely and the objects are simply superimposed on each other. 
+
+%FROM MWC 297
+We pull together existing YSOc catalogues, discuss the various methods used to compile them, 
+compare the distribution of objects to the SCUBA-2 submillimetre data. From here on Class 0, I and 
+Flat Spectrum (FS) YSOs are referred to as protostars and Class II, Transition Disk (TD) and III YSOs 
+are referred to as Pre-Main Sequence (PMS) stars. 
+%FROM MWC 297
+Three YSOc catalogues are found for the Serpens MWC 297 region, each deploying a different method 
+to identify and classify YSOcs. The earliest catalogue found is of \emph{Chandra} ACIS-I X-Ray 
+observations carried out by \cite{Damiani:2006ve} over an area of 16.9\arcmin\ $\times$ 8.7\arcmin\ 
+centred on the star MWC 297. YSOc identification is a byproduct of the investigation into the X-ray flaring of 
+the star MWC 297 and as a consequence their sample is incomplete for the whole of the Serpens MWC 297 region 
+(30\,\arcmin\ diameter). They find that the star MWC 297 only accounts for 5.5 per cent of X-ray emission 
+in the region. The rest is attributed to flaring low mass PMS. As \cite{Damiani:2006ve} do not make the 
+distinction between YSOs and more evolved objects in their work it is not possible to use these data for 
+the purposes of classification.   
+
+%FROM MWC 297
+\subsubsection{IR catalogues}
+\begin{table*}
+\caption{A sample of \emph{Spitzer} YSO candidates (YSOc) from the \SpitzerGB. The full version appears as supplementary material online.}
+\label{table:SGBS_YSO_small} 
+\centering
+\begin{tabular}{@{}lccccccccc@{}}
+\hline
+%  \begin{tabular}{@{}lcccccccccccr@{}}
+ID & SSTgbs &\multicolumn{4}{c}{ \hrulefill\quad \emph{Spitzer} IRAC \quad \hrulefill }&\multicolumn{2}{c}{\hrulefill\quad \emph{Spitzer} MIPS\quad \hrulefill}\\
+
+	 &&{$S_{\mathrm{3.6}}$ }&{$S_{\mathrm{4.5}}$ }&{$S_{\mathrm{5.8}}$ }&{$S_{\mathrm{8.0}}$ }&{$S_{\mathrm{24}}$ }&{$S_{\mathrm{70}}$ } &$\alpha_{\mathrm{IR}}$ \\
+&&{ mJy }&{mJy }&{mJy }&{mJy }&{mJy }&{mJy } &\\
+\hline
+%\footnotetext{Spectral index calculated from a fit between K$_S$ and MIPS $24\umu$m}
+YSOc2 &J18271323-0340146 &$193.0\pm10.4$ &$220.0\pm11.3$ &$258.00\pm13.40$ &$354.00\pm17.20$ &$1170.0\pm110.0$ &$1610\pm 172$ &$-0.17$ \\
+YSOc11 &J18272664-0344459 &$76.2\pm 3.7$ &$87.4\pm 4.5$ &$92.30\pm4.33$ &$116.00\pm6.00$ &$198.0\pm18.4$ &$ 312\pm  41$ &$-0.49$ \\
+YSOc15 &J18273641-0349133 &$ 5.4\pm 0.3$ &$ 3.5\pm 0.2$ &$10.60\pm1.77$ &$38.60\pm8.78$ &$107.0\pm28.4$ &\ldots &$0.03$ \\
+YSOc16 &J18273671-0350047 &$11.0\pm 0.6$ &$16.7\pm 0.9$ &$24.10\pm2.55$ &$29.00\pm2.68$ &$340.0\pm84.2$ &\ldots &$0.75$ \\
+YSOc17 &J18273710-0349386 &$868.0\pm43.7$ &$985.0\pm52.2$ &$1100.00\pm57.60$ &$1230.00\pm67.20$ &$1780.0\pm262.0$ &\ldots &$-0.43$ \\
+YSOc21 &J18273921-0348241 &$ 1.0\pm 0.3$ &$ 1.3\pm 0.1$ &$10.90\pm1.48$ &$38.70\pm7.55$ &$73.5\pm15.2$ &\ldots &$1.51$ \\
+YSOc38 &J18275223-0344173 &$ 0.1\pm 0.0$ &$ 0.0\pm 0.0$ &$0.14\pm0.05$ &$0.38\pm0.11$ &$ 3.8\pm 1.2$ &$ 454\pm 195$ &$1.17$ \\
+YSOc32 &J18275019-0349140 &$44.2\pm 2.2$ &$63.7\pm 3.1$ &$84.40\pm4.01$ &$96.70\pm4.79$ &$427.0\pm39.6$ &\ldots &$0.17$ \\
+YSOc41 &J18275472-0342386 &$153.0\pm 7.7$ &$254.0\pm12.7$ &$370.00\pm17.80$ &$571.00\pm27.20$ &$2100.0\pm202.0$ &$3480\pm 446$ &$0.56$ \\
+YSOc47 &J18280541-0346598 &$11.9\pm 0.6$ &$37.0\pm 1.9$ &$59.80\pm2.80$ &$70.10\pm3.36$ &$344.0\pm32.1$ &$3560\pm 386$ &$0.96$ \\
+YSOc73 &J18290545-0342456 &$ 4.7\pm 0.2$ &$14.2\pm 0.7$ &$21.80\pm1.04$ &$25.00\pm1.20$ &$49.4\pm 4.6$ &$ 662\pm  71$ &$0.30$ \\
+\end{tabular}
+%\end{tabular}
+%\end{minipage}
+\end{table*}
+% Damian's paper table 3
+% Gutermuth et al. (2008) Serpens South (cluster grinder x c2d)
+% Gutermuth et al. (2009) clusters (cluster grinder)
+%\emph{Spitzer}GB Description based on (but much cut down from) ophN_submitted.tex and Harvey et al. 2008 with reference to gutermuth et al. 2008
+The MWC 297 region was observed twice by \emph{Spitzer} in the mid-infrared, first as part of the \emph{Spitzer} Young Clusters Survey (\SpitzerYC; \citealt{gutermuth09}) and secondly as part of the \emph{Spitzer} legacy program ``Gould's Belt: star formation in the solar neighbourhood'' (\SpitzerGB, PID: 30574).   
+%FROM MWC 297
+In both surveys, mapping observations were taken at 3.6, 4.5, 5.8 and 8.0\,\micron\ with the Infrared Array Camera (IRAC; \citealt{fazio04}) and at 24\,\micron\ with the Multiband Imaging Photometer for \emph{Spitzer} (MIPS;\citealt{rieke04}).  The \SpitzerGB\ also provided MIPS 70 and 160\,\micron\ coverage, although the latter saturates towardsMWC 297.  The IRAC observations have an angular resolution of 2\arcsec\ whereas MIPS is diffraction limited with 6\arcsec, 18\arcsec\ and 40\arcsec\ resolution at 24, 70 and 160\,\micron\ respectively. 
+%FROM MWC 297
+The \SpitzerYC\ targeted 36 young, nearby, star-forming clusters.  Specifically, a 15\arcmin\ $\times$ 15\arcmin\ area centred on the star 
+MWC 297 was observed as part of this survey.  Observations, data reduction and source classification were carried out using ClusterGrinder as described in \citet{gutermuth09}.
+   %FROM MWC 297
+The \SpitzerGB\ program  is a mid-infrared survey 36 star forming regions using \emph{Spitzer} IRAC and MIPS bands aimed to complete the mapping of local star formation started by the \emph{Spitzer} ``From Molecular Cores to Planet-forming Disks'' (c2d) project \citep{c2d,evans09} by targeting the regions IC5146, CrA, Scorpius (renamed Ophiuchus~North), Lupus II/V/VI, Auriga, Cepheus Flare, Aquila (including MWC 297), Musca, and Chameleon to the same sensitivity and using the same reduction pipeline \citep{gutermuth08,harvey08,kirk09,peterson11,spezzi11,hatchell12}. The Serpens MWC 297 region was mapped as part of the Aquila rift molecular cloud that also includes the Serpens~South cluster \citep{gutermuth08} and Aquila~W40 regions.  
+%in the `Aquila' extension to the c2d-mapped Serpens~Main / NH$_3$ / VV~Ser region, an extension 
+The observational setup, data reduction and source classification used the c2d pipeline as described in detail in \citet{harvey07}, \cite{harvey08}, \cite{gutermuth08} and the c2d~delivery document \citep{c2ddel}.
+%FROM MWC 297
+As a result of these two \emph{Spitzer} survey programmes, two independent lists of Young Stellar Object candidates (YSOc) exist for the MWC 297 region. We refer to \citet{gutermuth09} for the \SpitzerYC\ observations and \SpitzerGB\ for the \emph{Spitzer} Gould's Belt survey. The \SpitzerGB\ catalogue (Table \ref{table:SGBS_YSO_small}) covers the entire region mapped by SCUBA-2 whereas the \SpitzerYC\ extent is 15\arcmin\ $\times$ 15 \arcmin\ around MWC 297. %YSOc from these methods are revisited in Section 5.1.
+%FROM MWC 297
+\SpitzerGB\ used IRAC and MIPS bands to identify Class I and II detecting a total of 76 YSOcs within a 20\,\arcmin\ radius of the centre of the field (Table \ref{table:SGBS_YSO_small}), whereas \cite{gutermuth09} identified 22 YSOcs using a colour-colour method, though the coverage of \SpitzerYC\ is limited to a 15\arcmin\ square.
+%FROM MWC 297
+Where the samples overlap we find notable differences between the catalogues. \SpitzerGB\ include five protostars whereas \SpitzerYC\ include four. Of these samples, only three are consistent across catalogues. These are YSOc2, 47 and 11 presented in Table \ref{table:SGBS_YSO_small}. Similarly \SpitzerGB\ identifies 22 PMS-stars whereas \SpitzerYC\ identified 18. Across the sample 11 are consistent in both catalogues. Objects that appear in both catalogues are most likely to be real YSOs. 
+%FROM MWC 297
+%The remaining protostars in this subset do not appear to be consistent with the strong submillimetre peak typically observed for Class 0/I objects. 
+%FROM MWC 297
+Of the two \emph{Spitzer} YSOc surveys, we use \SpitzerGB\ as the primary \emph{Spitzer} catalogue because it covers all of the SCUBA-2 mapped area.
+%FROM MWC 297
+All IR surveys are subject to contamination by Galactic sources (for example, field red giants) and extra-Galactic sources (broad line AGN). \cite{gutermuth09} calculate that this should account for less than 2\,per cent of sources in Serpens/Aquila. In addition to this, \cite{Connelley:2010nx} discuss how target inclination can play a role in classification. In Table~\ref{tab:YSO_cat} we give the total numbers of YSOcs in each catalogue by evolutionary class whilst in Figures~\ref{fig:YSO} and \ref{fig:minimaps2} we plot the positions and evolutionary classification of the SGBS YSOcs on the 850\,$\micron$ flux map. In Figure~\ref{fig:YSO} we show whether or not the Spitzer YSOcs are consistent with the \cite{Damiani:2006ve} X-ray sources. 
+%FROM MWC 297
+One further catalogue was found for the region. \cite{Connelley:2010nx} uses \emph{IRTF} 2MASS NIR data to classify Class I sources, by spectral index. The study lacks depth, returning a single object for this region and this being MWC 297, an object which is omitted from \SpitzerGB\ due to saturation. This result should be questioned as MWC 297 has been observed to be a Class III or ZAMS B1.5Ve star \citep{Drew:1997qf} which are optically visible, where as Class I objects are typically obscured by their natal envelopes. 
+%FROM MWC 297
+\begin{table}
+\caption{YSO candidates in the MWC 297 region.}
+\label{tab:YSO_cat}
+\begin{center}
+\begin{tabular}{c|ccccc}
+	& \multicolumn{5}{ |c }{YSO Classification}	\\
+	&	0/I	&	II	&	III	\\
+\hline
+\cite{Damiani:2006ve}			&	-	&	-	&	27	\\
+\SpitzerGB$^{a}$ - \cite{gutermuth08}	&	8	&	32	&	36	\\
+\SpitzerYC\ - \cite{gutermuth09}	&	4	&	16	&	2	\\
+%\cite{Connelley:2010nx}			&	1	&	-	&	-	\\
+\hline
+Total$^{b}$					&	10	&		&	72	&		\\
+\hline
+\end{tabular}
+\end{center}
+a) Within a 20\arcmin\ radius area centred at RA(J2000) = $18^{h}$ $28^{m}$ $13^{s}.8$, Dec. (J2000) = $-03^{\circ}$ $44'$ 1.7\arcsec. \\
+b) The totals account for sources which feature in multiple catalogues.
+\end{table}
+%FROM MWC 297
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=0.75]{/Users/damian/Documents/Thesis_et_al/images/20141118_MWC297_YSOdist.pdf}
+\caption{850\,$\micron$ greyscale map of Serpens MWC 297. Outer contours mark the data reduction mask (Figure 1) and inner contours the 3$\sigma$ detection level (0.0079 Jy/pixel). 
+Circular markers indicate the location of YSOcs as catalogued by \SpitzerGB\ and crosses indicate the location of SCUBA-2 confirmed YSOs (Table~\ref{table:cores}). 
+YSOcs are coded by evolutionary classification based on their spectral indices ($\alpha_{\mathrm{IR}}$) in the \emph{Spitzer} case and by bolometric temperature, $T_{\mathrm{bol}}$, in the SCUBA-2 case (Table~\ref{table:cores}). \emph{Spitzer} YSOcs are indicated by hollow black circles (Class III), solid red circles (Class II) and green hollow circles (Class 0/I). SCUBA-2 confirmed YSOs are indicated by black crosses (Class II) and green crosses (Class 0/I). Small, solid blue circles mark the location of \protect\cite{Damiani:2006ve} X-ray sources, typically associated with Class II/III objects.}
+\label{fig:YSO}
+\end{center}
+\end{figure*}
+%FROM MWC 297
+
+
+
+\subsection{Serpens South}
+
+%composite maps of Serpens South - gutermuth's YSOs
+\begin{figure}[t!]
+\begin{centering}
+\includegraphics[scale=0.4]{images/map_south_G08.png}
+\caption{left: composite image of Serpens South from IRAC wavelength; 3.6, 4.5, 8.0 $\micron$ in blue, green and red, respectively. Right: Greyscale 8.0 $\micron$ image overlaid with YSOs; Class I and II in red circles and green diamonds, respectively. The white circle outlines the extent of the core \citep{Gutermuth:2008fk}.} \label{fig:South_G08}
+\end{centering}
+\end{figure}
+
+Serpens South is considered part of the Aquila-Rift along with Serpens MWC 297 MWC 297. The Rift is heavily obscured by its molecular cloud \citep{Vallee:1987xr} with an extinction wall of $A_{v} \geqslant 5$ at 250$\pm$50pc. Serpens South is complicated by the presence of the nearby W40 complex (separation of approximately 1.5\arcmin) and extended sections of each region may overlap. 
+
+\cite{Maury:2011ys} estimates mass of the primary star forming core as ~$610M_\odot$ and column density of $~3.1\times10^{22}cm^{-2}$ over the projected area of $1pc^{-2}$. From this star-formation efficiency (SFE) is estimated as approximately 7\% and star-formation rate (SFR) is approximately 23M$_\odot$ Myr$^{-1}$pc$^{-2}$ which is significantly higher than the typical values for inert molecular clouds \citep{Evans:2009nx}. 
+
+The morphology of the region has been examined by \cite{Menshchikov:2010kl}. Figure \ref{fig:South_M10} demonstrates the extent of filamentary structure and how the observed protostars of the region are found within them. \cite{Andre:2010kx} studies SFR and SFE associated with filaments. Figure \ref{fig:SouthSCUBA2} also demonstrates the extent and complexity of the structure with many extraneous sub-cores with detect protostars in their vicinity. 
+
+The region was included in the \emph{Spitzer} c2d survey \citep{Evans:2003lq} which formed the basis for the first meaningful studies of Serpens South. Since then the \emph{Spitzer} GBS catalogs have developed and provide a wide insight into Protostars in Serpens South.
+
+The foremost study of South was by \cite{Gutermuth:2008fk} which identified 101 YSOs: 54 Class I and 37 Class II from 3.6, 4.5, 5.8 and 8.0 $\micron$ IRAC data centred on \emph{$\alpha$:18 30 03, $\delta$:-02 01 58.2} as shown in Figure \ref{fig:South_G08}. The cluster was found to have a well defined `core' region where the surface density of protostars was 590 $pc^{-2}$ and accounted for 77\% of the YSOs detected. Extended filamentary structure was also observed with surface density ranging between 50-120 $pc^{-2}$ and for a total length of approximately 1pc and column density N=$3\times10^{23}cm^{-2}$. \cite{Connelley:2007bs}'s survey of 0.8 to 2.43 $\micron$ includes South and the results contribute to constraining of the parameters of YSOs in the cluster. 
+
+\cite{Konyves:2010oq} and \cite{Bontemps:2010fk} to catalogue the protostars in the whole of Aquila Rift using recent data from \emph{Hershel} and they conclude there are 541 starless cores, of which 452 are gravitationally bound and therefore likely to evolve into protostars. Through measurements of velocities and analysis of the age, density and distribution of protostars in what is perceived to be Serpens South, they to conclude that South is sufficiently similar Serpens Main and Serpens Ammonia in distance and velocity structure, that, given there close proximity, they are in fact part of the same cloud structure. By contrast W40 is not only different but the OB association within does no appear to influence the structure of South as would expected if they were sufficiently close.  The \emph{Hershel} YSO catalog will shortly be released and will provide the first comparable survey to \emph{Spitzer} GBS which will allow better constraints on the reliability of the competing methods of detecting Protostars.
+
+\cite{Bontemps:2010fk, Andre:2010kx, Menshchikov:2010kl} utilise \emph{Hershel} Far Infrared and submillimetre data from from SPIRE (250 to 500 $\micron$) and PACS (100 to 160 $\micron$) to study the advanced morphology of the regions. Controversially, \cite{Bontemps:2010fk} argues that large uncertainties in previous measurements of distance do not allow for a reliable estimate and therefore they favour the status quo, that South is physically connected to W40 and therefore at the same distance. They detect 201 YSOs in Serpens-Aquila - though it is notable that 90$\%$ of these are attributed to W40 and a further 8$\%$ MWC 297 (see section 1.2). It is important to note, that whilst \cite{Bontemps:2010fk} does not provide complete classification of list of YSOs, they do claim to have identified ~45-60 Class 0 objects with the \emph{Herschel} data, 7 of which are within South. Until this point, Class 0 had been elusive and this paper represents the first statistically significant survey of Class 0 protostars. 
+
+
+\subsection{Serpens Main}
+
+%Serpens Main in IRAC bands
+\begin{figure*}[t!]
+\begin{centering}
+\includegraphics[scale=0.3]{images/photo_serpensmain_IRAC_W07.png}
+\includegraphics[scale=0.3]{images/map_serpens_main_SCUBA_D99.pdf}
+\caption{\emph{(left)} Serpens Main in three-band false-colour IRAC \emph{Spitzer} bands 3.4$\micron$ (blue), 4.5$\micron$ and 8.0$\micron$. Redish hue shows diffuse PAH emission, green is typically shocked Hydrogen and more blue sections is scattered light \citep{Winston:2007if}. \emph{(Right)} 850-greyscale and 450-contour $\micron$ images of Serpens Main. Submillimeter continuum sources identified by \cite{Casali:1993mz} are labeled as SMM1, etc. Cavity features due to outflows that are investigated by \cite{Davis:1999ly} are also labeled though the central white patch here represents a depression in flux and is in fact an artefact of the reduction process. Contours in 450$\micron$ are set at 0.5, 1, 2, 3 and 4 (black) and 5, 10 and 20 Jy $beam^{-1}$. The relative beam size of each map is displayed in bottom left of each image (~14'' at 850 and ~8'' at 450$\micron$)  } \label{fig:Main}
+\end{centering}
+\end{figure*} 
+
+The Serpens Main Molecular Cloud (identified in Figures \ref{fig:11}, \emph{left} \ref{fig:Main} and \cite{fig:serpensSCUBA2}) is located [RA DEC] and was first identified as a region of active star formation by \cite{Strom:1974zr}. It has been extensively mapped for molecular line emission \citealp{Dame:1985ly, Dame:1987ve, Dame:2001qf}, dust extinction \citealp{Cambresy:1999bh, Dobashi:2005dq} and at a variety of wavelengths. 
+
+850$\micron$ maps (figure \ref{fig:mainSCUBA2}) of Serpens Main show peaks in flux and column density in two separate clumps, a northwestern (NW) and southeastern (SE) clump. Both structures are of similar size, distance and are at close proximity, being separated by 200arcsec or a few parsecs \citep{Casali:1993mz}. Figure \ref{fig:Main} \emph{right} shows 850$\micron$ and 450$\micron$ SCUBA maps of Serpens detailing suspected submillimeter sources SMM1 through to SMM11. \cite{Davis:1999ly} investigates the flux and properties of these sources in an attempt to categorise these YSO by calculating their Spectral Energy Distributions (SED). \cite{McMullin:2000fk} attempted to calculate mass of Main using the $C^{18}O$ (J = 1-0) line transition and found it to be ~250-300$M_\odot$ . By contrast, \cite{White:1995uq} found it to be ~1450$M_\odot$ using the same method. However there is consensus with \cite{Williams:2000kx}'s work which show both clumps are undergoing in-falling motion due to gravity Ð supporting the conclusion that star formation through mass accretion is ongoing. 
+
+Many studies have been conducted into the exact distance of Serpens Main. Initial studies by \cite{Zhang:1988cr} put the distance at between 700 pc and 200 pc but more recent studies by \cite{Racine:1968oq} [errr check this citation] and \cite{Straizys:2003nx} have returned smaller and more precise values using a variety of different techniques. These methods are outlined in more detail in those papers and their respective results appear to converge on 225$\pm$55 pc. [UPDATE distance now 415pc]
+
+\cite{Eiroa:1992zr} conducted an early, near-infrared observations of the Serpens Main in the J,H,K and nbL bands detecting 163 stellar objects but were unable to reliable identify many of the objects. X-ray studies have been carried out by \cite{Preibisch:2003uf} and \cite{Winston:2007if}.  Preibisch's initial study using \emph{XMM-Newton} data revealed 1 Class I and 2 Class Flat Spectrum (FS) protostars. Winston then expanded on this considerably with use of joint \emph{Spitzer} and \emph{Chandra} observation through 6 wave bands from 3 to 70$\micron$. They identified 183 YSOs in Serpens Main: 22 Class 0/I, 16 Class FS, 62 Class II, 17 Class Transition Disc (TD) and 21 Class III. 60 were found to exhibit X-ray emission with no correlation for evolution class. 
+
+Work by \cite{Evans:2003lq} resulted in the \emph{Spitzer c2d Legacy Programme}, a wide ranging survey of star forming clusters with its IRAC, IRS and MIPS instruments to observe mid to far-infrared sources between 3.6 and 70$\micron$. Serpens  Main was included in this study and data has been analysed by many subsequent authors. \cite{Harvey:2006tg, Harvey:2007bh} subsequently identified 235 YSO in Serpens (this includes Serpens $NH_3$).
+
+\cite{Kaas:2004fx} presented an ISOCAM survey at the \emph{Infrared Space Observatory (ISO)} which detected 392 sources in the 6.7$\micron$ band and 139 in the 14.3$\micron$ band. 124 of these were common in both bands and 61 were constrained as YSO candidates. 
+
+\cite{Eiroa:2005dz} looked at 3.5cm radio emission from Serpens Main using the Very Large Array (VLA). 16 of the 22 sources detected were classified as YSOs, with the radio emission most likely resulting from thermal jets. 
+
+Such is the prominence of Serpens Main that it features heavily in several other large surveys of YSOs across many star forming regions, namely \cite{Enoch:2009kn, Gutermuth:2009fk, Sadavoy:2010ve}. Each survey uses a slightly different criteria for detection and selection of sources, allowing for analysis of methodology behind observing as well as their distribution with respect to 850$\micron$ SCUBA-2 data. 
+
+A total of 140 YSO candidates cited in \cite{Winston:2007if, Gutermuth:2009fk, Evans:2009fk} are compared in Serpens Main. [mention detection methods]. 92 sources are consistent between catalogs and have been identified by different methods making it likely they are indeed YSO as opposed to contaminants such as background galaxies or foreground stars. Only 48 data points are not consistent within any other catalog and should be receive a larger degree of scepticism. Classification between Protostars and PMS stars is inconsistent in 14 cases, 4 of which occur substantially outside of the cluster.
+
+
+\subsection{Serpens $NH_3$ and VV Ser}
+
+Serpens $NH_3$ was first observed by \cite{Cohen:1979fu} who identified 4 optical T-Tauri stars (Serpens G3, 4, 5, 6). The surrounding region was then mapped by \cite{Clark:1991fj} who also identified two additional sources with strong ammonia 1,1 emission lines (for which the cluster is named). Additional Herbig-Haro objects (small, nebulous regions formed from outflow material from Class 0 and I protostars \cite{Ziener:1999kl}) and $H_{2}O$ masers \citep{Persi:1994qa} were found providing further evidence of on going star formation. 
+
+The morphology of $NH_3$ is similar to Serpens Main as it has two separate clumps of dense star formation with connected filaments  as indicated in SCUBA-2 submillimeter data (Figure \ref{fig:NH3SCUBA2} and also IRAM mm data Figure\ref{fig:13mm}). Figure \ref{fig:serpensSCUBA2} shows the whole structure in relation to Main, the large scale density structure has a NE-SW orientation. \cite{Djupvik:2006fk} uses 1.3mm observations from IRAM to quantitatively show that emission is, in general, less intense in $NH_3$ than in Main. 
+
+Authors have adopted a distance to Serpens $NH_3$ as 225$\pm$55pc in line with the distance to the Serpens Cauda Clouds calculated by \cite{Straizys:2003nx}. \cite{Harvey:2006tg} represents the first known YSO survey of the region. This study included Main as well due to the proximity of the two clusters. Harvey describes this `cluster B' as less dense than `cluster A' (Main) but still the second most region in the local area which high concentrations of Class I sources and evidence of outflows (Figure \ref{fig:serpensIR}). 
+
+\cite{Djupvik:2006fk} presents a comprehensive review of the region and its YSOs, presenting evidence for 31 Class II sources, 5 Class FS sources, 5 Class I sources and 2 Class 0 sources. Note that Class III were omitted from the sample purposely due to selection bias. 
+\cite{Harvey:2009yq} revisited Serpens $NH_3$ and was able to produce significant improvements in the photometry of the sources of the regions, producing extended SEDs for many of them as well to better constrain the classification of the YSO and the revised YSO list is as follows: 8 Class II sources, 1 Class FS sources, 4 Class I sources and 2 Class 0 sources.
+
+Work by \cite{Evans:2003lq} on the \emph{Spitzer c2d Legacy Programme} remains the largest available catalog of YSOs for $NH_3$ but instances of sources from the wider \cite{Connelley:2007bs} near-infrared survey of YSOs and the \emph{Spitzer} GBS survey \citep{Gutermuth:2009fk} are also available. 
+
+Djupvik calculates Luminosity (LF) and Initial Mass Functions (IMF) by combining the Class II source for $NH_3$ with the same set for Main \citep{Kaas:2004fx} to produce a statistically significant sample from which it is possible to confirm the coeval age of the sources as ~2Myrs by trialling several scenarios and selecting the best fit. 
+
+%composite and model of VV Ser
+\begin{figure}[t!]
+\begin{centering}
+\includegraphics[scale=0.3]{images/model_VV_Ser_P07b.png}
+\caption{ The 4.5 (blue), 8.0 (green), 24.0 $mu$m (red) colour composites of the VV Ser nebulosity by \cite{Pontoppidan:2007rt}. \emph{left}: \emph{Spitzer} MIPS band 1 and IRAC band 2 and 4 colour image of VV Ser. \emph{right}: The model of the star-disk-nebulosity system produced by the above author with the same colour composite scheme} \label{fig.VV Ser}
+\end{centering}
+\end{figure}
+
+VV Serpens is a young UX Variable Orion Star located at	\emph{$\alpha$: 18 28 47.865 $\delta$: +00 08 39.76} roughly 20\arcmin\ to the south of Serpens $NH_3$, see Figure \ref{fig:serpensIR}. \cite{Chavarria-K.:1988ul} found a large nebulosity associated with the object. There is some debate over the exact spectral type of the star with publications claiming the later, B6 type \citep{Hernandez:2004pd} to the less powerful A2 \citep{Chavarria-K.:1988ul}. More recent authors agree with the classification of A0 printed by \citep{Mora:2001gf}. VV Ser has very low extinction ($A_v \sim 3$) allowing for accurate and precise measurements of its properties \citep{Pontoppidan:2007rt}. \cite{Pontoppidan:2007fr} measures an effective temperature of 10200K, a mass of 2.6$\pm$0.2 $M_{dot}$ and an age of 3.5$\pm$0.5 Myr. There is a wealth of $\micron$ wavelength data on this object curtosy of the \emph{Spitzer Legacy Program} and \emph{From Molecular Cores to Protoplanetary Disks \cite{Evans:2003lq}}. VV Ser has been used for the study of dust and proto-planetary disks by \cite{Pontoppidan:2007fr, Pontoppidan:2007rt} and \cite{Alonso-Albi:2008mz}.  
+
+VV Ser is an example of UX Variable Orion star, whereby the star is inclined such that its disk is appears edge on to the observer. As a result in casts a narrow band shadow across the star as observed in figure \fig{fig.VV Ser}. Additionally, the light may frequently change in extinction due to `clumps' of material in the disk eclipsing the star due to keplerian motion \cite{Natta:2001rr}. Another feature of VV Ser is a vast, extended, low density nebulosity spanning 94,000 Au which has no detectable optical or IR counter parts. This combined with low extinction suggests that the star has lost the vast bulk of its primordial envelope.  
+
+Together with Main and VV Serpens, these three objects are collectively known as `Serpens' and are shown together in the SCUBA-2 data (Figure \ref{fig:serpensSCUBA2}).
+
+
+\subsection{W40 Complex}
+
+
+
+
+
+\subsection{Serpens East}
+
+E is notable region of the Aquila rift with strong submilimeter features. it is covered very sparsely in the literature with no known catalogs or studies of the YSOs in the region. \cite{Szymczak:2000kx} surveys IRAS 6.7GHz Methanol maser emission and similarly \cite{Wu:2006zr} studied a selection of sources with strong ammonia lines, including \emph{IRAS 18352-0148} which is found in E. This source is also a strong $H_{2}O$ maser which are often found at sites of high mass star formation \citep{Wang:2007ys}. This could potentially be a first indicator of star formation in E, however the literature puts the distance to this maser at 3.2kps. This is over an order of magnitude further away that all the other components of Serpens-Aquila. 
+
+
+\subsection{Other}

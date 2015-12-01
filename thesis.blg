@@ -1,0 +1,81 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: ab/abstract.aux
+A level-1 auxiliary file: declaration.aux
+A level-1 auxiliary file: acknowledgements.aux
+A level-1 auxiliary file: c1/intro.aux
+A level-1 auxiliary file: c2/chapter2.aux
+A level-1 auxiliary file: c3/chapter3.aux
+A level-1 auxiliary file: c4/chapter4.aux
+A level-1 auxiliary file: c5/chapter5.aux
+A level-1 auxiliary file: c6/chapter6.aux
+A level-1 auxiliary file: c7/chapter7.aux
+A level-1 auxiliary file: c8/chapter8.aux
+A level-1 auxiliary file: cF/conclusions.aux
+The style file: /Users/damian/Documents/Thesis_et_al/mnras/mn2e.bst
+Reallocated field_info (elt_size=4) to 10129 items from 5000.
+Database file #1: /Users/damian/Documents/Thesis_et_al/bibliography.bib
+Warning--I didn't find a database entry for "Gutermuth:2008fk"
+Warning--I didn't find a database entry for "Evans:2009nx"
+Warning--I didn't find a database entry for "fig:serpensSCUBA2"
+Warning--I didn't find a database entry for "Harvey:2007bh"
+Warning--I didn't find a database entry for "Gutermuth:2009fk"
+Warning--I didn't find a database entry for "Evans:2009fk"
+Warning--I didn't find a database entry for "Harvey:2009yq"
+Warning--you've exceeded 250, the entry-string-size, for entry Harvey:2006tg
+while executing--line 1184 of file /Users/damian/Documents/Thesis_et_al/mnras/mn2e.bst
+*Please notify the bibstyle designer*
+Warning--you've exceeded 250, the entry-string-size, for entry Mora:2001gf
+while executing--line 1184 of file /Users/damian/Documents/Thesis_et_al/mnras/mn2e.bst
+*Please notify the bibstyle designer*
+Warning--you've exceeded 250, the entry-string-size, for entry Mora:2001gf
+while executing--line 1223 of file /Users/damian/Documents/Thesis_et_al/mnras/mn2e.bst
+*Please notify the bibstyle designer*
+Warning--you've exceeded 250, the entry-string-size, for entry Harvey:2006tg
+while executing--line 1223 of file /Users/damian/Documents/Thesis_et_al/mnras/mn2e.bst
+*Please notify the bibstyle designer*
+Warning--can't use both author and editor fields in Rodney:2008ij
+Warning--empty publisher in Rodney:2008ij
+You've used 216 entries,
+            2601 wiz_defined-function locations,
+            1870 strings with 51847 characters,
+and the built_in function-call counts, 114509 in all, are:
+= -- 10487
+> -- 10258
+< -- 71
++ -- 3608
+- -- 3608
+* -- 11723
+:= -- 21282
+add.period$ -- 0
+call.type$ -- 216
+change.case$ -- 2071
+chr.to.int$ -- 216
+cite$ -- 218
+duplicate$ -- 2468
+empty$ -- 3607
+format.name$ -- 3882
+if$ -- 20467
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 214
+newline$ -- 661
+num.names$ -- 874
+pop$ -- 1639
+preamble$ -- 1
+purify$ -- 2278
+quote$ -- 0
+skip$ -- 3492
+stack$ -- 0
+substring$ -- 4678
+swap$ -- 294
+text.length$ -- 17
+text.prefix$ -- 1198
+top$ -- 0
+type$ -- 1941
+warning$ -- 2
+while$ -- 863
+width$ -- 0
+write$ -- 2174
+(There were 13 warnings)

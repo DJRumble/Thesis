@@ -1,0 +1,1079 @@
+\chapter{Radiative heating in Serpens MWC 297 region}
+\label{ch:chapter6}
+
+
+\section{Temperature maps of Serpens MWC 297}
+
+%MWC 297
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=0.7]{/Users/damian/Documents/Thesis_et_al/images/20140820_MWC297_tri_panel.pdf}
+\caption{Top to bottom: a) SCUBA-2 convolved 850\,$\micron$ flux map of Serpens MWC 297. Contours from the original 850\,$\micron$ data are at 0.011, 0.033\,Jy/pixel (corresponding to 5 and 15 $\sigma$). b) SCUBA-2 convolved and aligned 450\,$\micron$ flux map of Serpens MWC 297 in Jy/pixel. Contours from the original 450\,$\micron$ data are at 0.082, 0.25\,Jy/pixel (corresponding to 5 and 15 $\sigma$). The crosses in a) and b) mark the location of the ZAMS B1.5Ve star MWC 297 and its binary partner \emph{OSCA} (A2v). c) Dust temperature map of Serpens MWC 297 for $\beta$ = 1.8. Contours of \emph{Spitzer} 24\,$\micron$ emission at 32, 40 and 70\,MJy per Sr are overlaid.}
+\label{fig:mwc}
+\end{center}
+\end{figure*}
+
+
+The 450\,$\micron$ and 850\,$\micron$ SCUBA-2 data for the MWC 297 region are 
+presented in Figure~\ref{fig:mwc} alongside a map of temperature of submillimetre 
+dust in that region. These maps show a large diversity in temperature across five 
+isolated regions of significant flux (shown in Figure~\ref{fig:mwc}c). Mean cloud 
+temperatures range from 10.1$\pm$0.9\,K and 15$\pm$2\,K for regions which are 
+relatively cold and isotropic, to 25$\pm$17\,K for warmer regions with a large diversity 
+of temperatures. Figure~\ref{fig:Tcomp} shows one cloud that has a temperature of 41$\pm$19\,K 
+which is hot to the extent that this would suggest an active heat source. The range in 
+temperatures suggests that the regions within the Serpens MWC 297 vary in physical 
+conditions. 
+
+\cite{Menshchikov:2010kl} infer temperature variation from contrasting strengths of 
+350\,$\micron$ flux bands to the shorter 70\,$\micron$ and 160\,$\micron$ 
+bands of \emph{Herschel}. They quote a temperature range for dense, starless filaments 
+of 7.5 to 15\,K across the whole Aquila rift. However, we do not observe a typical filamentary 
+structure in Serpens MWC 297 region (Figure \ref{fig:maps}).
+
+\cite{Konyves:2010oq} and \cite{Bontemps:2010fk} used single-temperature modified black-body 
+fitting of SEDs of \emph{Herschel} 500\,$\micron$ data points in Aquila and Polaris. 
+Their study includes Serpens MWC 297 and they find temperatures for the 
+region ranging between 24 and 26\,K. Though \emph{Herschel} 500\,$\micron$ data is 
+at a lower resolution than our effective beam, the general temperatures of the region seem 
+consistent with our findings. 
+
+\cite{Hatchell:2013ij} use only the primary beam to study NGC1333, finding typical dust temperatures 
+of ranging from 12 to 16\,K. They also argue for a heated region pushing temperatures up as 
+high as 35 to 40\,K near the location of the B star SVS3. When the moderating effects of the 
+secondary beam are taken into account, these results are largely consistent with our findings 
+(Serpens MWC 297 also contains a B star). 
+
+Figure~\ref{fig:mwc}c shows \emph{Spitzer} MIPS 24\,$\micron$ flux for the Serpens MWC 297 
+region. These data show hot compact sources associated with individual stellar cores. It also 
+shows the morphology of an extended IR nebulosity, associated with SH2-62, that is centred 
+on MWC 297. As well as the dust within the immediate vicinity of the star MWC 297 showing clear 
+signs of heating, we observe 24\,$\micron$ emission that is coincident with heating in the SCUBA-2 
+temperature maps. As 24\,$\micron$ emission provides independent 
+evidence of heating, where we observe high temperature pixels that are not coincident with 
+24\,$\micron$ emission (for example in the northernmost cloud) we conclude we are likely 
+witnessing data reduction artefacts as opposed to warm gas and dust. 
+
+In addition to providing evidence for direct heating by MWC 297, the 24\,$\micron$ data also 
+provide strong evidence that the B star is physically connected to the observed clouds. 
+The Aquila rift is thought to be a distance of 250$\pm$50 pc \citep{Maury:2011ys} and through 
+association we conclude that the distance to MWC 297 matches this figure.
+
+
+\section{The SCUBA-2 clump catalogue}
+
+In this section we introduce the clump-finding algorithm \textsc{fellwalker} used to identify 
+clumps in the SCUBA-2 data presented in Figure~\ref{fig:maps}. We calculate clump 
+masses and compare these to their Jeans masses to determine whether or not the objects 
+are unstable to gravitational collapse. 
+
+\subsection{Fellwalker parameters}
+
+
+We tuned the \textsc{fellwalker} algorithm to produce a set of objects consistent 
+with a by-eye decomposition, setting the following parameters; \emph{MinDip} 
+= 1$\sigma$ (minimum flux between two peaks), \emph{MinPix} = 4 pixels (minimum number 
+of pixels per valid clump), \emph{MaxJump} = 1 pixel (distance between clump 
+peaks), \emph{FWHMBeam} = 0 (FWHM of instrument), \emph{MinHeight} = 3$\sigma$ 
+(minimum height of clump peak to register as a valid clump) and \emph{Noise} = 3$\sigma$ 
+(detection level). Throughout this process we used a constant noise level, 
+$\sigma$, calculated via the method described by \cite{Salji:2013kx} and described in 
+Section 3.1. \cite{watson:2010pc} discusses the \textsc{fellwalker} parameters in depth 
+and concludes \emph{MinDip} and \emph{MaxPix} are the most influential in returning 
+the maximum breakup of clouds into clumps, a subset of which will later be used to compile 
+a list of protostellar cores. The $3\sigma$ level allows for the detection of the smallest 
+clumps that may be missed at the $5\sigma$ level on account of insufficient pixels for 
+detection as outlined above. This method also included a number of spurious clumps 
+associated with high variance pixels at the maps edges. In order to avoid these we first 
+masked the SCUBA-2 data with the data reduction mask shown in Figure \ref{fig:maps}. 
+
+%We parameterise \textsc{fellwalker} to detect clumps consistent with 3$\sigma$ or greater 
+%detections from 850\,$\micron$ data. The same boundaries are then used consistently 
+%on the 450\,$\micron$ data. Spurious data around the edges of the map resulting from the 
+%scanning procedure are removed. \cite{watson:2010pc} discusses the \textsc{fellwalker} 
+%parameters in depth and concludes \emph{MinDip} and \emph{MaxPix} are the most 
+%influential in returning the maximum number of clumps, and therefore identifying smaller scale 
+%cores, and we set these equal to the $rms$ noise level and four pixels respectively. 
+%We also found \emph{FWHMBeam} was important and setting this to zero included 
+%all point sources regardless of size whereas setting \emph{MaxJump} to one pixel 
+%isolated sources that were closer to each other. \emph{MinHeight} and \emph{Noise} 
+%were both set to minimum statistical certainty of $3\sigma$,  \emph{MaxBad} was 
+%set to 100 to stop pixels being eliminated if they were contact with `bad' data. 
+
+Using these parameters 28 submillimetre clumps were detected in 850\,$\micron$ data 
+and are presented in Figure \ref{fig:clumps}. Two sources (SMM 23 and 25) were immediately 
+discarded as they were not consistent with a 5$\sigma$ detection. A further two clumps 
+were split into two separate objects by the algorithm when there was no discernible peak 
+in the submillimetre data. In these cases (SMM 7 \& 8 and SMM 13 \& 14) the objects were 
+recombined into single object. We note that this is a side effect of having a low \emph{MinDip} 
+parameter to maximise the detection of smaller clumps.  In total a sample of 23 clumps 
+are presented in Table 3. We note that there is a known bias that underestimates the 
+size of a clump as its peak flux approaches the cutoff level and therefore biases against 
+the detection of cold, faint objects (examples might be SMM 26 and 27). Modelling 
+clump profiles could be used to better estimate the full extent of these objects. However, 
+as these present a minority of cases we take no further action on this issue 
+\citep{Rosolowsky:2006bh}.
+
+The \textsc{fellwalker} algorithm is insensitive to low mass, isolated objects where detections 
+were limited to less than five pixels above the noise level. We find that one potential 
+source was missed on account of it only exhibiting a single significant pixel above the 
+5$\sigma$ noise level. Here object flux was measured with aperture photometry 
+(see Section 5.2).
+
+Due to the higher noise level of the 450\,$\micron$ data many objects detected at 850\,$\micron$ 
+were not present at 450\,$\micron$. Therefore we apply the 850\,$\micron$ clump boundaries to the 450\,$\micron$ 
+data when calculating integrated intensity at that wavelength to ensure consistent flux extraction at 
+both wavelengths for each object.
+
+%We are aiming to detect clumps above the 5$\sigma$ noise level, however to ensure the 
+%detection of the smallest clumps that were often omitted by \textsc{fellwalker} on account of their diminutive size, 
+%we lowered the noise level condition to 3$\sigma$ in increase the area which can be detected whilst 
+%ensuring a degree of statistical significance. The consequence of this lower \emph{Noise} level is the inclusion of several spurious clumps 
+%in the output which required removal by eye. Whilst this was feasible in the context Serpens 
+%MWC 297, reproducing this method on larger regions will require \textsc{fellwalker} to be parameterised 
+%to minimise anomalous results at the expense of free floating, point like YSOs. 
+
+
+\subsection{Mass}
+
+SCUBA-2 observations of the Serpens MWC 297 region were used to calculate the masses of the \textsc{fellwalker} 
+clumps. \cite{Hildebrand:1983fy} describes how the mass of a cloud can be calculated from the 
+submillimetre emission of dust grains fitted to a black-body spectrum for a nominal temperature. 
+We follow this standard method for calculating clump mass (for example \citeauthor{Johnstone:2000fk}
+\citeyear{Johnstone:2000fk}, \citeauthor{Kirk:2006vn}\,\citeyear{Kirk:2006vn}, \citeauthor{Sadavoy:2010ve}
+\citeyear{Sadavoy:2010ve} and \citeauthor{Enoch:2011lh}\,\citeyear{Enoch:2011lh}). We use flux at 
+850\,$\micron$ ($S_{\mathrm{850}}$) per pixel, dust opacity ($\kappa_{\mathrm{850}}$), distance 
+($d$) and a variable temperature ($T_{\mathrm{d}}$) per pixel, summing over all pixels, $i$, in 
+the clump to calculate the total clump mass:
+
+\begin{eqnarray}
+M  & = 0.39 \sum_{i} S_{\mathrm{850,i}}\left [\exp \left ( \frac{17\mathrm{K}}{T_{\mathrm{d},i}} \right ) - 1 \right ]  &       \nonumber \\
+\nonumber    & \times \left ( \frac{d}{250\mathrm{pc}} \right )^{2}\left ( \frac{\kappa_{\mathrm{850}}}{0.012\mathrm{\hbox{cm}^{2} \hbox{g}^{-1}}} \right )^{-1}.\\
+\label{eqn:mass}
+\end{eqnarray}
+
+%Uncertainty in kappa
+There is a high degree of uncertainty in the value of $\kappa_{\mathrm{850}}$. The popular OH5 model 
+of opacities in dense ISM, with a specific gas to dust ratio of 161, gives 0.012 $\hbox{cm}^{2} \hbox{g}^{-1}$ at 
+850\,$\micron$ \citep{Ossenkopf:1994vn}. Comparable studies suggest values of 0.01 \citep{Johnstone:2000fk}, 
+0.019 \citep{Eiroa:2008ta} and 0.02 $\hbox{cm}^{2} \hbox{g}^{-1}$ \citep{Kirk:2006vn}. \cite{Henning:1995qf} find 
+$\kappa_{\mathrm{850}}$ can vary by up to a factor of two. We assume an opacity of $\kappa_{\mathrm{850}}$ 
+= 0.012 following \cite{Hatchell:2005fk}. This value is consistent with $\beta$ = 1.8 over a wavelength range of 
+30\,$\micron$ to 1.3\,mm. We assume a distance $d = 250\pm50\hbox{ pc}$ following \cite{Sandell:2011dz} as 
+outlined in Section 1.
+
+We calculate dust masses using dust temperatures calculated for each pixel where possible. Not all the clumps 
+shown in Figure~\ref{fig:clumps} have temperature data due to the noise constraints of the temperature mapping 
+process and the requirement that the region is also detected at 450\,$\micron$. For those that do not, a constant clump 
+temperature of 15\,K is assumed following \cite{Johnstone:2000fk} and \cite{Kirk:2006vn}. Some clumps have only 
+partial temperature data. In these cases the remaining pixels are filled with a value equal to the mean of the existing 
+data. In some cases (SMM 6 and 11 for example), temperature data is limited to a few pixels whereas the total clump 
+area is an order of magnitude larger. As it is unlikely that such a small sample of data will accurately represent the 
+whole clump, results for objects such as these should be treated with a larger degree of uncertainty. Edge effects have 
+a negligible influence on clump mass as high temperatures reduce the contribution in Equation 5. Clump masses 
+are listed in Table~\ref{tab:mass}. %Core masses are calculated with the same method and are shown in Table~\ref{table:cores}.  
+
+The total mass of clumps in Serpens MWC 297 is 40$\pm$3\,$M_{\mathrm{\odot}}$. Individual clump 
+masses range over 2 orders of magnitude from 0.05 to 19\,$M_{\mathrm{\odot}}$ with 29\,per cent of 
+objects having a mass of 1\,$M_{\mathrm{\odot}}$ or higher. Figure~\ref{fig:clumps} shows how 
+\textsc{fellwalker} divides the areas of star formation into five large-scale star-forming clouds and a small 
+number of isolated objects. Of these clouds, SMM 1, 12, 15 \& 16 is the most massive at 21$\pm$2\,$M_{\mathrm{\odot}}$, 
+containing 53\,per cent of all the mass detected by \textsc{fellwalker}, followed by SMM 2, 7 \& 8 at 6.6$\pm$0.3\,$M_{\mathrm{\odot}}$ 
+(17\,per cent), SMM 4, 10, 11, 13, 14, 21 \& 24 at 3.3$\pm$0.1\,$M_{\mathrm{\odot}}$ (9\,per cent), 
+SMM 3, 6 \& 19 at 3.1$\pm$0.1\,$M_{\mathrm{\odot}}$ (8\,per cent) and SMM 5, 22, 26 \& 27 at 
+3.1$\pm$0.3\,$M_{\mathrm{\odot}}$ (8\,per cent). 
+
+\begin{table*}
+%\caption{Properties of Submillimetre clumps in MWC 297} 
+\caption{Properties of submillimetre clumps in MWC 297.}
+\label{tab:mass}
+\begin{center}
+\begin{tabular}{@{}lllccllcllc}
+
+\hline
+ID$^{a}$	&Object name$^{b}$	&	$S_{\mathrm{450}}^{c}$	&	$S_{\mathrm{850}}^{c}$	&	$M_{\mathrm{850}}^{d}$	&	$T_{\mathrm{d}}^{e}$	&	Area$^{a}$	&$M_{\mathrm{J}}^{f}$ & $M_{\mathrm{850}}/$$M_{\mathrm{J}}$ &	SGBS YSOc ID$^{g}$\\
+		&				&	(Jy)					&	(Jy)					&	(M$_{\mathrm{\odot}})$	&	(K)				&	(pixels)		&(M$_{\mathrm{\odot}})$	& 	 						&				\\
+\hline
+\hline
+SMM1	&	JCMTLSG J1828090-0349497 	&	45.7	&	11.5	&	19(2)		&	10.1(0.5)	&	358	&	2.1(0.1)	&	9.12(1.05)		&-\\
+SMM2	&	JCMTLSG J1827542-0343197 	&	33.2	&	5.0	&	3.5(0.2)		&	17.9(0.9)	&	205	&	2.9(0.1)	&	1.21(0.1)		&YSOc41\\
+SMM3	&	JCMTLSG J1829071-0344378 	&	11.2	&	1.9	&	1.6(0.1)		&	14.6(0.7)	&	94	&	1.58(0.08)	&	1.03(0.1)		&-\\
+SMM4	&	JCMTLSG J1827405-0350257 	&	43.9	&	4.7	&	0.91(0.05)		&	46(2)	&	213	&	7.4(0.4)	&	0.12(0.01)		&-\\
+SMM5	&	JCMTLSG J1827590-0350137 	&	36.8	&	5.4	&	3.3(0.3)		&	18.2(0.9)	&	265	&	3.3(0.2)	&	0.99(0.09)		&-\\
+SMM6	&	JCMTLSG J1829055-0343138 	&	7.7	&	1.3	&	1.2(0.1)		&	14.2(0.7)	&	94	&	1.53(0.08)	&	0.77(0.08)		&YSOc73\\
+SMM7*	&	JCMTLSG J1827586-0342557 	&	59.4	&	7.7	&	3.1(0.2)		&	25(2)	&	419	&	8.2(0.3)	&	0.37(0.03)		&-\\
+%SMM8	&	JCMTLSG J1827570-0341017 	&	30.0	&	4.4	&	2.08(0.15)		&	21.7(1.1)	&	246	&	3.79(0.19)	&	0.55(0.05)		\\
+SMM9	&	JCMTLSG J1829260-0345139 	&	3.1	&	0.8	&	0.67(0.06)		&	15.0(-)	&	73	&	1.43(0.07)	&	0.47(0.05)		&-\\
+SMM10	&	JCMTLSG J1827501-0350437 	&	3.5	&	0.4	&	0.29(0.03)		&	15.0(-)	&	26	&	0.85(0.04)	&	0.35(0.04)		&YSOc32\\
+SMM11	&	JCMTLSG J1827373-0350197 	&	1.1	&	0.2	&	0.1(0.02)		&	17.6(0.9)	&	9	&	0.59(0.03)	&	0.17(0.03)		&YSOc17\\
+SMM12	&	JCMTLSG J1828074-0348437 	&	4.1	&	1.0	&	0.86(0.07)		&	15.0(-)	&	42	&	1.08(0.05)	&	0.79(0.08)		&-\\
+SMM13*	&	JCMTLSG J1827393-0349257 	&	30.9	&	3.8	&	1.25(0.06)		&	28(2)	&	199	&	6.3(0.2)	&	0.20(0.01)		&-\\
+%SMM14	&	JCMTLSG J1827369-0349257 	&	12.9	&	1.6	&	0.6(0.04)		&	25.4(1.3)	&	89	&	2.67(0.13)	&	0.22(0.02)\\
+SMM15	&	JCMTLSG J1828126-0348197 	&	1.8	&	1.0	&	0.8(0.07)		&	15.0(-)	&	50	&	1.18(0.06)	&	0.68(0.07)		&-\\
+SMM16	&	JCMTLSG J1828058-0347017 	&	2.2	&	0.4	&	0.33(0.03)		&	15.0(-)	&	18	&	0.71(0.04)	&	0.47(0.05)		&YSOc47\\
+SMM17	&	JCMTLSG J1829187-0346559 	&	2.7	&	0.4	&	0.34(0.03)		&	15.0(-)	&	42	&	1.08(0.05)	&	0.32(0.03)		&-\\
+SMM18	&	JCMTLSG J1827133-0341438 	&	0.2	&	0.1	&	0.05(0.02)		&	15.0(-)	&	7	&	0.44(0.02)	&	0.12(0.04)		&YSOc2\\
+SMM19	&	JCMTLSG J1829107-0344378 	&	2.5	&	0.4	&	0.33(0.03)		&	15.0(-)	&	47	&	1.14(0.06)	&	0.29(0.03)		&-\\
+SMM20	&	JCMTLSG J1827225-0343378 	&	1.4	&	0.7	&	0.61(0.05)		&	15.0(-)	&	73	&	1.43(0.07)	&	0.43(0.04)		&-\\
+SMM21	&	JCMTLSG J1827297-0351378 	&	5.1	&	0.6	&	0.46(0.04)		&	15.0(-)	&	65	&	1.35(0.07)	&	0.34(0.04)		&-\\
+SMM22	&	JCMTLSG J1827582-0348137 	&	4.7	&	0.5	&	0.1(0.01)		&	42(2)	&	31	&	2.6(0.1)	&	0.04(0.0)		&-\\
+SMM24	&	JCMTLSG J1827285-0350378 	&	3.5	&	0.4	&	0.29(0.03)		&	15.0(-)	&	37	&	1.02(0.05)	&	0.29(0.03)		&-\\
+SMM26	&	JCMTLSG J1827594-0348437 	&	1.5	&	0.2	&	0.15(0.02)		&	15.0(-)	&	10	&	0.53(0.03)	&	0.28(0.04)		&-\\
+SMM29	&	JCMTLSG J1828022-0348377 	&	0.6	&	0.1	&	0.09(0.02)		&	15.0(-)	&	6	&	0.41(0.02)	&	0.23(0.05)		&-\\
+\hline
+
+\end{tabular}
+\end{center}
+
+\raggedright
+a) Clumps as identified by the \textsc{fellwalker} algorithm. \\
+b) Position of the highest value pixel in each clump (at 850\micron). \\
+c) Integrated fluxes of the clumps as determined by \textsc{fellwalker}. The uncertainty at 450\,$\micron$ is 0.3\,Jy and at 850\,$\micron$ is 0.02\,Jy. There is an additional systematic error in calibration of 10.6\,per cent and 3.4\,per cent at 450\,$\micron$ and 850\,$\micron$.\\
+d) As calculated with equation \ref{eqn:mass}. Errors in brackets are calculated from error in total flux, described in c., and error in mean temperature of 5\,per cent. These results do not include the systematic error in distance (20\,per cent) and opacity (100\,per cent). \\
+e) Mean temperature as calculated from the temperature maps (Figure~\ref{fig:mwc}). Where no temperature data is available an arbitrary value of 15K(-) is assigned that is consistent with the literature.  \\
+f) As calculated with equation \ref{eqn:sadavoy}. These results have a systematic error uncertainty due to distance of 20\,per cent.\\
+g) Where a \textsc{fellwalker} source is coincident with a SGBS YSOc, that object is listed here. A complete list is presented in Table \ref{table:SGBS_YSO_small}.\\
+Objects indicated with * have been merged with an adjacent object which was incorrectly identified as a separate clump by \textsc{fellwalker}. 
+\end{table*}
+
+
+\subsection{Jeans mass}
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.45]{/Users/damian/Documents/Thesis_et_al/images/20140820_MassRatio.pdf}
+\caption{Jeans stability plotted against Jeans length. All clumps with $M_{\mathrm{850}}/M_{\mathrm{J}} > 1$, as shown by the dashed line, are expected to be undergoing collapse. Blue circles represent calculations made with real temperature data whereas red crosses indicate those made with an assumed temperature of 15\,K. Systematic error in the measurement of distance to MWC 297 accounts for 20\,per cent uncertainty on Jeans length.}
+\label{fig:jeans_plot}
+\end{center}
+\end{figure}
+
+%In this section we outline our method for calculating the Jeans mass, MJ of our clumps.
+
+The Jeans instability \citep{Jeans:1902dz} describes the balance between thermal support and 
+gravitational collapse in an idealised cloud of gas. $R_{\mathrm{J}}$ defines a critical length 
+scale above which the cloud may collapse on a free fall timescale and star formation can 
+take place. Analogously, $M_{\mathrm{J}}$ defines an upper limit of mass. Assuming a spherical 
+clump has a density such that it is Jeans unstable to perturbations at the size of the clump, 
+$R_{\mathrm{J}}$, then
+
+\begin{equation}
+M_{\mathrm{J}} = 1.9\left ( \frac{\bar{T}_{\mathrm{d}}}{10\mathrm{K}} \right )\left ( \frac{R_{\mathrm{J}}}{0.07\mathrm{pc}} \right )M_{\mathrm{\odot}}. 
+\label{eqn:sadavoy}
+\end{equation}
+
+We use the effective radius of the clump, as determined by clump area (in pixels) from 
+\textsc{fellwalker} (Table~\ref{tab:mass}), as the length scale $R_{\mathrm{J}}$. We note that 
+effective radius is a lower limit on clump size. Mean temperature, $\bar{T}$, across the clump 
+is calculated directly from our temperature maps. 
+
+Whereas mass was calculated on a pixel-by-pixel basis, this is not possible for $M_J$ 
+as the characteristic length scale of the Jeans instability covers the entire object. 
+Instead we use a mean temperature calculated from our maps. Temperatures 
+and Jeans masses of clumps are also shown in Table~\ref{tab:mass}. The masses of 
+clumps calculated with the temperature data in the previous section deviates from the 
+equivalent masses calculated with a uniform mean temperature (set at 15\,K) of that clump 
+by 12\,per cent on average per clump which is sufficiently similar to allow this analysis.
+
+This method is based on the work by \cite{Sadavoy:2010ve} who performed a similar analysis 
+for starless cores in the Gould belt. They used the assumption of a typical cold (10K) 
+molecular cloud core size of 0.07 pc \citep{di-Francesco:2007bh}. \cite{Rosolowsky:2008dq} 
+determined a range of temperatures of 9\,K to 26\,K in Perseus (a similar region to 
+Serpens-Aquila) from ammonia observations. This paper goes a step further and is able to 
+use mean temperatures specific to each clump. We determine a mean clump temperature 
+of $20\pm10$\,K. The greater uncertainty on this value is indicative of the greater diversity of 
+temperatures than assumed by \cite{Sadavoy:2010ve}. 
+
+Under the assumption that only internal  pressure can balance self-gravity, $M_J$ sets an upper 
+limit on the mass of a sphere of gas for a given radius. If the observed mass, $M_{850}$, is greater 
+than the calculated $M_J$, or alternatively $M_{\mathrm{850}}/$$M_{\mathrm{J}}> 1$, that would 
+suggest that the clump is unstable to gravitational collapse and hence active star formation is likely 
+\citep{Mairs:2014zr}. An object that has $M_{\mathrm{850}}/$$M_{\mathrm{J}}\ll1$ is currently 
+stable and will not collapse (alternatively it has already collapsed and the majority of the mass is 
+now contained within the protostar). Given the uncertainties present in theory and observations, the 
+stability of objects where $M_{\mathrm{850}}/$$M_{\mathrm{J}}\approx 1$ is ambiguous. Figure~
+\ref{fig:jeans_plot} plots $M_{\mathrm{850}}/$$M_{\mathrm{J}}$ against the Jeans length scale for 
+the clumps identified in Serpens MWC 297 and reveals that at least three out of a total 22 clumps 
+detected by \textsc{fellwalker} are Jeans unstable and may contain protostars. Evidence for these are 
+addressed in Section 5. For comparison, $M_{\mathrm{850}}/$$M_{\mathrm{J}}$ is plotted for the 
+same list of objects, assuming a single clump temperature of 15\,K (the red crosses in 
+Figure~\ref{fig:jeans_plot}). We observe that in a majority of cases using a real temperature has caused 
+the ratio to decrease and we therefore conclude that previous authors who have used a constant 
+temperature of 15\,K have underestimated the stability of their clumps. 
+
+%Objects that have $M > M_J$ are considered gravitationally bound therefore 
+%undergoing gravitational collapse. This assumption may not always be true as non-thermal 
+%processes, such as magnetic fields, may support against collapse. Gravitational processes 
+%are poorly understood and where authors have considered this problem [CITE], the majority 
+%assume these effects to be negibible.  \cite{Rygl:2013ve} use a similar method to our Jeans 
+%test by taking the ratio of core mass to the calculated BonnorÐEbert mass at fixed temperature 
+%to distinguish between bound and unbound object. The BonnorÐEbert mass is 
+%analogous to the Jeans mass in that when the mass of cloud of fixed size exceeds 
+%this limit, gravitational collapse ensues.  \cite{di-Francesco:2007bh} addresses the 
+%issue of gravitational binding as a\,Key indicator of when a clump can be considered a 
+%pre stellar core but concludes that uncertainties in mass, distance, temperature and 
+%magnetic fields make accurate calculation difficult. Our method removes the assumption 
+%of constant temperature and offers improved accuracy of masses however systematic errors in masses 
+%of up to a factor 2 to 3 still limits full interpretation of our findings.
+
+%Core masses are lower than clump masses in the majority of cases 
+%as expected. Where they are not, the area of the clump identified by \textsc{fellwalker} is less than the aperture used in photometry. 
+
+%The total mass if calculated without temperature data and assuming a core temperature of 15 K underestimates 
+%the total mass by 3\,per cent. The assumption of a clump temperature of 15 K throughout has been widely used by 
+%previous authors.
+
+%Models by \cite{Evans:2001kx}, \cite{Shirley:2002vn}, \cite{Shirley:2003vn} and \cite{Young:2003fk} describe a temperature profile taking into account internal heating by the star and external heating by the ISM. 
+%Our results potentially show signs of external heating, though artefacts in the data prevent further analysis. 
+%Our results do not provide evidence for internal heating where sufficient data exists.
+
+%We discuss our findings on the masses of protostellar population with respect to previous authors. 
+%\cite{Shirley:2000uq} calculate masses from SCUBA data from a sample of known YSOs in different regions 
+%using a similar method to ours and find the mean mass of 1.8$\pm$0.9 $M_{\mathrm{\odot}}$ which is consistent 
+%with our value of 1.7$\pm$2.5 $M_{\mathrm{\odot}}$ and with their viral calculations. \cite{Johnstone:2000fk} used 
+%the same instruments and methods to analyse $\rho$ Ophiucous and produced a comparable population 
+%ranging between 0.02 and 6.3 $M_{\mathrm{\odot}}$, however they assume constant temperature of 20 K and opacity 
+%of $\kappa_{850}$ = 0.01. \cite{Johnstone:2000fk} comments that incompleteness becomes a problem at 
+%masses less than 0.4$M_{\mathrm{\odot}}$. Of our sample detected with SCUBA-2, 34\,per cent of the sample are of mass 
+%0.4$M_{\mathrm{\odot}}$ or lower, with the smallest mass detected a factor of 10 smaller than this. Our work 
+%represents a significant improvement in detection capabilities at submillimetre wavelengths. 
+
+
+\section{The SCUBA-2 YSO catalogue}
+
+In this section we cross-reference our list of SCUBA-2 clumps, as identified by \textsc{fellwalker}, 
+with \emph{Spitzer} YSOc catalogues and produce our own SCUBA-2 confirmed YSOc catalogue 
+for the Serpens MWC 297 region. 
+
+We calculate the relative distribution of protostars to PMS stars in the region as a measure 
+of dynamical evolution of YSOcs within a star-forming cluster.  We produce Spectral Energy 
+Distributions (SEDs) of the YSOcs where supplementary data exist. With the addition of new 
+SCUBA-2 data at 450\,$\micron$ and 850\,$\micron$ we update the classification of the 
+YSOcs in the Serpens MWC 297 region.
+
+\subsection{YSO distribution}
+
+\cite{Kaas:2004fx}, \cite{Winston:2007if} and \cite{harvey07} discuss how evolutionary 
+class (determined by IR spectral index) and spatial distribution in a star-forming region 
+are correlated, finding that Class 0/I and FS sources are concentrated towards 
+the central filaments of Serpens Main region whereas Class II, TD and III sources are much more widely 
+distributed. We incorporate SCUBA-2 data into this method, allowing for direct comparison of 
+evolutionary class spatial distribution with H$_{\mathrm{2}}$ column density. Our method takes 
+the ratio of the number of protostars to PMS stars. Ratios are calculated for the region within the 
+data reduction mask (a large scale region defined as where \emph{Herschel} 500\,$\micron$ 
+emission is greater than 2\,Jy/beam; see Figure~\ref{fig:maps}), and the emission `cloud' defined 
+as above the 3$\sigma$ detection in SCUBA-2 850\,$\micron$, consistent with the levels set for 
+\textsc{fellwalker} clump analysis in Section 4.1. In addition the ratio was calculated for the 
+space outside of the data reduction mask up to the boundaries of the SCUBA-2 data in 
+Figure~\ref{fig:YSO} as a control region. Table~\ref{tab:dist} shows the results for these 
+corresponding areas for the YSOcs catalogues listed in Table~\ref{tab:YSO_cat} and plotted 
+in Figure~\ref{fig:YSO}. 
+
+\begin{table}
+\caption{Ratios of protostars (Class 0, I, FS) to PMS stars (Class II, TD, III) in the \SpitzerGB\ and SCUBA-2 catalogue }
+\label{tab:dist}
+\begin{center}
+\begin{tabular}{c|cc|c}
+	&	Protostars	&	PMS-stars	&	Ratio	\\
+\hline
+Control region		&	0	&	49	&	0.0		\\
+ \emph{Herschel} 2Jy beam$^{-1}$ mask	&	10	&	23	&	0.43		\\
+ \emph{SCUBA-2} 3$\sigma$ mask	&	8	&	10	&	0.80		\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}%
+
+Preliminary work by \cite{Kaas:2004fx} suggested that Class I to Class II ratios were 10 
+times greater within cloud regions of Serpens Main than outside them. \cite{harvey07} conducted 
+a similar analysis and found ratios of 0.37 for the whole region and 1.4 and 3.0 for the cloud 
+regions. Whereas our ratios are not as large (0.8), they do follow the same trend of greater 
+numbers of protostars in regions of higher column density, supporting the conclusion that
+protostars form in regions of high column density and then migrate away from these regions 
+as they evolve into PMS-stars. 
+
+\subsection{SCUBA-2 YSOcs}
+
+
+In this section we determine which members of the SCUBA-2 clump catalogue (Table~\ref{tab:mass}) 
+are starless and which host YSOs, as \textsc{fellwalker} is parameterised to identify both. The 
+\textsc{fellwalker} algorithm is ideal for identifying larger scale, often irregular and extended 
+clumps, but not effective for extracting the flux of individual YSOs, which are smaller. We 
+extract a revised catalogue of YSOcs (Table~\ref{table:cores}) based on the position of the 
+clumps listed in Table~\ref{tab:mass} and calculate the flux emission using aperture photometry 
+with a fixed 40\arcsec diameter aperture.
+
+Six clumps are found to contain SGBS YSOcs (Table \ref{table:SGBS_YSO_small}) by cross-referencing 
+the SCUBA-2 clumps in Table~\ref{tab:mass} (Figure~\ref{fig:minimaps1}) with IR sources 
+(Table \ref{table:SGBS_YSO_small}). Two further clumps (SMM 1 and 3) are found with 
+little or no IR emission but are centrally condensed and have $M_{\mathrm{850}}/$$M_{\mathrm{J}}> 1$ 
+signifying they are gravitationally unstable and may be early protostellar (Class 0) YSOcs.  
+
+The following YSOcs-hosting clumps detected (SMM 1, 2, 3, 6, 10, 11, 16 and 18) are listed in 
+Table~\ref{table:cores} as SCUBA-2 YSO candidates (S2-YSOc). The remaining clumps 
+listed in Table~\ref{tab:mass} do not contain YSOcs and are considered starless. 
+SMM 4 and 7 are notable as they have relatively high masses (greater than 1 $M_{\mathrm{\odot}}$) 
+but are not forming stars. SMM 5 has $M_{\mathrm{850}}/$$M_{\mathrm{J}}= 1$ but there is no 
+evidence for a 24\,$\micron$ source there. It could be argued that this is a prestellar object on 
+the cusp of becoming protostellar.
+
+%\cite{Berrilli:1992cr}, \cite{Hillenbrand:1992kl} and \cite{di-Francesco:1994dq} use an 
+%approximately 15\arcsec\ aperture to measure flux which is representative an upper 
+%limit based of the technology of the time. More modern instruments have much 
+%greater mapping extent and instead 
+
+%In this section we consider SCUBA-2 observations at 450\,$\micron$ and 850\,$\micron$ 
+%and comment on the classification of YSOcs in Serpens MWC 297. We compare our 
+%findings to the IR YSOcs catalogues from section 5.1 and directly to \emph{Spitzer} MIPS 
+%24\,$\micron$ data. 
+
+%IR methods are designed to identify YSOcs, where IR emission from 
+%accretion is dominant. Younger, Class 0 and I protostars are dominated by submillimetre 
+%emission from their cold, dusty envelopes and therefore these objects are more difficult to 
+%detect by IR methods. Instead we can turn to SCUBA-2 to study these regions further. 
+
+%Firstly we compare SCUBA-2 data with the \emph{Spitzer} MIPS 24\,$\micron$ data, 
+%as shown in Figure~\ref{fig:mwc}c, to check for internal heating. Class I, II and III YSOcs 
+%are all classified by some degree of IR emission from accretion luminosity. 
+%there by any centrally condensed submillimetre object that is coincident with 
+%an IR source can be classified as a protostellar core. Objects 2, 6, 10, 11, 16 
+%and 18 are all found to have a coincident source. There is evidence for IR emission 
+%coincident with the peak of object 1, though it is very faint. It has integrated flux of 
+%50 MJy/Sr compared to a sky flux of approximately 30MJy/Sr and is at least two orders of magnitudes 
+%less luminous than its peers. 
+
+%Next we consider gravitational binding. We use a positive Jeans test, $M/M_{J} > 1$, as listed in table 
+%\ref{tab:mass} to determine whether our clumps are gravitational bound. $M_{\mathrm{J}}$ is 
+%proportional to both temperature and radius so clumps that are relatively large and warm 
+%will favour gravitational stable clouds and return a negative Jeans test, objects that have very small 
+%masses will also favour this condition. We observe that many of the lowest mass object appear 
+%as isolated, point-like low intensity sources that would be typical of evolved class II or III objects 
+%that have lost the bulk of their envelope through accretion and winds. These objects are clearly 
+%gravitationally bound despite having a negative Jeans test. Objects 1, 2, 3, 5 and 6 and have a 
+%positive Jeans test and can be considered gravitationally bound. 
+
+%Figure~\ref{fig:minimaps1} shows the  isolated clumps and 850\,$\micron$ contours overlaid 
+%with 40\arcsec\ aperture equivalent to a core of diameter 0.05 pc centred on the peak flux. 
+%A centrally condensed core will produce a strong peak with FWHM less than size of the aperture 
+%whereas a extend, amorphous clump will have FWHM greater than the aperture. 
+%On this basis objects 1, 2, 3, 4, 10, 11 and 18 can be considered to have a core-like 
+%detection with object 16 a borderline case. 
+
+In addition to all those submillimetre objects identified by \textsc{fellwalker}, we also include one 
+additional YSOc, S2-YSOc 29, as listed in Table~\ref{table:cores} and YSOc11 in Table \ref{table:SGBS_YSO_small}. 
+This object fulfils the criterion of coincidence with a strong IR source in the \emph{Spitzer} 24\,$\micron$ 
+MIPS data and a corresponding Class III identification in the SGBS YSOcs catalogue. S2-YSOc 29 
+registers a 5$\sigma$ detection with one pixel and resembles S2-YSOc 10 and 18 which are also believed 
+to be an isolated, Class III PMS-stars with the remnants of an envelope/cold accretion disc contributing 
+to their observed submillimetre flux. 
+
+Apertures were placed over the peak positions of the \textsc{fellwalker} clumps (Table~\ref{tab:mass}) in 
+addition to the \emph{Spitzer} YSOcs positions and the integrated SCUBA-2 flux calculated with the intention 
+to measure the flux from any dense, protostellar core associated with the SCUBA-2 clump peak and/or Spitzer YSOc. 
+We follow \cite{di-Francesco:2007bh}, \cite{Sadavoy:2010ve} and \cite{Rygl:2013ve}'s definition of a core as a 
+gravitationally bound, dense object, of diameter less than 0.05 pc and set apertures at this size (40\arcsec at 250\,pc). 
+Some larger scale emission is likely to be observed. However, through careful selection of aperture size we can 
+assume that emission from the core dominates at this length scale. 
+
+%Both \cite{di-Francesco:2007bh} and \cite{Sadavoy:2010ve} define their apertures on the physical properties of the source, a protostellar core of diameter 0.07 pc
+
+Figures \ref{fig:YSO} and \ref{fig:minimaps2} show the locations of the SCUBA-2 YSOcs as well as those 
+catalogued in the \SpitzerGB\ catalog. Figure~\ref{fig:minimaps1} shows the relationship between the 
+submillimetre peaks and the \emph{Spitzer} YSOc position, with the SCUBA-2 fluxes for \emph{Spitzer} 
+YSOcs presented in Table~\ref{tbl:spitzeradd}. The mass of the SCUBA-2 YSOcs are calculated with 
+Equation~\ref{eqn:mass}, using a constant, mean temperature derived from our maps, and the results presented in 
+Table~\ref{table:cores}. 
+ 
+A small number of \emph{Spitzer} YSOcs inside the \emph{Herschel} 500\,$\micron$ data reduction mask are consistent 
+with SCUBA-2 YSOcs with identical peak positions, for example in S2-YSOc 18 (Figure~\ref{fig:minimaps1}). In some 
+cases, positions appear offset, for example S2-YSOc 2. This anomaly can be explained 
+by virtue of the deeply embedded nature of the source and that \emph{Spitzer} might be observing IR 
+emission from an outflow cavity rather than the YSO itself. 
+
+YSOcs classified as 0/I by \emph{Spitzer} should also have evidence of a SCUBA-2 peak at the 
+same position. Those \emph{Spitzer} detected protostars (YSOc16 and 38; Table~\ref{table:SGBS_YSO_small}) 
+that lie outside of the 5$\sigma$ detection limit at 850\,$\micron$ and have no obvious peak in emission 
+are unlikely to be YSOcs and discarded as incorrectly classified objects. 
+
+A minority of cases detect greater than 5$\sigma$ flux but have no significant peak in emission, for 
+example YSOc15 and 21. Examining these specific cases, both are classified as protostars and are 
+deeply embedded within S2-YSOc13. Figure~\ref{fig:mwc}c shows how this region is near the centre of the 
+reflection nebulae SH2-62 and therefore we interpret YSOc15 and 21 as IR emission from dust heated 
+by the star MWC 297 and not real YSOcs. Many of the remaining \emph{Spitzer} YSOcs detect low level, 
+extended SCUBA-2 flux with no significant peak. No significant flux is detected for objects outside the mask. 
+%Those protostars within the 5$\sigma$ contour in Figure \ref{fig:YSO}, but with no obvious peak in emission, YSOc15 and 21, should be considered with suspicion.
+
+\begin{figure*}
+\begin{center}
+%\includegraphics[scale=1.45]{/Users/damian/Documents/Thesis_et_al/images/minimaps_450850.pdf}
+\caption{Comparison of flux emission from \textsc{fellwalker} objects at 450\,$\micron$ (contours), 850\,$\micron$ (greyscale) and the \SpitzerGB\ YSOcs (markers). Numbers in square brackets correspond to the objects in Table~\ref{tab:mass}. Maps show contours of 450\,$\micron$ submillimetre flux at 5, 10, 20 and 30 $\sigma$ ($\sigma$ = 0.016 Jy/pixel). \emph{Spitzer} YSOcs are indicated by hollow black circles (Class III), solid red circles (Class II) and green hollow circles (Class 0/I). The star indicates the location of the star MWC 297.}
+\label{fig:minimaps2}
+\end{center}
+\end{figure*}
+
+\begin{figure*}
+\begin{center}
+%\includegraphics[scale=1.45]{/Users/damian/Documents/Thesis_et_al/images/20141120_minimaps_850.pdf}
+\caption{Submillimetre clumps in Serpens MWC 297 as identified by the \textsc{fellwalker} clump-finding algorithm. Numbers in square brackets correspond to the objects in Table~\ref{tab:mass}. Maps show contours of 850\,$\micron$ submillimetre flux at 5, 10, 20 and 30 $\sigma$ ($\sigma$ = 0.0022 Jy/pixel) up to the position of peak flux (black cross). The aperture from which SED flux density was calculated is plotted as the scale size of a protostellar core (0.05\,pc). Temperature is shown where it is statistically significant and is used to calculate the masses shown in Table~\ref{table:cores}. \emph{Spitzer} YSOcs are indicated by hollow black circles (Class III), solid red circles (Class II) and green hollow circles (Class 0/I). The star indicates the location of the star MWC 297.}
+\label{fig:minimaps1}
+\end{center}
+\end{figure*}
+
+\begin{table*}
+\caption{Properties of YSO candidates in MWC 297.}
+\label{table:cores} 
+\begin{center}
+\begin{tabular}{@{}lllcccccccc}
+\hline
+ID$^{a}$		&	$S_{\mathrm{450}}^{b}$	&	$S_{\mathrm{850}}^{b}$ 	&	$M_{\mathrm{850}}^{c}$	&	$T_{\mathrm{d}}^{d}$ &	$T_{\mathrm{bol}}^{e}$ & $\alpha_{\mathrm{IR}}^{f}$ & $L_{\mathrm{bol}}^{e}$	& $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}^{e}$	&	SGBS class$^{g}$		&	Class \\
+			&	(Jy)	&	(Jy)	&		(M$_{\mathrm{\odot}})$ 	&	(K) 	&	(K)	&	& (L$_{\mathrm{\odot}})$	&	per cent	&		&	 \\
+\hline
+\hline
+S2-YSOc1		&	14.4	&	3.09	&	5.1(0.5)	&	10.3(0.5)  		&	30(3) 	&	1.65(	0.08)		&	1.1(0.1)		&	5.0(0.5)	&	`Red'			&	0\\
+S2-YSOc2		&	11.1	&	1.56	&	1.3(0.1)	&	15.6(0.8) 		&	290(30)	&	0.56(0.05)  	&	2.1(0.2)		&	1.9(0.2)	&	`YSOc red'		&	I\\
+S2-YSOc3		&	7.0	&	1.09	&	0.95(0.08)	&	14.8(0.7)		&	8(1)	 	&	1.4(0.7)		&	0.8(0.1)		&	3.0(0.3)	&	`Flat'	 			&	0\\ 
+S2-YSOc6	 	&	4.1	&	0.68	&	0.62(0.06)	&	14.2(0.7)  		&	100(10)	&	0.30(0.05)		&	0.28(0.03)		&	5.2(0.5)	&	`YSOc'			&	0/I\\
+S2-YSOc10		&	4.5	&	0.37	&	0.31(0.03)	&	15.0(-)		&	190(20)	&	0.17(0.05)		&	0.82(0.08)		&	1.8(0.2)	&	`YSOc star+dust'	&	I\\
+S2-YSOc11		&	3.9	&	0.35	&	0.22(0.02)	&	17.6(0.9) 		&	780(60)	&	-0.43(0.06)	& 	3.3(0.2)		&	0.3(0.0)	&	`YSOc'			&	II\\
+S2-YSOc16		&	3.7	&	0.73	&	0.60(0.05)	&	15.0(-) 		&	120(10)	&	0.9(0.3)		&	0.73(0.07)		&	1.9(0.2)	&	`star F5V'			&	I\\
+S2-YSOc18		&	0.1	&	0.11	&	0.09(0.02)	&	15.0(-) 		&	820(50)	&	-0.17(0.05)	&	1.32(0.08)		&	0.1(0.0)	&	`YSOc star+dust'	&	II\\
+S2-YSOc29		&	4.0	&	0.36	&	0.30(0.03)	&	15.0(-) 	 	&	860(50)	&	-0.49(0.05)	&	0.34(0.02)		&	0.1(0.0)	&	`YSOc star+dust'	&	II\\
+\hline
+MWC 	&	-		&	1.05	&		-	&	-	 		&	660(6)	 &	-			&	422(4) 		&	0.1(0.0)	&	`2mass'			&	III\\
+  297		&\\
+\end{tabular}
+\end{center}
+\raggedright
+a) SCUBA-2 YSOcs (S2-YSOc) as identified by cross-referencing the SCUBA-2 clumps in Table~\ref{tab:mass} (Figure~\ref{fig:minimaps1}) with IR sources (Table \ref{table:SGBS_YSO_small}). \\
+b) Integrated fluxes of the YSOcs determined by fixed 40\arcsec\ diameter aperture photometry. The uncertainty at 450\,$\micron$ is 0.0165\,Jy/pixel and at 850\,$\micron$ is 0.0022\,Jy/pixel. There is an additional systematic error in calibration of 10.6\,per cent and 3.4\,per cent at 450\,$\micron$ and 850\,$\micron$.\\
+c) Mass as calculated with equation \ref{eqn:mass}. Errors in brackets are calculated from error in total flux, described in b., and error in mean temperature of 5\,per cent. These results do not include the systematic error in distance (20\,per cent) and opacity (factor of two). \\
+d) Mean temperature as calculated from the temperature maps (Figure~\ref{fig:mwc}). Where no temperature data is available an arbitrary value of 15K(-) is assigned that is consistent with the literature.  \\
+e) YSOcs are classified using the $T_{\mathrm{bol}}$, $L_{\mathrm{bol}}$ and  $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ methods which are described in Section 5.4.\\
+f) Values for spectral index are taken from the \SpitzerGB\ catalogue.\\
+g) SGBS notation is described in \cite{evans09}. \\
+\end{table*}
+
+\begin{table}
+\caption{SCUBA-2 $40''$ aperture fluxes for the \emph{Spitzer} YSOc listed in Table~\ref{table:SGBS_YSO_small}.  A full version of this catalogue is available online.}  
+\label{tbl:spitzeradd} 
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+
+\hline
+ID &{$S_{\mathrm{450}}$ }&{$S_{\mathrm{850}}$ }	&	S2-YSOc ID\\
+&{ Jy }&{Jy }	&	\\
+\hline
+% output from getfluxes_MWC297.py
+% YSOc number | S450 / Jy | S850 / Jy % footnote a: Extended low level emission in aperture.  No significant peak at YSOc position \($<3\sigma$\).\% footnote b: Outside data reduction mask.  No significant flux detected in initial data reduction stage \($<5\sigma$\).\
+YSOc1	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc2	&$<0.72$	&$0.115\pm0.013$&S2-YSOc18\\ 					
+YSOc3	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc4	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc5	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc6	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc7	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc8	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc9	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc10	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc11	&$<0.72$	&$0.154\pm0.013$&S2-YSOc29\\
+YSOc12	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc13	&$1.73\pm0.14$$^{a}$	&$0.184\pm0.013$$^{a}$&-\\
+YSOc14	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc15	&$3.30\pm0.14$$^{a}$	&$0.408\pm0.013$$^{a}$&-\\ %no peak
+YSOc16	&$2.08\pm0.14$$^{a}$	&$0.071\pm0.013$$^{a}$&-\\
+YSOc17	&$3.11\pm0.14$	&$0.362\pm0.013$&S2-YSOc11\\					
+YSOc18	&$2.10\pm0.14$$^{a}$	&$0.263\pm0.013$$^{a}$&-\\	%no peak
+YSOc19	&$<0.72^{b}$	&$<0.065^{b}$&-\\
+YSOc20	&$1.11\pm0.14$$^{a}$	&$0.112\pm0.013$$^{a}$&-\\
+
+\ldots & \ldots & \ldots & \ldots\\
+\hline
+\end{tabular}
+\end{center}
+(a) Extended low level emission in aperture.  No significant peak at YSOc position  ($>3\sigma$).   \\
+(b) Outside data reduction mask.  No significant flux detected in initial data reduction stage ($<5\sigma$). \\
+\end{table}
+
+\subsection{Spectral energy distributions}
+
+SEDs are powerful tools for determining the properties of a star and we use these as an aid to 
+classification through measurement of the spectral index  across their IR wavebands, bolometric 
+temperature and luminosity ratio \citep{evans09}.
+
+SEDs are constructed from archival Two Micron All Sky Survey (2MASS) fluxes, \emph{Spitzer} 
+fluxes, and from SCUBA-2 fluxes.  For the SCUBA-2 fluxes we conducted aperture photometry 
+(as described in Section 5.2) at both 450\,$\micron$ and 850\,$\micron$ centred on the \textsc{fellwalker} 
+clump peaks from Table~\ref{tab:mass}. None of our sources overlapped sufficiently to make blended emission 
+a problem. 
+
+%\cite{Berrilli:1992cr}, \cite{Hillenbrand:1992kl} and \cite{di-Francesco:1994dq} use an 
+%approximately 15\arcsec\ aperture to measure flux which is representative an upper 
+%limit based of the technology of the time. More modern instruments have much 
+%greater mapping extent and instead 
+
+%In two cases (4 and 12 in figures \ref{fig:minimaps1} and  
+%\ref{fig:minimaps2}), the \textsc{fellwalker} peaks of a core was sufficiently close to another 
+%object that they encroached on each others aperture. Our solution is to halve the size 
+%of the aperture, removing the adjacent object from view. We then measure the new flux 
+%and take the ratio of this and the full aperture. Those objects which are overlapping with 
+%additional structure are singled out by having substantially greater ratios than the bulk of the cores. 
+%these are removed from the sample and the mean ratio calculated. Assuming identical core profile 
+%across our sample, we then apply this mean in reverse to cores 4 and 12, scaling flux back up to a full 
+%sized aperture but with a profile that represents an isolated core, thus removing the contamination.
+
+%Both objects were relatively weak in 450\,$\micron$ and have approximately 24per cent and 26per cent contamination 
+%from neighbouring objects, 4 and 12 respectively. Similarly we get approximately 5per cent and 8per cent at 
+%450\,$\micron$ and 850\,$\micron$ contamination in object 12.  [REWORD]. 
+
+Our primary sources are IRAC and MIPS data from the SGBS. Six out of nine 
+objects are identified in the \SpitzerGB\ YSOc catalogue. We access the full \SpitzerGB\ source 
+catalogue, which includes sources not classified as YSOcs, and find fluxes of each of the remaining 
+three objects. S2-YSOc 1 and 3 are low luminosity objects that cannot be reliably classified as a 
+YSOc by \emph{Spitzer} and are therefore labelled `Red' and `Flat' following a description of 
+their SEDs. Both objects have IRAC and MIPS  fluxes that are many orders of magnitude less than 
+their peers. S2-YSOc 16 has been classed as a F5V star. Following the work of \cite{Alonso-Albi:2009ve} 
+we bring together fluxes and present the SEDs in Figure~\ref{fig:SED} with specific cases of 
+individual YSOs discussed in depth the following sections. 
+
+Many of the following methods directly use the SEDs constructed in this section to classify YSOs by 
+examining how the flux of the object varies with wavelength. 
+
+
+\subsection{YSO classification}
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=1.2]{/Users/damian/Documents/Thesis_et_al/images/20140718_MWC297_SEDs_fit.pdf}
+\caption{Spectral Energy Distributions for YSOcs associated with \textsc{fellwalker} clumps (Table~\ref{table:cores}). Blue points represent archive data sourced from \emph{Spitzer} and 2MASS. Red points show new data provided by SCUBA-2 at 450\,$\micron$ and 850\,$\micron$ (note that the star MWC 297 was not identified by \textsc{fellwalker} after free-free contamination was accounted for). The straight line in MWC 297 describes free-free emission from an UCH\textrm{II} region and polar jet/wind with a spectral index $\alpha$=1.03.}
+\label{fig:SED}
+\end{center}
+\end{figure*}
+
+Spectral index, $\alpha_{\mathrm{IR}}$, is a direct measurement of the gradient of the SED slope 
+over an range of IR wavelengths (typically 2 to 24\,$\micron$) and is expressed as 
+
+\begin{equation}
+\alpha_{\mathrm{IR}} = \frac{d \log(\lambda S_{\lambda})}{d \log(\lambda )}. \label{eqn:alpha}
+\end{equation}
+
+\cite{gutermuth08} calculated $\alpha_{\mathrm{IR}}$ from the fluxes in the \SpitzerGB\ catalogue and we 
+display these results in Table \ref{table:cores} and Table~\ref{table:SGBS_YSO_small} for SGBS. 
+As a classification tool for YSOs, $\alpha_{\mathrm{IR}}$ was developed by \cite{Lada:1984fk} and 
+\cite{Greene:1994kl} and is summarised by \cite{evans09} who specify the boundaries between 
+%Class 0/I, FS, II and III as $\alpha_{\mathrm{IR}}$ = 0.3, -0.3 and -1.6.
+
+\begin{itemize}
+\item Class 0/I : $0.3 \leq \alpha _{IRAC}$
+\item Class Flat Spectrum : $-0.3 \leq \alpha _{IRAC} \leq 0.3$
+\item Class II : $-1.6 \leq \alpha _{IRAC} \leq -0.3$
+\item Class III : $\alpha _{IRAC} \leq -1.6$
+\end{itemize}
+
+$\alpha_{\mathrm{IR}}$ is one the most commonly used methods for the classification of protostars and consequently 
+is one of the most criticised. Uncertainties on $\alpha_{\mathrm{IR}}$ typically vary between 10 and 20 per cent. 
+However, measurements have been shown to be highly susceptible to disk geometry and source inclination 
+\citep{Robitaille:2007zr} whilst extinction is known to cause $\alpha_{\mathrm{IR}}$ to appear larger. Furthermore, 
+the development of $\alpha_{\mathrm{IR}}$ predates the identification of the Class 0 protostar \citep{Chandler:1990qf, 
+Eiroa:1994ve, Andre:2000zr} and therefore does not distinguish between Class 0 and Class I when $\alpha_{\mathrm{IR}}$ is 
+measurable (absence of  $\alpha_{\mathrm{IR}}$ has been taken in this work to define a Class 0). Via the classification 
+scheme outlined above, our sample contains four Class 0/I, two FS and three Class II sources. Saturation of 
+\emph{Spitzer} bands prevent measurement of $\alpha_{\mathrm{IR}}$ for MWC 297.
+
+We calculate bolometric temperature, $T_{\mathrm{bol}}$, and luminosity, $L_{\mathrm{bol}}$, as alternative methods 
+of classification of YSOs. We follow the numerical integration method of \cite{Myers:1993vn} and \cite{Enoch:2009xq} 
+who calculated the discrete integral of the SED of an object for a given number of recorded fluxes. By adding SCUBA-2 
+data to that from the \SpitzerGB\ source catalogue, we extend the SEDs (Figure \ref{fig:SED}) for our YSOcs into the 
+submillimetre spectrum and allow for a more complete integral from which we calculate $T_{\mathrm{bol}}$, the 
+temperature of a black body with the same mean frequency of the observed SED, via 
+
+\begin{equation}
+T_{\mathrm{bol}} = 1.25\times10^{-11}\bar{\nu }\,(\mathrm{K}\,\mathrm{Hz}^{-1}), \label{equ:tbol1}
+\end{equation}
+where $\bar{\nu}$ is the mean frequency of the whole spectrum,
+\begin{equation}
+\bar{\nu }=\frac{\int \nu S_{\nu} d\nu }{\int \nu d\nu }.\label{equ:tbol2}
+\end{equation}
+ 
+Classification separating boundaries for $T_{\mathrm{bol}}$ from \citep{Chen:1995ys}.% Class 0, I, II and III are 70, 350, 650 and 2800\,K \citep{Chen:1995ys}.
+\begin{itemize}
+\item Class 0 : $T_{\mathrm{bol}}< 70K$
+\item Class I : $70K \leq T_{\mathrm{bol}}\leq  350K$
+\item Class II : $350K \leq T_{\mathrm{bol}}\leq  650K$
+\item Class III : $650K \leq T_{\mathrm{bol}}\leq  2800K$
+\end{itemize}
+
+$T_{\mathrm{bol}}$ measurements for our sources are listed in Table~\ref{table:cores}. As this method uses more available data 
+it could be considered a more reliable method of classification than $\alpha_{\mathrm{IR}}$ which only covers IRAC and MIPS 
+bands 2\,$\micron$ to 24\,$\micron$. Furthermore $T_{\mathrm{bol}}$ provides a quantifiable method for separating Class I and Class 0.
+Similarly we calculate the ratio of submillimetre luminosity ($L_{\mathrm{smm}}$), defined as $\geq$ 350\,$\micron$ by \cite{Bontemps:1996fu}, 
+to $L_{\mathrm{bol}}$ in the method described by \cite{Myers:1998ys} and \cite{Rygl:2013ve}, to classify YSOs: 
+
+\begin{equation}
+L_{\mathrm{bol}} = 4\pi d^{2}\int_{0}^{\infty}S_{\nu}  d\nu \label{eqn:Lbol},
+\end{equation}
+and likewise for the submillimetre luminosity,
+\begin{equation}
+L_{\mathrm{smm}} = 4\pi d^{2}\int_{0}^{350\micron}S_{\nu} d\nu \label{eqn:Lsmm}.
+\end{equation}
+
+This method was developed by \cite{Andre:1993ff} who originally set the Class 0/I boundary 
+at 0.5 per cent (subsequently used by \cite{ Visser:2002ly} and \cite{Young:2003fk}). 
+\cite{Maury:2011ys} and \cite{Rygl:2013ve} revise this upwards to 3 per cent and most recently 
+\cite{Sadavoy:2014nx} has used 1 per cent outlining the lack of consensus on this issue. We follow 
+the work of \cite{Rygl:2013ve} and classify objects with $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ 
+$\geq 3$ per cent as Class 0 protostars.
+%\begin{itemize}
+%\item Class 0 : $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ \geq 3\,per cent$
+%\item Class I or higher : $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ \leq  3\,per cent$
+%\end{itemize}
+Likewise, results for $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ are listed in Table \ref{table:cores}. 
+
+%these methods are capable of classifying the earliest, Class 0 stage of protostellar evolution whereas 
+%$\alpha_{\mathrm{IR}}$ often classifies Class 0 by lack of IR emission [CITE], a method that has become 
+%increasingly less reliable as instrumentation has become more effective at detecting low luminosity sources. 
+%Bolometric temperature and luminosity methods utilise the full spectrum including the submillimetre 
+%wavelengths where emission is believed to be dominant in protostars.
+
+Our sample contains two Class 0 sources, four Class I and three Class II by $T_{\mathrm{bol}}$ and 
+three Class 0 to six Class I, II \& III sources by $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ . 
+
+Uncertainties on $L_{\mathrm{bol}}$, $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ and $T_{\mathrm{bol}}$ 
+were calculated using a Monte Carlo method. A normal distribution of fluxes, with the mean on the measured 
+flux at each wavelength for each YSO with a standard deviation equal to the original error on the measurements 
+was produced. From each set of fluxes our classifications were calculated and the standard deviation on 
+results listed in Table~\ref{table:cores}. The size of the uncertainties are consistent with \cite{Dunham:2008fk}. 
+\cite{Dunham:2008fk} and \cite{Enoch:2009xq} both study the error on $L_{\mathrm{bol}}$ and $T_{\mathrm{bol}}$ 
+and conclude incompleteness of the spectrum is a major source of systematic error in results of order approximately 
+31\,per cent and 21\,per cent (respectively) when compared to a complete spectrum. \cite{Enoch:2009xq} find 
+that the omission of the 70\,$\micron$ flux is particularly critical when interpreting classification, leading to an 
+overestimate of $L_{\mathrm{bol}}$ by 28\,per cent and underestimate of $T_{\mathrm{bol}}$ by 18\,per cent.
+
+Figure~\ref{fig:class} shows a direct comparison between the $\alpha_{\mathrm{IR}}$,  
+$L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ and $T_{\mathrm{bol}}$ methods of classifying 
+YSOs. As outlined above, each specialises in classification at different stages of evolution 
+with $T_{\mathrm{bol}}$ arguably being the most effective for classifying protostars. 
+\cite{Young:2005ly} studied the merits of $T_{\mathrm{bol}}$ and $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ 
+and concluded that the latter is the more robust method for classifying Class 0 objects when 
+compared to models of core collapse. However, it is also more sensitive to incompleteness 
+of the submillimetre spectrum. With only two fluxes at wavelengths greater than 350\,$\micron$ 
+for the majority of the YSOs in MWC 297, we must consider the results from 
+$L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ to be incomplete and therefore less reliable 
+than $T_{\mathrm{bol}}$. 
+
+Out of the three objects classified as Class 0 by both $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ 
+and $T_{\mathrm{bol}}$ methods, only S2-YSOc 1 is consistent in both regimes. This object has a 
+significantly positive value of $\alpha_{\mathrm{IR}}$ and so we classify this object as Class 0. 
+The other two objects, S2-YSOc 3 and S2-YSOc 6, are forming in close proximity to each other but 
+relatively isolated from the rest of the cloud. With a minimum separation of approximately 
+10,000\,AU it seems likely that these objects formed together and therefore they are likely to 
+be a similar class. S2-YSOc 3 has no noticeable IR flux at 24\,$\micron$. However, the S2-YSOc 3 SED 
+(Figure \ref{fig:SED}) shows \emph{Spitzer} data consistent with emission from a heated region and so we conclude that the 
+emission at 24\,$\micron$ is sufficiently weak that it does not surpass the noise level and therefore 
+does not appear in Figure \ref{fig:mwc}c. Such low luminosity emission would be typical of Class 0 
+and therefore we label it as such. S2-YSOc 6 has a weak, if non-negligible, detection at 24\,$\micron$ data. 
+Therefore, we label it as Class 0/I. S2-YSOc 2 and 10 consistently fall into the Class I bracket by all three methods.
+
+%SMM 2 and 10 consistently fall into the Class I bracket by all three methods. This is an interesting result as SMM2 is a 
+%relatively massive, extended object whereas SMM10 is a low mass isolated core as shown in Figure~\ref{fig:minimaps1}. 
+%Our physical understanding of the Class I objects raises questions about the validity of the classification of SMM10. 
+%It seems this is a likely candidate where inclination is influencing the range of flux detected. 
+
+S2-YSOc 11, 18 and 29 all represent highly evolved and largely isolated cores that are consistently 
+classified as Class II/III objects and have 24\,$\micron$ detections in Figure~\ref{fig:mwc}c. 
+Finally we discuss S2-YSOc16, an object labelled Class I by $T_{\mathrm{bol}}$ and by $\alpha_{\mathrm{IR}}$ 
+and with a strong peak in the 24\,$\micron$ data. Figure~\ref{fig:minimaps1} shows how 
+this object appears deep within an extended dust cloud. This scenario fits the definition of a Class 
+I and the low mass of the object (0.60 $M_\odot$) when compared to the mass available in the 
+neighbouring clumps (approximately 21 $M_\odot$) suggests that this object is early in its accretion 
+life cycle.
+
+\section{Discussion}
+
+%[Temperature maps can be made from subregions of MWC 297 because of the quality of SCUBA-2 data]
+
+In this paper we use SCUBA-2 450\,$\micron$ and 850\,$\micron$ data and \emph{Spitzer} 
+data to investigate star formation in Serpens MWC 297 region. Taking the ratio of SCUBA-2 fluxes, we produce 
+temperature maps of subregions of Serpens MWC 297 and calculate the properties of YSOs and clumps in 
+the region. 
+
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=0.35]{/Users/damian/Documents/Thesis_et_al/images/20140822_class.pdf}
+\caption{ Bolometric temperature plotted against $L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ (\emph{left}) and $\alpha_{\mathrm{IR}}$ (\emph{right}) for the 10 YSOcs listed in Table~\ref{table:cores}. 
+Dashed lines indicate the boundaries of classification of objects (greyed boxes indicating regions of class space where methods agree).}
+\label{fig:class}
+\end{center}
+\end{figure*}
+
+\subsection{The state of star formation in Serpens MWC 297} 
+
+%[MWC 297 shows evidence for active star formation within the last 3Myr]
+
+Star formation is active and ongoing over a wide range of physical stages, from prestellar objects to Class III 
+PMS-stars. We have detected 22 clumps in SCUBA-2 850\,$\micron$ data using the clump-finding algorithm 
+\textsc{fellwalker} (Table~\ref{tab:mass}), from which we classify eight as YSOcs through consistency with 24\,$\micron$ 
+data and the \SpitzerGB\ YSOc catalogue. We include an additional \emph{Spitzer}-detected YSOc (YSOc11) 
+which was missed by \textsc{fellwalker} to provide us with a sample size of nine (Table~\ref{table:cores}), 
+in addition to the 10 $M_\odot$ ZAMS star MWC 297. Seven (YSOc2, 11, 17, 32, 41, 47, 73) of these are found 
+in the \SpitzerGB\ YSOc catalogues and two in the general \SpitzerGB\ source catalogue. Three Class 0, three 
+Class I and three Class II sources are classified with SCUBA-2 data. 
+
+72 Class II/III and 10 Class 0/I sources are listed in the \SpitzerGB\ catalogue for the region. We do not expect 
+to detect a high proportion of the Class II objects or any Class III objects with SCUBA-2. Figure \ref{fig:YSO} 
+shows how few of these objects lie within the 3$\sigma$ detection level. We do expect to detect all Class 0 
+and most Class I objects with SCUBA-2 and therefore four (YSOc 15, 16, 21, 38) out of 10 Class 0/I sources 
+listed in the \SpitzerGB\ catalogue that are not associated with SCUBA-2 peaks should be considered with 
+scepticism. The remaining 16 objects identified by \textsc{fellwalker} are considered to be prestellar objects 
+and diffuse clouds. From the SCUBA-2 catalogue every stage in star formation is represented up to stars on 
+the main sequence. Given the assumed lifetime of each class, star formation has been active in this region 
+for at least 3\,Myr.
+
+%[Star formation is ongoing but will be limited in the future]
+
+Star formation is observed at various stages in five large-scale clouds in the region which are composed 
+of a number of fragmented clumps (Figure~\ref{fig:clumps}), the most evolved of which contain star forming 
+cores. S2-YSOc 1 represents the most massive core we detect at 5.1$\pm$0.5\,$M_{\mathrm{\odot}}$ and is the 
+most prominent object in a larger cloud of mass 21$\pm$2\,$M_{\mathrm{\odot}}$ - (see Figure~\ref{fig:minimaps1}). 
+S2-YSOc 1 is the coolest YSO we have observed with mean temperature of 10.3$\pm$0.5\,K and there is no 
+evidence of heating in this region. If all the mass detected in S2-YSOc 1 accretes onto the core, allowing for a 
+star-formation efficiency of 30 per cent \citep{evans09}, this object may go on to form an intermediate 
+mass star similar to MWC 297. 
+
+A second cloud appears somewhat less fragmented with only two objects as opposed to four but also 
+less massive with a peak core mass of 1.3$\pm$0.3\,$M_{\mathrm{\odot}}$ and total cloud mass of 
+3.5\,$M_{\mathrm{\odot}}$ (Figure~\ref{fig:minimaps1} - S2-YSOc 2). Likewise a 30 per cent star-formation 
+efficiency would limit the final mass to around 1 $M_{\mathrm{\odot}}$. S2-YSOc 3 and 6 (Figures~\ref{fig:minimaps1}) 
+form a potentially loosely bound proto-binary composed of a Class 0 and Class I object with separation of 
+10,000\,AU and masses 0.95$\pm$0.08 and 0.62$\pm$0.06\,$M_{\mathrm{\odot}}$. 
+  
+In addition to these deeply embedded, less evolved objects, a number of more evolved, isolated objects 
+were observed. S2-YSOc 10, 18 and 29 are detached from the larger clouds and are much less luminous than the 
+younger objects (Figure~\ref{fig:minimaps1}). At these stages, PMS-stars are dominated by disks rather than 
+envelopes and we calculate masses of 0.31$\pm$0.03\,$M_{\mathrm{\odot}}$, 0.09$\pm$0.02\,$M_{\mathrm{\odot}}$ 
+and 0.30$\pm$0.03\,$M_{\mathrm{\odot}}$ for these objects. The protostar to PMS ratios suggest that these objects 
+may have been formed in a dense region and later ejected or that the associated molecular cloud was larger in the 
+past. Typical core migration speeds of 1\,pc per Myr are consistent with the size of the observed region 
+(30\arcmin\ diameter) and birth of these objects in one of the large clouds, most likely that associated with the star 
+MWC 297 as it is the most evolved. S2-YSOc 11 and 16 are likely transition cores between Class I and II 
+stages (Figure~\ref{fig:minimaps1}). 
+
+%[Remaining dense cores have low mass]
+
+The remaining objects are not considered to be star-forming. The most massive of these are SMM 5 and 
+7 at 3.5$\pm$0.3 and 3.1$\pm$0.2\,$M_{\mathrm{\odot}}$ (see Figure~\ref{fig:minimaps1}). 
+We calculate free fall timescales of 2.1 and 1.8\,Myrs for these objects. These are significantly larger 
+than the typical protostellar timescale of 0.5\,Myr are therefore unlikely to form stars without accreting 
+mass or cooling further. The mean temperature of starless clumps is over twice that of star-forming cores 
+(32$\pm$4\,K to 15$\pm$2\,K). Our observed core temperature is consistent with the assumption made in 
+Section 4.2 and used by \cite{Johnstone:2000fk} and \cite{Kirk:2006vn}. The remaining objects all have 
+masses less than 1\,$M_{\mathrm{\odot}}$ and are too diffuse to produce reliable temperature data. If these 
+objects go onto to form stars, they are unlikely to form anything more massive than a brown dwarf. 
+
+%[summary discussion]
+
+A global analysis of the region reveals that, of a total cloud mass of 40\,$M_{\mathrm{\odot}}$, only 
+12.5\,$M_{\mathrm{\odot}}$ is not currently associated with ongoing star formation. Assuming a mean YSO 
+mass of 0.5\,$M_{\mathrm{\odot}}$ based of IMF observations \citep{Chabrier:2005nx, evans09}, and given 
+a mass of MWC 297 of 10\,$M_{\odot}$ \citep{Drew:1997qf}, we conclude that the total stellar 
+(Class II or higher) mass of the region is 46\,$M_{\odot}$. To date, approximately 85 per cent of the 
+original cloud mass has gone into forming stars. From this we conclude that once this current generation 
+of stars are formed, there is unlikely to be any further massive star formation without further mass accreting  
+from the diffuse ISM and as a result we envisage a large distribution of low mass objects with the massive 
+MWC 297 system dominating the region. 
+
+\subsection{What does SCUBA-2 tell us about the star MWC 297?}
+
+ %[What do we already know about MWC 297]
+ 
+The B1.5Ve star MWC 297 is a well known object. We comment on its relevant features and refer the reader to 
+\cite{Sandell:2011dz} for a comprehensive review the star's properties. 
+ 
+%[MWC 297 is located in Physically associated with the star-forming clouds]
+ 
+MWC 297 is considered to be physically associated with the YSOcs within a 1\arcmin\ radius identified in \SpitzerGB\ and the additional 
+YSO catalogues identified in Table~\ref{tab:YSO_cat} and displayed in Figure~\ref{fig:YSO}. MWC 297, objects 2MASS J18273854-0350108 
+(undetected in SCUBA-2) and 2MASS J18273670-0350047 (detected as S2-YSOc 11 in SCUBA-2) were found to have a mean group 
+velocity of 0.01\arcsec per year \citep{Roser:2008fk, Zacharias:2012uq, Zacharias:2013kx} providing evidence they were formed from 
+same cloud. Further evidence in 24\,$\micron$ data shown in Figure~\ref{fig:mwc}c shows how emission from warm dust heated by MWC 297, 
+associated with SH2-62, is consistent with the location of dust clouds in the SCUBA-2 data. The angular distance between MWC 297 and the 
+nearest clump (SMM 4) detected in SCUBA-2 amounts to a minimum physical separation of 5,000\,AU, approximately half the size of our definition 
+of a core (0.05 pc, \citeauthor{Rygl:2013ve} \citeyear{Rygl:2013ve}). 
+ 
+%%%%% MOVED TO CHAPTER 4 %%%%%
+%[SCUBA-2 detections are consistent with free-free and residual]
+%We determine that free-free emission from an UCH\textrm{II} region and polar jets/winds associated with MWC 297 contaminates the 450\,$\micron$ 
+%and 850\,$\micron$ data \citep{Skinner:1993bh}. The nature of the free-free emission from the outflow has been debated by various authors. 
+%\cite{Malbet:2007zr} and \cite{Manoj:2007ly} argue for ionised stellar winds that dominate at higher latitudes, whereas \cite{Skinner:1993bh} 
+%and \cite{Sandell:2011dz} provide evidence for an additional source of free-free emission in the form of highly collimated polar jets. Jets are 
+%typically associated with less evolved objects where luminosity is dominated by accretion processes whereas MWC 297 is considered 
+%to be a Class III / ZAMS star where the majority of the disk has fallen onto the star or been dissipated by winds. X-ray flares are thought to be a 
+%signature of episodic accretion and \cite{Damiani:2006ve} detect a number of X-rays flares from the Serpens MWC 297 region but find that 
+%only 5.5\,per cent of total flaring is directly associated with MWC 297, suggesting that accretion onto it is minimal. The majority of X-ray emission is 
+%associated with additional YSOs and the companion of MWC 297, \emph{OSCA}, an A2V star identified by \cite{Habart:2003fk} and 
+%\cite{Vink:2005uq} at a separation of 850\,AU. 
+
+%Figure~\ref{fig:freefreeSED} and Figure~\ref{fig:contamination} show that free-free emission due to an UCH\textrm{II} region and polar winds/jets 
+%is responsible for the majority of flux from the star MWC 297. Original peak fluxes of 188$\pm$16\,mJy and 86$\pm$22\,mJy are reduced to 51$\pm$11\,mJy 
+%and 15$\pm$4\,mJy at 450\,$\micron$ and 850\,$\micron$ respectively. The 5$\sigma$ level of 82\,mJy and 11\,mJy means that flux is too uncertain to 
+%be detected at 450$\micron$ and therefore it is not possible to calculate reliable temperatures of the residual circumstellar envelope/disk around 
+%the star. The assumption of point-like free-free emission may add further uncertainty to the residual flux.
+
+%[SCUBA-2 fluxes are not consistent with previous claims of an accretion disk - now explained by free-free]
+
+Previous observations have interpreted a submillimetre source consistent with the location of MWC 297 as an accretion disk or circumstellar envelope 
+\citep{di-Francesco:1994dq, Drew:1997qf,di-Francesco:1998fk}. We believe that these observations can now be explained as free-free emission. 
+\cite{Manoj:2007ly} constrain the disk radius with radio observations to 80\,AU and calculate a disk mass of M = 0.07\,$M_{\mathrm{\odot}}$. These results are 
+supported by \cite{Alonso-Albi:2009ve} who conclude that this `exceptionally low' disk mass is partly due to photoionisation by an UCH\textrm{II} region. 
+Further work by \cite{Alonso-Albi:2009ve} argues for the presence of a cold circumstellar envelope. Free-free does not account for emission at 70\,$\micron$ 
+and 100\,$\micron$ as shown in the SED for MWC 297 (Figure~\ref{fig:SED}) due to the exponential cutoff of the free-free power law as emission becomes 
+optically thick at shorter wavelengths. 
+
+Our results do not rule out the presence of a disk or residual envelope following subtraction of the free-free emission, but they do confirm that any residual 
+disk is low mass, though with a high degree of uncertainty as the submillimetre flux observed at the position of MWC 297 likely 
+contains a component from the clump SMM 4 whichs overlaps this location. Temperature information about MWC 297 is also limited by the diminished 
+size of the residual emission. We note that throughout this paper we have assumed a constant value of $\beta$ = 1.8. We have argued this a fair 
+assumption for the ISM and extended envelope but this does not hold for the local environment of the protostar where the value of $\beta$ is known to 
+be lower, leading to higher dust temperatures (see Figure~\ref{fig:SR_temp}).
+
+%Evidence for a warm disk in the 70\,$\micron$ and 100\,$\micron$ bands is unaffected by free-free emission.
+
+%From these results we could conclude that 850\,$\micron$ flux is greater than 450\,$\micron$ flux and that we could be observing relatively cold emission from 
+%thermal dust emission within cold gas clouds.  \cite{Manoj:2007ly} calculates disk mass of 0.07$M\odot$. Taking this value and using equation \ref{eqn:mass} 
+%we calculate this would correspond to a dust temperature of approximately 7 K. Such low values are observed in Figure~\ref{fig:mwc} where class 0 objects are 
+%forming, they are not consistent with disk temperatures of 50 K [CITE]. 
+
+%Further more, such a low mass object would unlikely be able to shield radiative heating 
+%from the UCH\textrm{II} region to maintain this temperature. An alternative explanation for this feature could be the \emph{dust opacity index}, $\beta$, which up until this 
+%point has be assumed a constant value of 1.8. In section 3 we outlined the justification for fixing $\beta$ at a constant value with the proviso that $\beta$ is known 
+%to increase towards proto-planetary cores, the situation that we currently examine. \cite{Manoj:2007ly} examines the SED of MWC 297 in the submillimetre and 
+%conclude a $\beta$ of value 0.1 to 0.3. Such a low value allows greater dust temperatures and lower values of $\kappa _{850} \propto \left (\frac{\nu }{230.6}  \right )^{\beta }$ 
+%which would be consistent with \cite{Manoj:2007ly} disk mass and the presence of UCH\textrm{II} region around MWC 297. 
+
+%[Summary discussion]
+
+%SCUBA-2 data shows a strong submillimetre source that is consistent with the location of MWC 297 - we account for the majority of this emission 
+%through free-free power law emission from a combined UHCII/jet source, leaving a small and uncertain residual flux. Through extrapolation of this 
+%power law we can conclude that this source dominates emission long wards of the SCUBA-2 wavelengths and that any properties calculated by these 
+%fluxes can be explained by free-free emission. 
+
+Based on these observations we suggest the following arrangement whereby we are observing both the B star, MWC 297, and the companion A star, 
+\emph{OSCA}. MWC 297 has evolved further to the extent that it is producing the UCH\textrm{II} region observed. We find it unlikely that such a system 
+could still be accreting matter on a large scale, or that the magnetic fields required to produce collimated jets could survive the UCH\textrm{II} region, 
+and therefore we associate the jet emission observed by \cite{Skinner:1993bh} to \emph{OSCA}, an object that may be less evolved and more likely to 
+still be in the accreting phase. Further evidence for active accretion onto \emph{OSCA} has been provided by \cite{Damiani:2006ve} who found substantial 
+X-ray flaring from the object. A more massive disk structure would likely exist around the lower mass, and therefore less evolved, \emph{OSCA} than 
+MWC 297 and therefore this is likely the source of any residual SCUBA-2 flux and \emph{Spitzer} MIPS flux observed in the combined SED.  The separation 
+at 850\,AU is too small to resolve the two objects with the JCMT beam. 
+
+\subsection{Is there evidence for radiative feedback in Serpens MWC 297?}
+
+%[SMM4 is influenced] \cite{Damiani:2006ve}
+
+The star MWC 297 is directly associated with the star-forming clumps identified in the SCUBA-2 data and the B star is 
+directly heating those objects, none more so than SMM 4 where our result suggests that MWC 297 is directly 
+influencing its evolution. A mean temperature of 46$\pm$2\,K for SMM 4 was calculated, almost a factor of three 
+times higher than the typical clump temperature of 15\,K. The standard deviation of pixels of this clump is high at 11\,K. 
+The clump is warmest around the exterior with temperatures peaking above 55\,K (potentially contributed to by edge effects) 
+but it appears to have a cooler centre of 29\,K (Figure~\ref{fig:minimaps1}). This is warmer than the mean temperature (18\,K) 
+of all the other clumps (discounting SMM 22 on account of its small size) detected by \textsc{fellwalker}. Heating of this 
+object is not internal and the ISRF is not sufficient to produce such high  temperatures. Only MWC 297 can provide 
+sufficient external heating. 
+
+SMM 4 has a dust mass of 0.91$\pm$0.05 $M_{\mathrm{\odot}}$ but is the fourth most luminous clump in the region with a well 
+defined, centrally condensed core. Raised temperatures mean that the object is gravitationally stable with a $M_{\mathrm{850}}/$$M_{\mathrm{J}}$
+ratio of 0.12. From these results we conclude that, in the past, SMM 4 may have begun collapse on a similar timescale 
+to MWC 297; however upon the B star producing sufficient radiation, MWC 297 has directly heated the larger part of the 
+neighbouring clump to the extent that gravitational collapse is no longer possible, in effect suppressing, or even halting, 
+the star formation process. Whether or not the low mass of SMM 4 or the power of MWC 297 is the limiting factor in this 
+process remains unknown.
+
+%[Other cores are cold]
+
+The majority of the other clumps detected show little or no external heating and no objects show evidence of 
+internal heating. Table~\ref{tab:mass} outlines a range of mean clump dust temperatures, between 10 and 46\,K, 
+across the region. This is wider than the range of 12 to 20\,K assumed by \cite{Motte:1998ys} for Ophiuchus. 
+Examining the mean temperatures of the Class 0 objects we find values of 12.6$\pm$0.9\,K, below the assumed 
+15\,K used by \cite{Johnstone:2000fk} and \cite{Kirk:2006vn} but within the range of \cite{Motte:1998ys}. Of the six 
+Class 0/I objects, two (S2-YSOc 2 and 10) lie within the nebulosity whereas the remainder lie in regions with little significant 
+emission from large scale heated dust as shown in Figure~\ref{fig:minimaps1}. None of the YSOcs show significant heating. 
+However, use of a constant $\beta$ may not hold towards the centre of a protostar and our use of $\beta$ = 1.8 specifically 
+for large structures maybe be systematically underestimating temperatures in these regions.
+
+Starless object SMM 7 shows heating (Figure~\ref{fig:minimaps1}) along its eastern edge which is not consistent 
+with the 24\,$\micron$ emission. We suspect we are observing the `edge effect' artefact produced in the map 
+making process and this consequently increases temperature to 25$\pm$2\,K. Conversely SMM 5 shows evidence 
+of heated gas along its western edge in 24\,$\micron$ emission (Figure~\ref{fig:mwc}c) but is relatively cool and 
+homogenous in Figure~\ref{fig:minimaps1} with a mean temperature of 18.2$\pm$0.9\,K. Prohibitively high noise 
+in the 450\,$\micron$ data prevent wider examination of this feature. 
+
+
+%Such low values infer grain growth and the earliest stages of a protoplanetary disk. Planet construction is not typically associated with O or B stars due to heating and ionisation of the disk [CITE]. \cite{Malbet:2007zr} has found evidence of puffing up the inner parts of the disk due to heating and it is difficult to reconcile these conditions with those that favour grain growth, though the two disk model of \cite{Alonso-Albi:2009ve} offers room for planetary formation. 
+%At this angle, MWC 297 would resemble a UX Orionis object \citep{Pontoppidan:2007fr}, where by the optically thick disk and circumstellar envelope cast a shadow over the light of the central star.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+
+We observed Serpens MWC 297 region with SCUBA-2 at 450\,$\micron$ and 850\,$\micron$ as part of the JCMT 
+Gould Belt Survey of nearby star-forming regions. The observations covers a 30\arcmin\ diameter circular region centred 
+on RA(J2000) = $18^{h}$ $28^{m}$ $13{\farcs}8$, Dec. (J2000) = $-03^{\circ}$ $44'$ 1.7\arcsec\ including the 
+B1.5Ve Herbig Be star MWC 297 and a collection of local dense clouds. We use the clump-finding algorithm 
+\textsc{fellwalker} to identity submillimetre clumps in the data and compare our catalogue to YSOc catalogues produced 
+by the \emph{Spitzer} Gould Belt Survey (\SpitzerGB), and to \emph{Spitzer} 24\,$\micron$ data of the region. 
+The latter shows heating of surrounding clouds associated with the star MWC 297 and the optical nebula SH2-62,  providing 
+evidence that the two are physically located in space.  
+
+We account for sources of submillimetre contamination, finding an insignificant CO contamination estimated at 
+13\,per cent but a significant amount from free-free emission as the result of an ultra-compact HII region and polar winds/jets 
+associated with the star MWC 297. We use the ratio of 450\,$\micron$ and 850\,$\micron$ to build maps of dust temperature 
+for Serpens MWC 297 with the aim of investigating evidence for radiative heating in the region. To do this we employed 
+a method whereby each dataset is convolved with both the primary and secondary beam components of the JCMT 
+beam at the other wavelength to achieve like resolution of 19.9\arcsec\ before calculating the flux ratio and consequently temperature. 
+\\
+\\
+Our key results are:
+\begin{enumerate}
+\item Our temperature method uses both the primary and secondary 
+components of the JCMT beam as this better reflects the shape of the 
+real beam. The two component model decreases temperatures between 
+5 and 9 per cent in the warmest and coolest regions respectively. 
+\item We detect 22 clumps. By cross referencing this list with \emph{Spitzer} 
+YSOcs and a comparison of mass to Jeans mass as a test of 
+gravitational stability, we identify nine YSOcs
+\item We calculated masses based on calculated temperatures (as 
+opposed to an assumed value) across the whole region. Clump masses 
+range between 0.02-19\,M$\odot$ and core masses range between 
+0.09-5.1\,M$\odot$. Starless clumps are consistently warmer than star 
+forming cores with mean temperatures of 32$\pm$4\,K compared to 
+15$\pm$2\,K. 
+\item We classify the YSOs using $T_{\mathrm{bol}}$ and 
+$L_{\mathrm{smm}}$/$L_{\mathrm{bol}}$ as two Class 0, one 
+Class 0/I, three Class I and three Class II sources. 30\,per cent of 
+Class 0/I objects and 8\,per cent of Class II objects catalogued in 
+\SpitzerGB\ were also detected by SCUBA-2. No Class III objects 
+were detected by SCUBA-2. SCUBA-2 detected two potential Class 0 
+and one Class I/II YSOcs that were not included in the \SpitzerGB\ 
+YSOc catalogue.   
+\item We modelled free-free emission from MWC 297 as a point-source 
+with a spectral index of $\alpha = 1.03\pm0.02$. This contamination 
+accounted for 73\,per cent and 83\,per cent of peak flux at 450\,$\micron$ 
+and 850\,$\micron$ respectively. Residual peak fluxes were 51$\pm$10\,mJy 
+and 15$\pm$3\,mJy respectively. The residual submillimetre emission for 
+MWC 297 was insufficiently bright to be distinguishable from a larger 
+clump (SMM 4) projected behind it on the sky.
+\item We conclude that radiative heating from one generation of stars 
+is directly influencing the formation of another, but we note that the effect 
+is not large across the region. Our findings suggest that clump SMM 4 
+had begun collapsing before radiative heating from MWC 297 raised 
+the temperatures to 46$\pm$2\,K, to the extent that gravitational 
+collapse is now suppressed or even halted. 
+\end{enumerate}
+
+Serpens MWC 297 region represents a low mass star-forming region with a limited number of YSOcs. We believe that in the future, 
+this region will become dominated by the HII region associated with the star MWC 297. The expansion and shock front of this region 
+will likely play an important role in the subsequent evolution of the cores and clumps we have detected. Further work will look 
+at expanding these methods to produce temperature maps for larger regions within Serpens-Aquila, with a particular eye to 
+possible free-free contamination where OB stars are observed to be forming.
+\\

@@ -1,0 +1,1045 @@
+\chapter{Radiative heating in W40 Complex}
+\label{ch:chapter7}
+
+\section{Temperature maps of the W40 complex}
+The results of the common resolution convolution kernel maps in the form of SCUBA-2 spectral 
+index $\alpha$ and temperature are presented in Figures \ref{fig:alpha} and \ref{fig:temp} respectively. 
+The range of dust temperatures in the W40 complex are comparable, if warmer than those calculated from 
+SCUBA-2 data in NGC1333 by \cite{Hatchell:2013ij} and in Serpens MWC 297 by \cite{Rumble:2015vn}. 
+
+The Dust Arc shows a large range of temperatures along its length. Lowest temperatures of 16$\pm$2\,K 
+are recorded in the far west of Arc. From there temperatures increase from west to east over a range of 
+approximately 23\,K to 33\,K. The Arc appears fragmented into a number clumps. These clumps have 
+cooler interiors, with temperatures around 20$\pm$1\,K, and significantly warmer exteriors with temperature 
+approaches 50\,K with uncertainties between 20 to 30\%. The northern side of the Dust Arc has a slight 
+over density of warmer pixels compare to the souther side. It is notable however that the temperature 
+around OS2a are the lowest in the whole region at 11$\pm$2 in spite of allowing for free-free and CO 
+emission.
+
+W40-N is a little studied object as it is not in close proximity to the OB association and star cluster. 
+W40-NA, B and C have a remarkably consistent temperatures with standard deviation of 5\,K 
+(compared to 8\,K in the Dust Arc). It is significantly cooler than the Dust Arc with a mean temperature 
+of 21$\pm$4\,K compared to 26$\pm$4\,K.
+
+W40-S is a filament composed of four major clouds. The bulk of the filament is on the periphery 
+of the \HII\ region/nebulosity SH-64. There is a sharp contrast between the temperatures of the four clouds 
+with B and D the warmer bodies both at 20$\pm$3 and 20$\pm$3\,K. A and C are significantly cooler with 
+temperatures of 14$\pm$1 and 16$\pm$2\,K. In addition to W40-S there are a number of smaller clouds of 
+similar temperatures that are not associated with the three identified regions of the W40 complex.
+
+%\emph{Spitzer} GBS extinction maps are higher resolution and can probe to significantly higher 
+%extinctions than optical methods and these are consistent with the SCUBA-2 peak extinctions where $A_{v}$ is 
+%typically around 30.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The SCUBA-2 clump catalogue}
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=1.0]{/Users/damian/Documents/Thesis_et_al/Papers/starformation_in_W40/W40images/20150904_temperature+H70.pdf}
+\caption{Temperature map of the W40 complex with \emph{Herschel} 70\,$\micron$ contours at 300, 1200, 4800 and 12000\,MJy/Sr.}
+\label{fig:temp}
+\end{center}
+\end{figure*}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.6]{/Users/damian/Documents/Thesis_et_al/Papers/starformation_in_W40/W40images/20150805_clumpmap.pdf}
+\caption{Clumps identified in the SCUBA-2 CO subtracted, 4\arcmin\ filtered and free-free subtracted 850\,$\micron$ data using the Starlink clump-finding algorithm \texttt{fellwalker}. Clumps are indexed in order of highest to lowest flux density which matches the order presented in Tables \ref{tab:results1} and \ref{tab:results2}.}
+\label{fig:clumps}
+\end{center}
+\end{figure}
+
+
+In this section we use the Starlink \texttt{fellwalker} algorithm to identify clumps in the SCUBA-2 850\,$\micron$, CO subtracted, 
+4\arcmin\ filtered, free-free subtracted data. We determine clumps' fluxes, temperatures, column densities and YSO densities. 
+We calculate masses, Jeans masses, Jeans stability and projected distance between each clump and OS1aS (from here on 
+in referred to as OS1a), the primary ionising star in the OB association.  
+
+\subsection{Clumpfinding analysis}
+%Parameterisation of FW and clump catalogue.\cite{}
+
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=0.5]{/Users/damian/Documents/Thesis_et_al/Papers/starformation_in_W40/W40images/20150902_histogramresults.pdf}
+\caption{Histograms of the properties of clumps within the W40 complex. Top left) describes mass segregation, top right) column density segregation, bottom left) temperature distribution of clumps and bottom right) Jeans stability of clumps. Total height of bars includes the full set of clumps. Blue is a subset of clumps that have real, calculated temperature, yellow is further subset of clumps with real temperature and at least one YSO present within the body of the cloud. Red bars show those clumps where no temperature data is available therefore a value of 15$\pm$2\,K \citep{Rumble:2015vn} has been assumed for the purpose of these calculations.}
+\label{fig:hist}
+\end{center}
+\end{figure*}
+
+\begin{table*}%[h]
+\caption{A sample of submillimetre clumps and their respective SCUBA-2 and \emph{Herschel} fluxes. The full table is available online.}
+\begin{tabular}{@{}llllll}
+Index$^{a}$	&	Object name$^{a}$	&	70\,$\micron$ flux$^{b}$&		450\,$\micron$ flux$^{c}$	&	850\,$\micron$ flux$^{c}$	&	21\,cm flux$^{d}$\\
+	&		&	(MJy/Sr)&		(Jy)	&	(Jy)	&	(Jy)\\
+\hline
+\hline
+W40-SMM1	&	JCMTLSG J18h31m20.9909s -02d06m20.2932s	&	8304		&	93.50	&	10.44	&	0.124\\
+W40-SMM2	&	JCMTLSG J18h31m10.1841s -02d04m41.2862s	&	3834		&	56.38	&	6.77	&	0.006\\
+W40-SMM3	&	JCMTLSG J18h31m10.3844s -02d03m50.2869s	&	3622		&	71.64	&	9.26	&	0.005\\
+W40-SMM4	&	JCMTLSG J18h31m09.5833s -02d06m26.2843s	&	1982		&	26.72	&	3.06	&	0.011\\
+W40-SMM5	&	JCMTLSG J18h31m21.1910s -02d06m56.2928s	&	5007		&	41.98	&	4.73	&	0.091\\
+W40-SMM6	&	JCMTLSG J18h31m10.5841s -02d05m41.2859s	&	2322		&	54.28	&	6.54	&	0.008\\
+W40-SMM7	&	JCMTLSG J18h31m16.7880s -02d07m05.2899s	&	4854		&	62.94	&	6.87	&	0.013\\
+W40-SMM8	&	JCMTLSG J18h31m46.8079s -02d04m26.2952s	&	2185		&	46.21	&	5.96	&	0.003\\
+W40-SMM9	&	JCMTLSG J18h31m38.8027s -02d03m35.2982s	&	3533		&	32.30	&	3.77	&	0.015\\
+W40-SMM10	&	JCMTLSG J18h31m03.7784s -02d09m50.2738s	&	344		&	24.63	&	3.57	&	0.004\\
+\hline
+\end{tabular}\\
+\raggedright
+$^{a}$Position of the highest value pixel in each clump (at 850\,$\micron$). \\
+$^{b}$Mean \emph{Herschel} 70\,$\micron$ flux of the clumps.\\
+$^{c}$Integrated SCUBA-2 fluxes of the clumps. The uncertainty at 450\,$\micron$ is 0.017\,Jy and at 850\,$\micron$ is 0.0025\,Jy. There is an additional systematic error in calibration of 10.6 and 3.4\,\% at 450 and 850\,$\micron$.\\
+$^{d}$Absolute mean VLA 21\,cm flux of the clumps.\\
+\label{tab:results1}
+\end{table*}%Thesis - add details of testing here.
+
+
+
+In this section we use the clump-finding algorithm \texttt{fellwalker} \citep{Berry:2014vn} to extract a catalogue 
+of irregular clumps from the SCUBA-2 850\,$\micron$ data (Figure \ref{fig:maps}). Each clump then forms the 
+basis of a mask for the temperature map (Figure \ref{fig:temp}) so that a single clump temperatures can be 
+found and used to calculate various additional properties. 
+
+Details of how we apply apply \texttt{fellwalker} to SCUBA-2 data are given in \cite{Rumble:2015vn}. By 
+setting the parameter MinDip = 3$\sigma$, \texttt{fellwalker} is tuned to breakup large-scale continuous 
+clouds with multiple bright cores into discrete clumps. Noise and MinHeight parameters were set to 5$\sigma$ 
+and MaxJump was set to one pixel ensuring that all extracted clumps were significant detections but allowing 
+for fragmentation peaks. By setting MinPix to four pixels, a large number of single pixel objects which were likely 
+noise artefacts were removed from the catalogue.   
+
+The original observations also include objects that are part of Serpens South which is located near to the W40 
+complex on the sky. There is no physically defined point in the SCUBA-2 data that describes where the W40 complex ends 
+and Serpens South begins and so we define an arbitrary cut off along the line of RA(J2000) = 18:30:40 with all 
+eastward points belonging to the W40 complex and westward points belonging to Serpens South. Whilst this 
+approach may risk associating some clumps with the wrong cloud, we estimate this will affect less than 5\% of 
+members overall. We identify 82 clumps in the W40 complex and their fluxes at 70, 450, 850\,$\micron$ and 
+21\,cm are presented in Table \ref{tab:results1}. Clump positions are presented in Figure \ref{fig:clumps}.
+
+\begin{table*}%[h]
+\caption{The properties of a sample of submillimetre clumps in the W40 complex. The full table is available online.}
+\begin{tabular}{@{}llllllllll}
+Index	&	S$_{850}$$^{a}$	&	Mass$^{b}$	&	Temp$^{c}$.	&	Column density$^{d}$	&	YSO density$^{e}$	&	Protostars$^{e}$	&	M$_{\mathrm{J}}$$^{f}$	&	M/M$_{\mathrm{J}}$	&	Distance$^{g}$ \\
+	&	(Jy)	&	(M$_{\odot}$)	&	(K)	&	(H$_{2}$ cm$^{-2}$)	&	(YSO$\hbox{ pc$^{2}$}$)	&	(per clump)	&	(M$_{\odot}$)	&		&	(pc) \\
+\hline
+\hline
+W40-SMM1	&	10.44	&	12.5$\pm$2.6	&	33.6$\pm$5.7	&	75$\pm$16 $\times$10$^{21}$	&	147	&	4	&	20.6$\pm$3.5	&	0.6$\pm$0.2	&	0.3\\
+W40-SMM2	&	6.77	&	9.65$\pm$1.66	&	28.1$\pm$3.7	&	69$\pm$12 $\times$10$^{21}$	&	17	&	0	&	12.9$\pm$1.7	&	0.8$\pm$0.2	&	0.6\\
+W40-SMM3	&	9.26	&	16.63$\pm$3.32	&	23.0$\pm$3.2	&	83$\pm$17 $\times$10$^{21}$	&	22	&	1	&	14.6$\pm$2.0	&	1.1$\pm$0.3	&	0.7\\
+W40-SMM4	&	3.06	&	4.01$\pm$0.67	&	30.2$\pm$3.9	&	62$\pm$10 $\times$10$^{21}$	&	26	&	1	&	9.2$\pm$1.2	&	0.4$\pm$0.1	&	0.7\\
+W40-SMM5	&	4.73	&	5.55$\pm$1.15	&	33.1$\pm$5.5	&	57$\pm$12 $\times$10$^{21}$	&	86	&	1	&	13.8$\pm$2.3	&	0.4$\pm$0.1	&	0.3\\
+W40-SMM6	&	6.54	&	9.92$\pm$1.66	&	27.8$\pm$3.7	&	73$\pm$12 $\times$10$^{21}$	&	21	&	1	&	12.9$\pm$1.7	&	0.8$\pm$0.2	&	0.6\\
+W40-SMM7	&	6.87	&	7.3$\pm$1.48	&	35.8$\pm$6.0	&	44$\pm$8.8 $\times$10$^{21}$	&	47	&	0	&	18.1$\pm$3.0	&	0.4$\pm$0.1	&	0.5\\
+W40-SMM8	&	5.96	&	10.82$\pm$1.72	&	23.8$\pm$2.8	&	60$\pm$10 $\times$10$^{21}$	&	25	&	1	&	10.6$\pm$1.3	&	1.0$\pm$0.2	&	0.7\\
+W40-SMM9	&	3.77	&	5.97$\pm$1.24	&	26.3$\pm$4.2	&	48$\pm$10 $\times$10$^{21}$	&	56		&	0	&	10.4$\pm$1.6	&	0.6$\pm$0.2	&	0.5\\
+W40-SMM10	&	3.57	&	10.52$\pm$1.78	&	16.5$\pm$1.6	&	80$\pm$14 $\times$10$^{21}$	&	36	&	2	&	7.3$\pm$0.7	&	1.5$\pm$0.3	&	1.1\\
+\hline
+\end{tabular}\\
+\raggedright
+$^{a}$Integrated SCUBA-2 850\,$\micron$ fluxes of the clumps. The 850\,$\micron$ uncertainty is 0.0025\,Jy. There is an additional systematic error in calibration of  3.4\,\%.\\
+$^{b}$As calculated with equation \ref{eqn:mass}. These results do not include the systematic error in distance (10\,\%) or opacity (100\,\%).\\
+$^{c}$Mean temperature as calculated from the temperature maps. Where no temperature data is available an arbitrary value of 15$\pm$2\,K is assigned that is consistent with previous authors (\citeauthor{Johnstone:2000fk}\citeyear{Johnstone:2000fk}, \citeauthor{Kirk:2006vn},\citeyear{Kirk:2006vn}, \citeauthor{Rumble:2015vn}\citeyear{Rumble:2015vn}).\\
+$^{d}$Peak column density of the clamp. These results do not include the systematic error in distance (10\,\%) or opacity (100\,\%).\\
+$^{e}$Calculated from composite YSO catalogue outlined in Section 2.3.\\
+$^{f}$As calculated with Equation \ref{eqn:sadavoy}. These results have a systematic uncertainty due to distance of 10\,\%.\\
+$^{g}$Projected distance between clump and OS1a, the primary ionising star in the W40 complex OB association. \\
+\label{tab:results2}
+\end{table*}
+
+
+\subsection{Clump Temperatures}
+%Temps per clump and distribution per clump
+
+The mean temperature for clumps in the W40 complex is calculated and presented in Table \ref{tab:results2}. 
+21 clumps detected at 850\,$\micron$ are not detected at 450$\micron$ and therefore do not have associated 
+temperature data. For these cases we assign a temperature of 15$\pm$2\,K, consistent with \cite{Rumble:2015vn}. 
+Where temperature data only partially covers the 850\,$\micron$ clump we assume the vacant pixels have a 
+temperature equal to the mean of the occupied pixels. The W40 complex has a broad spread of temperatures 
+between 10 and 37\,K (as shown in Figure \ref{fig:hist}) with a modal value of 17\,K. 
+
+The mean percentage error in temperature across all clumps is 16\% due to calibration uncertainty. This 
+corresponds to an uncertainty of 3\,K on the mean clump temperature of 19\,K. This mean clump temperature 
+is larger than the 15$\pm$2\,K found by \cite{Rumble:2015vn} in the Serpens MWC 297 region. The Dust 
+Arc is notably warmer than the other major clouds in the region with a mean temperature of 26$\pm$4\,K 
+compared to W40-N (21$\pm$4\,K) and W40-S (17$\pm$3\,K). The mean temperature of the peripheral 
+clumps is 15$\pm$2\,K. Given that these mean temperatures are calculated from clumps with measured 
+temperatures only, it is remarkable that the mean temperatures for an isolated clump is identical to that 
+in the Serpens MWC 297 region \citep{Rumble:2015vn} and completely consistent with the assumptions 
+used by \cite{Johnstone:2000fk} and \cite{Sadavoy:2010ve}. 
+
+W40-SMM 35 is the coolest of the regular clumps with a temperature of 10$\pm$1\,K. This temperature is 
+comparable with the Class 0 object S2-YSOc1 detected in the Serpens MWC 297 region \citep{Rumble:2015vn} 
+and we find that this small clump contains a single YSO. The clump is isolated from the rest for the W40 
+complex, outside the main nebulosity Sh-64, and away from any active areas of star-formation as it has limited 
+\emph{Herschel} 70\,$\micron$ flux of 1300\,MJy/Sr. W40-SMM 7 and 14 are the warmest clumps detected 
+both with temperatures of 36$\pm$6\,K. Both are neighbouring clumps found in the Dust Arc, approximately 
+0.5\,pc from OS1a.
+
+\subsection{Clump column density and mass}
+%Clump densities related to star-formation
+
+SCUBA-2 850\,$\micron$ fluxes, $S_{\mathrm{850}}$, listed in Table \ref{tab:results1} are 
+used to calculate the mass of the clumps in the W40 complex by assuming a single 
+temperature grey body spectrum \citep{Hildebrand:1983fy}. We follow the standard 
+method for calculating clump mass for a given distance, $d$, and dust opacity, 
+$\kappa_{\mathrm{850}}$, (\citeauthor{Johnstone:2000fk} \citeyear{Johnstone:2000fk}; 
+\citeauthor{Kirk:2006vn} \citeyear{Kirk:2006vn}; \citeauthor{Sadavoy:2010ve} 
+\citeyear{Sadavoy:2010ve}; \citeauthor{Enoch:2011lh} \citeyear{Enoch:2011lh}). 
+Masses are calculated by summing fluxes over pixels $i$ using
+
+\begin{eqnarray}
+M & = 0.39 \sum_{i} S_{{\mathrm{850},i}}\left [\exp \left(\frac{17\,\mathrm{K}}{T_{\mathrm{d},i}} \right) - 1 \right ] & \nonumber \\
+& \times \left(\frac{d}{250\,\mathrm{pc}} \right)^{2}\left(\frac{\kappa_{\mathrm{850}}}{0.012\,\mathrm{\hbox{cm}^{2} \hbox{g}^{-1}}} \right)^{-1}.
+\label{eqn:mass}
+\end{eqnarray}
+
+There is a high degree of uncertainty in the value of $\kappa_{\mathrm{850}}$. We follow the 
+popular OH5 model of opacities in dense ISM, with a specific gas to dust ratio of 161, giving $\alpha$ 
+= 0.012 $\hbox{cm}^{2}\,\hbox{g}^{-1}$ though \cite{Henning:1995qf} finds that  $\kappa_{\mathrm{850}}$ 
+can vary by up to a factor of two. This model is consistent with $\beta$ = 1.8 over a wavelength 
+range of 30\,$\micron$--1.3\,mm. We assume a distance $d = 500\pm50\hbox{ pc}$ following 
+\cite{Mallick:2013kx} as outlined in Section 1.
+
+Figure \ref{fig:hist} shows the distribution of clump masses in the W40 complex. The total mass of 
+all clumps in the W40 complex is 239$\pm$9\,M$_{\odot}$. 50\% of all clumps have a mass of 
+1.2\,M$_{\odot}$ or less whereas the 12 most massive clumps contain more mass than all the 
+others combined. Five clumps have masses greater than 10\,M$_{\odot}$ with W40-SMM3 the 
+most massive clump at 17$\pm$3\,M$_{\odot}$. The Dust Arc, W40-N and W40-S have collective 
+masses of 87$\pm$6, 73$\pm$5 and 31$\pm$3\,M$_{\odot}$ respectively confirming the Dust Arc 
+as the most massive structure in the W40 complex. W40-SMM 10 and 16 are two clouds that, with 
+masses of 11$\pm$2 and 12$\pm$2\,M$_{\odot}$, are amongst the most massive in the complex. 
+However, they are isolated clouds well outside of Sh2-64. Like W40-SMM 22, 33 and 35, these 
+peripheral clouds all have relatively low temperatures often less than 15\,K.
+
+Maps of column density are presented in Figure \ref{fig:CD} and \ref{fig:hist}. Previous authors 
+\citep{Johnstone:2000fk,Sadavoy:2010ve} have often used an assumed constant temperature 
+in this calculation. However, we can now incorporate temperature measurements alongside 
+the SCUBA-2 850$\micron$ fluxes to calculate column densities from pixel masses, M$_{i}$, 
+using the standard method of mass per unit area, A$_{i}$ and the mean molecular mass, per 
+H$_{2}$, ($\mu$=2.8, \citeauthor{kauffmann08} \citeyear{kauffmann08}), 
+
+\begin{equation}
+N_{i,H_{2}}=\frac{M_{i}}{\mu _{H_{2}}m_{p}A_{i}}.
+\label{eqn:CD}
+\end{equation}
+
+We find the range of peak column densities across our sample of clumps to be 8 to 136 
+$\times$10$^{21}$ H$_{\mathrm{2}}$ cm$^{-2}$. The median clump column density is 
+22$\times$10$^{21}$ H$_{\mathrm{2}}$ cm$^{-2}$ which is larger than the 7$\times$10$^{21}$ 
+H$_{\mathrm{2}}$ cm$^{-2}$ reported by \cite{Konyves:2015uq} using \emph{Herschel} data 
+because the atmospheric subtraction with of SCUBA-2 results in a selection basis that omits 
+the low column density clumps from the sample \citep{Ward-Thompson:2015fk}. 
+
+We calculate the average volume density along the line of sight for clumps from peak column 
+density and mean clump size along the x and y axis, as calculated by \textsc{fellwalker}, to obtain 
+a lower limit on clump density. From this we define a list of `dense cores' where the density limit is 
+greater than 10$^{5}$\,cm$^{-3}$ (the threshold density of star-formation) and the effective size is 
+greater than the typical core diameter of 0.05$\hbox{ pc}$ \citep{Rygl:2013ve}. In total, 33 dense 
+cores are listed in Table \ref{tab:dense}, along with any known YSO within the clump and the Jeans 
+stability of the clump. The Dust Arc has nine cores, W40-N has nine cores, W40-S has four and there 
+are 11 isolated dense cores. In total 40\% of the cores have densities greater than 10$^{-5}$\,cm$^{-3}$ 
+confirming that significant proportion of clumps in the W40 complex are likely undergoing star-formation.
+
+W40-SMM 19 is the densest core with a peak column density of 135$\pm$29$\times$10$^{21}$ 
+H$_{\mathrm{2}}$ per cm$^{-2}$ (volume density 13.8$\times$10$^{5}$ cm$^{-3}$). As outlined 
+in Section 4.21, the SCUBA-2 spectral index for this object, after accounting for free-free 
+emission, is suspiciously low. Given its prominent location at the centre of the stellar cluster 
+(YSO-density of 234 YSOs$\hbox{ pc$^{-2}$}$) and the confirmed presence of an \UCHII\ region 
+associated with the Herbig Be star, we have reason to believe the minimum temperature of 8.8\,K 
+calculated for this clump, and therefore the density, is unreliable. 
+
+W40-SMM 16 has a peak column density of 120$\pm$19$\times$10$^{21}$ H$_{\mathrm{2}}$ per 
+cm$^{-2}$ which is comparable to W40-SMM 19. However the volume density is approximately a 
+third at 3.7$\times$10$^{5}$ cm$^{-3}$. For the reasons outlined, we believe that this core is 
+a cool, massive, isolated core and therefore the calculated high densities of W40-SMM 16 are reliable. 
+
+%We calculate the volume density of some of the highest column density clumps in our catalogue. 
+%This requires estimating a core mass, M$_{\mathrm{core}}$, within a core radius, R$_{\mathrm{core}}$, 
+%using the method outlined in \cite{Konyves:2015uq} 
+
+%\begin{equation}
+%n_{H_{2}}^{ave}=\frac{M_{\mathrm{core}}}{\frac{4}{3}\pi R_{\mathrm{core}}^{3}}\frac{1}{\mu _{H_{2}}m_{p}}.
+%\label{eqn:VD}
+%\end{equation}
+
+%R$_{\mathrm{core}}$ is estimated from the size of an extinction contour set at twice the threshold 
+%of clumps containing YSOs (the threshold is noted at 20$\times$10$^{21}$ H$_{\mathrm{2}}$ per 
+%cm$^{-2}$ in Figure \ref{fig:hist}, corresponding to an A_{v} $\geq$ 22) [I'm very dubious about this method]. 
+%Where the volume density exceeds 10$^{5}$ cm$^{-3}$ we define the clump as containing a `dense 
+%core'. 
+
+%Accurate temperature information can be combined with flux to derive the column densities and extinction 
+%for the W40 complex. Clouds in the W40 complex have a mean extinctions of 24$\pm$18, calculated from 
+%column densities assuming $N_{\mathrm{H_{2}}}=0.94\times10^{21} A_{v} \hbox{mag}$ \citep{Bohlin:1978kx}.
+%This extinctions exceed the optical extinctions given by \cite{Vallee:1987xr} and the \cite{Dobashi:2005uq} 
+%Dark Cloud Atlas as expected. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.4]{/Users/damian/Documents/Thesis_et_al/Papers/starformation_in_W40/W40images/20150819_CD+YSO.pdf}
+\caption{SCUBA-2 column density map of the major parts of the W40 complex. Prepared using temperature maps presenting in Figure \ref{fig:temp} for a constant $\beta$ = 1.8. Contours describe YSO surface density with levels at 20, 60, 110, 160 and 210 YSO$\hbox{ pc$^{2}$}$.}
+\label{fig:CD}
+\end{center}
+\end{figure}
+
+\subsection{Clump Stability}
+
+The Jeans instability \citep{Jeans:1902dz} defines a critical ratio, above which the force 
+of gravitational collapse will overwhelm thermal support in a idealised cloud of gas, causing 
+it to collapse and begin star-formation \citep{Sadavoy:2010ve,Mairs:2014zr}. The condition 
+for collapse is defined as when the mass of a clump, M$_{850}$, is greater than the Jeans 
+mass, 
+
+\begin{equation}
+M_{\mathrm{J}} = 1.9\left(\frac{\bar{T}_{\mathrm{d}}}{10\,\mathrm{K}} \right)\left(\frac{R_{\mathrm{J}}}{0.07\,\mathrm{pc}} \right)\,\mathrm{M}_{{{\sun}}}, 
+\label{eqn:sadavoy}
+\end{equation}
+
+where $\bar{T_{d}}$ is mean clump temperature and $R_{J}$ is the effective radius 
+of the clump, as determined by clump area (in pixels) from \textsc{fellwalker}, assuming 
+spherical structure and that the effective radius is less than that of the clump. Alternatively 
+the condition of Jeans instability can be written as M$_{850}$/M$_{\mathrm{J}} \geq$  1. 
+\cite{Rumble:2015vn} covers this method in more detail. 
+
+Clump instability is presented in Table \ref{tab:results2} and Figure \ref{fig:hist}. Of the 82 
+clumps in the W40 complex, we find that 10 are unstable. We have confidence that 
+W40-SMM 16, 35 and potentially 10 are unstable and may collapse to form stars because 
+they have M$_{850}$/M$_{\mathrm{J}} \geq$  1.5. Again, all three of these objects are cool 
+clumps on the periphery of the OB association, with projected distances of approximately 
+2.9, 2.4 and 1.1\,pc from OS1a. 
+
+Despite having the most mass in the region, the clumps in the Dust Arc are mostly below 
+the threshold required for collapse. The same is true for the clumps in W40-N. It is 
+important to note that whilst the Dust Arc is significantly warmer than W40-N (26$\pm$4\,K 
+to 21$\pm$4\,K) giving it a mean Jeans mass of 9.8\,M$_{\odot}$, Figure \ref{fig:CD} 
+shows dense cores along the breadth of the filament. Contrast that with W40-N where 
+dense cores are confined to W40-SMM 8 and 12. For overdensities like these to occur 
+suggests that these respective clumps have already begun to collapse, despite not being 
+Jeans critical, suggesting that external pressure could be contributing to overcoming 
+thermal support. 
+
+By contrast, W40-S contains four major clumps where column density appears correlated 
+with stability. W40-SMM 15 and 18 are Jeans critical and both have high column densities 
+of 79$\pm$15 and 61$\pm$11$\times$10$^{21}$ H$_{\mathrm{2}}$ cm$^{-2}$ whereas 
+W40-SMM 24 and 27 have lower densities of 38$\pm$10 and 32$\pm$8$\times$10$^{21}$ 
+H$_{\mathrm{2}}$ cm$^{-2}$ and are both sub-critical. Stability is listed alongside the dense 
+cores in Table \ref{tab:dense}. 
+
+\begin{table}%[h]
+\caption{Dense cores in the W40 complex.}
+\begin{tabular}{|lllcl}
+Clump ID & Radius$^{a}$ & Density$^{b}$                      & Protostars & M/M$_{\mathrm{J}}$ \\
+(W40-SMM)&  (pc)   & ($\times$10$^{5}$ cm$^{-3}$) &    &                    \\
+\hline
+\hline
+1        & 0.14   & 1.7                          & 4          & 0.6$\pm$0.2        \\
+2        & 0.10   & 2.2                          & -          & 0.8$\pm$0.2        \\
+3        & 0.14   & 1.9                          & 1          & 1.1$\pm$0.3        \\
+4        & 0.07   & 3.0                          & 1          & 0.4$\pm$0.1        \\
+5        & 0.12   & 1.7                          & 1          & 0.4$\pm$0.1        \\
+6        & 0.12   & 1.9                          & 1          & 0.8$\pm$0.2        \\
+7        & 0.12   & 1.2                          & -          & 0.4$\pm$0.1        \\
+8        & 0.10   & 1.9                          & 1          & 1.0$\pm$0.2        \\
+9        & 0.09   & 1.7                          & -          & 0.6$\pm$0.2        \\
+10       & 0.11   & 2.4                          & 2          & 1.5$\pm$0.3        \\
+12       & 0.09   & 2.7                          & -          & 1.0$\pm$0.2        \\
+13       & 0.13   & 1.1                          & 1          & 0.7$\pm$0.2        \\
+14       & 0.10   & 1.1                          & -          & 0.3$\pm$0.1        \\
+15       & 0.09   & 3.0                          & -          & 1.1$\pm$0.2        \\
+16       & 0.10   & 3.7                          & -          & 2.3$\pm$0.4        \\
+18       & 0.07   & 3.0                          & -          & 1.0$\pm$0.2        \\
+20       & 0.07   & 1.6                          & -          & 0.3$\pm$0.1        \\
+22       & 0.07   & 2.5                          & n/a$^{c}$          & 1.0$\pm$0.2        \\
+23       & 0.07   & 1.2                          & -          & 0.3$\pm$0.1        \\
+25       & 0.07   & 1.4                          & -          & 0.3$\pm$0.1        \\
+26       & 0.06   & 2.1                          & -          & 0.4$\pm$0.1        \\
+30       & 0.06   & 1.9                          & -          & 0.6$\pm$0.1        \\
+32       & 0.06   & 1.2                          & 1          & 0.3$\pm$0.1        \\
+33       & 0.07   & 1.8                          & 2          & 0.7$\pm$0.2        \\
+34       & 0.06   & 1.7                          & 1          & 0.4$\pm$0.1        \\
+35       & 0.08   & 2.1                          & -          & 1.8$\pm$0.4        \\
+36       & 0.09   & 1.1                          & -          & 0.9$\pm$0.2        \\
+37       & 0.06   & 1.7                          & 1          & 0.8$\pm$0.2        \\
+40       & 0.05   & 1.3                          & -          & 0.3$\pm$0.1        \\
+41       & 0.06   & 1.2                          & -          & 0.4$\pm$0.1        \\
+42       & 0.06   & 1.1                          & 1          & 0.3$\pm$0.1        \\
+44       & 0.07   & 1.1                          & -          & 0.5$\pm$0.2        \\
+46       & 0.60    & 1.1                          & -          & 0.3$\pm$0.1       \\
+\hline
+\end{tabular}\\
+\raggedright
+$^{a}$ Effective radius calculated from effective area by the clump-finding algorithm \texttt{fellwalker}.\\         
+$^{b}$ A lower limit of the average volume density of a dense core along the line of sight.\\       
+$^{c}$ Clumps beyond the coverage of our composite YSO catalogue.\\
+\label{tab:dense}
+\end{table}
+
+\subsection{YSO distribution}
+
+In this section we consider the YSO distribution based on the composite YSO catalogue 
+produced from the SGBS merged with the catalogues published by \cite{Kuhn:2010kl}, 
+\cite{Rodriguez:2010bs}, \cite{Maury:2011ys} and \cite{Mallick:2013kx}. The YSO 
+distribution was mapped by convolving the YSO positions with a 2\arcmin\ FWHM gaussian 
+to produce a surface density map up to units of YSOs per pc$^{2}$ as shown in Figure 
+\ref{fig:CD}. The stellar cluster is visible in Figure \ref{fig:CD} and has a FWHM size of 
+approximately 3\arcmin30\arcsec\ $\times$ 2\arcmin30\arcsec. The Dust Arc has its east 
+end located towards the centre of the star cluster where density peaks at 232 
+YSOs$\hbox{ pc$^{2}$}$. However, this value quickly drops off to 20 YSOs$\hbox{ pc$^{2}$}$ 
+at its western edge at W40-SMM 31. Overall the Dust Arc has an average density of 61 
+YSOs$\hbox{ pc$^{2}$}$ which is significantly more than either W40-N (26 
+YSOs$\hbox{ pc$^{2}$}$) or W40-S (17 YSOs$\hbox{ pc$^{2}$}$). 
+
+In addition to the surface density, the absolute number of YSOs located within the body of 
+the clump was also recorded. Given its proximity to the peak YSO surface density and the size 
+of the clump, it is unsurprising that W40-SMM 1 has the largest number of embedded YSOs 
+at nine. A total of 21/82 clumps have at least one Class 0/I protostar. 
+
+In addition to low mass stars, the proximity of clumps to high mass stars is also estimated 
+through the projected distance between the clump and the primary ionising star OS1a. 
+The ability of this star to heat its surroundings is evidenced through the presence of an 
+\HII\ region producing the radio emission seen in Figure \ref{fig:21cm} where gas temperatures 
+are at a minimum of 10,000\,K. Comparisons between clump temperature and distance 
+can be used to determine what effect, if any, the massive stars in the W40 complex are 
+having on the dust temperatures. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Discussion}
+
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=0.55]{/Users/damian/Documents/Thesis_et_al/Papers/starformation_in_W40/W40images/20150809_herschel.pdf}
+\caption{\emph{Herschel} 70\,$\micron$ flux density map of the W40 complex. Morphological features of W40-N and the Dust Arc are labelled along side major clumps detected in SCUBA-2 850\,$\micron$ emission (see Figure \ref{fig:clumps} for accurate clumps positions). Black contours show SCUBA-2 850\,$\micron$ at the 5$\sigma$ and 50$\sigma$ level. Red contours show HARP $^{12}$CO 3\hbox{--}2 redshifted (10.5\,km s$^{-2}$) emission at 5, 25 and 75\,K\,km s$^{-1}$. White contours show archival VLA 21\,cm emission at 5$\sigma$ and 25$\sigma$ \citep{Condon:1998kx}.}
+\label{fig:H70}
+\end{center}
+\end{figure*}
+
+In this paper, we use SCUBA-2 450 and 850\,$\micron$ data to investigate the role of 
+radiative feedback in star-formation in the W40 complex, whilst accounting for known 
+sources of submillimetre contamination. We observed $^{12}\textrm{CO}$ 3\hbox{--}2 
+345\,GHz line emission which is known to contaminate the SCUBA-2 850\,$\micron$ 
+band \citep{Drabek:2012uq} and analysed archival VLA 3.6 \citep{Rodriguez:2010bs} 
+and 21\,cm \citep{Condon:1998kx} data for traces of free-free emission \citep{Olnon:1975bh} 
+from both large-scale \HII\ and small-scale \UCHII\ regions .
+
+We conduct a clump analysis, using the clump-finding algorithm \texttt{fellwalker} 
+\citep{Berry:2014vn}, on the 850\,$\micron$ flux density maps of the W40 complex 
+and we calculate masses, column densities, Jeans masses and stability of 82 clumps 
+in the region using real temperatures calculated from flux ratio using a constant $\beta$ 
+of 1.8 and a model convolution kernel \citep{Aniano:2011fk, Pattle:2015ys}. We can now 
+compare our results for clumps to various features of the W40 complex, namely proximity 
+of YSO populations, massive stars and the \HII\ region. 
+
+In this discussion section we first examine the evidence for radiative feedback from 
+internal and external sources influencing clump temperature. We then look at what 
+SCUBA-2 and HARP data, as well as \emph{Herschel} and VLA data, can tell us about 
+the stars that have formed and are currently forming, before addressing whether there 
+is evidence that radiative feedback is influencing the star-formation process.  
+
+\subsection{What evidence is there of radiative feedback heating the clumps in the W40 complex?}
+
+The W40 complex is home to a number of prominent sources of radiative feedback. Photons 
+from OS1a and its companion B stars are ionising molecular hydrogen gas that is subsequently 
+detected as free-free emission at radio wavelengths as seen in Figure \ref{fig:21cm}. Lower 
+energy photons have produced the nebulosity SH2-64 which is detected by \emph{Herschel} at 
+70\,$\micron$ where dust is being heated. In addition to this, \cite{Pirogov:2013ys} argues that 
+IRS 5 is powering a secondary \HII\ region, a secondary bubble nebulosity is observed around 
+IRS 5 in the \emph{Herschel} 70\,$\micron$ flux data shown in Figure \ref{fig:H70}. \emph{Chandra} 
+observations by \cite{Kuhn:2010kl} have revealed a significant PMS-star cluster alongside the OB 
+association. Submillimetre observations by \cite{Maury:2011ys} have found populations of 
+protostars embedded deep within the molecular clouds which we confirm with SCUBA-2 
+supported by up to 12 molecular outflows identified in $^{12}$CO 3\hbox{--}2 observations (Figure 
+\ref{fig:outflows}).
+
+\subsection{External heating}
+
+We first address the sources of external heating in the W40 complex (see Figure \ref{fig:scatter}). 
+We find that there is a strong correlation between clump temperature and proximity to OS1a. 
+The population of clumps at distances greater than 1.2\,pc (marked) has an average temperature 
+of 16$\pm$3\,K, again consistent with the isolated clumps and the literature (\citeauthor{Johnstone:2000fk} 
+\citeyear{Johnstone:2000fk}, \citeauthor{Kirk:2006vn} \citeyear{Kirk:2006vn} and \citeauthor{Rumble:2015vn} 
+\citeyear{Rumble:2015vn}). At distances less than 1.2\,pc there is a strong negative correlation 
+between temperature and proximity to OS1a, with the exception of W40-SMM 19 (which has an 
+anomalous spectral index, as discussed in Section 5).
+
+VLA 21\,cm emission traces free-free continuum emission. As discussed in Section 1, low density 
+\HII\ regions have temperatures of at least 10,000\,K required to ionise hydrogen. Figures \ref{fig:21cm} 
+and \ref{fig:freefree21} shows the extent of the \HII\ region. Relative to the nebulosity, the \HII\ 
+region is small in size, however it does coincide with several of the SCUBA-2 clumps in the Dust 
+Arc and W40-N. Of the clumps that overlap the \HII\ region, none have a temperature of less than 
+21\,K (ignoring the anomaly of W40-SMM 19) and the mean clump temperature of 29\,K is almost 
+twice that of the typical clump temperature of 15\,K (\citeauthor{Johnstone:2000fk} \citeyear{Johnstone:2000fk}, 
+\citeauthor{Kirk:2006vn} \citeyear{Kirk:2006vn} and \citeauthor{Rumble:2015vn} \citeyear{Rumble:2015vn}).
+
+This step in clump temperatures is also observed when temperature is plotted as a function of 
+YSO density (Figure \ref{fig:scatter}. Above a density of 45 YSO$\hbox{ pc$^{-2}$}$ (marked) the 
+mean clump temperature is 28\,K whereas below the mean is 19\,K. There is deficit of warm 
+clumps at low densities with no clumps exceeding temperatures of 20\,K below 10 YSO$\hbox{ 
+pc$^{-2}$}$. As discussed, our YSO catalogue does not distinguish between embedded protostars 
+and free-floating PMS-stars and therefore the YSO density will be an over-estimate of the density of 
+objects embedded within the clump.
+
+Each temperature relation plotted in Figure \ref{fig:scatter} show some correlation indicative of 
+clump temperature increasing to over double the literature value (15\,K) of a star-forming core 
+towards the centre of the cluster. None of our tests, proximity to OB stars, YSO density 
+or an \HII\ region, are mutually exclusive from the others so critical evaluation is required to 
+determine which is the dominant factor, and which, if any, influence on clump temperature. 
+
+Evaluating these results, we find that the FWHM of the YSO surface density and the 5$\sigma$ 
+level of 21\,cm flux have a similar size of approximately 3\arcmin30\arcsec\ $\times$ 
+2\arcmin30\arcsec, and are both centred on OS1a. We therefore conclude that the similarity of 
+trends between the \HII\ region and the YSO surface density is likely coincidental. Given the 
+uncertainties inherent in our YSO catalogue outlined in Section 1, we conclude that the radiative 
+feedback from OS1a that is producing the \HII\ region is dominating over any potential heating by 
+embedded YSO within this region. The size of the \HII\ region corresponds to a 0.17\,\hbox{ pc} 
+radius, however Figure \ref{fig:scatter} shows temperatures increasing by 1/radius from OS1a 
+out to 1.2\,pc (8\arcmin\ 15\arcsec). Our conclusions support those of \cite{Matzner:2002qf} in 
+that radiative feedback from the OB association (including ionising and non-ionising photons) 
+is the dominant mechanism for heating clumps. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.35]{/Users/damian/Documents/Thesis_et_al/Papers/starformation_in_W40/W40images/20150821_scatterresults.pdf}
+\caption{Plots describing clump temperature as a function of; top) distance, in pc, to OS1a, the most powerful star in the W40 complex, middle) mean VLA 21\,cm flux detected in the area of each clump and bottom) YSO surface density. Circle markers indicate that that clump has at least one YSO detected within it.}
+\label{fig:scatter}
+\end{center}
+\end{figure}
+
+\subsection{Internal heating}
+
+Addressing internal sources of radiative feedback requires an assessment of embedded star-formation 
+occurring within the clumps. The individual locations of YSOs in our composite catalogue, described in 
+Section 2.2, are plotted in Figure \ref{fig:w40ysos} with green markers indicating Class 0/I protostars 
+and red markers indicating Class II/III PMS-stars. Yellow bars in Figure \ref{fig:hist} show how the 
+distribution of protostars appears largely random compared to mass ($\geq$1\,M$_{\odot}$), column 
+density ($\geq$12$\times$10$^{21}$ H$_{2}$ cm$^{-2}$), temperature and stability suggesting that 
+the presence of a protostar in a clump has a negligible impact on these properties.
+
+OS2b appears embedded in the tip of W40-SMM1 in Figure \ref{fig:freefree3_6} and an unresolved peak 
+in SCUBA-2 emission at 450 and 850\,$\micron$ is detected, suggesting that we are observing a protostellar 
+envelope. This provides a good case to examine as to whether massive protostars are significantly heating 
+their environment. The B4 classification of the star lead us to conclude that the electron density is insufficient 
+for the free-free emission to be optically thick in the submillimetre. With negligible free-free contribution and 
+CO contamination, we are confident that the temperatures presented in the Figure \ref{fig:temp} are accurate 
+to the best of our knowledge. 
+
+We record a mean temperature for the object of 31$\pm$1\,K for a beam sized aperture centred on OS2b. 
+This is over twice the temperature of a typical star-forming core but consistent with the average temperature 
+of W40-SMM1 (34$\pm$6\,K). Given the proximity to the OB association, we might expect the outer layers of 
+this core to be heated by radiative feedback from OS1a. A better test of whether this object is providing 
+significant internal heating is to measure of the temperature of the dust at the centre of the core (defined as 
+the peak of local SCUBA-2 emission) which is 21$\pm$2\,K. This is comparable to the central temperatures 
+of cores with low mass protostars in the Dust Arc and W40-N (19\,K). We therefore conclude that there is 
+no evidence that stars up to B4 in class can significantly heat their protostellar environment. 
+
+%This conclusion should be considered with respect to the following caveats. Class II objects are detected 
+%as faint discs and Class III objects are almost never detected by SCUBA-2 as the have accreted/blown the 
+%bulk of their envelope. On that basis any PMS-star that appears embedded is likely a free-floating 
+%foreground object. Conversely, most Class I and all Class 0 objects should be observed as embedded in 
+%dust clouds by SCUBA-2, and therefore any protostars that fall below the 5$\sigma$ detection limit should 
+%be considered false detections. We find that embedded protostars are often located near colder spots in 
+%the filaments (Figure \ref{fig:temp}), suggesting that radiative feedback from low mass protostars is not 
+%sufficient to heat the wider clump. However, we note that we do not believe that our catalogue of embedded 
+%protostars is complete.
+
+%In addition to the low mass embedded protostars, we also have a number of high mass embedded protostars. 
+%We have already discussed how the Herbig star OS2a appears anomalous. In Section 3.2 we have argued 
+%that 2MASS J18312144-0206228, 2MASS J18312171-0206416 and 2MASS J18312211-0206593 are high 
+%mass embedded young stars with \UCHII\ regions that are found in W40-SMM 1 and 5. W40-SMM 1 is the 
+%brightest clump in all four wavebands surveyed in Table \ref{tab:results1}, consistent with our conclusion that 
+%the clump houses three embedded B0 spectral class or earlier stars forming within 0.1$\hbox{ pc}$ distance 
+%of each other. Whilst temperatures in the W40-SMM 1 and 5 are above the average at 34$\pm$6 and 
+%33$\pm$6\,M$_{\odot}$, there no is exceptional spike in temperature at the location of the VLA3 \UCHII\ regions 
+%(see Figure \ref{fig:temp} insert). The location of these four massive YSOs and the peak in VLA 3.6\,cm 
+%emission is approximately 3000$\hbox{ au}$ from the peak of the SCUBA-2 emission in W40-SMM1. This, 
+%combined with lack of significantly heated dust, could possibly suggest a blistering of a massive cloud by 
+%the \UCHII\ regions, or even that the bulk of dust in W40-SMM 1 and 5 is in the foreground relative to these 
+%massive stars. 
+
+There is evidence that significantly powerful protostellar outflows can contribute additional 
+localised dust heating through shocks \citep{Buckle:2015vn}. Outflows have been detected 
+in the W40 complex by \cite{Zeilik:1978qf} and more recently \cite{van-der-Wiel:2014vn} 
+found red and blue shifted line wings in the eastern Dust Arc. Our HARP data extends this 
+coverage to the whole of the Dust Arc and W40-N (Figure \ref{fig:CO}). We detect 12 potential 
+molecular outflows which are presented in Figure \ref{fig:outflows}. The highest velocity 
+line-wings of 8.7\,km s$^{-1}$ are recorded in outflow B5-4, thought to be associated with a 
+protostar in W40-SMM2. Line-wings found in Serpens Main by \cite{Graves:2010mb} are 
+detected out to -30\,km s$^{-1}$ and +37\,km s$^{-1}$ from an ambient cloud of similar 
+velocities to the W40 complex. We conclude that the outflows in the W40 complex are 
+relatively weak and that the radiative feedback from outflows is negligible, relative to the 
+levels of the radiative feedback from the protostar itself. 
+
+We therefore conclude that, whilst there is evidence for internal feedback mechanisms through 
+embedded protostars and outflows, there is no evidence that protostars up to B4 in class can 
+significantly heat the dust. 
+
+\subsection{What is the state of star-formation in the W40 complex?}
+
+Our results show significant heating of filaments and dust clouds by radiative feedback 
+from the OB association in the W40 complex. We now discuss what evidence exists to 
+suggests that stars are forming in the W40 complex, and whether radiative feedback is 
+influencing this.
+
+\subsection{First generation star-formation}
+
+The first generation of star-formation concerns the OB association, associated stellar 
+cluster and their immediate environment. Figure \ref{fig:w40ysos} shows the FWHM 
+contour of YSO surface density for this cluster from which we calculate an effective 
+cluster width of 3\arcmin (0.44$\hbox{ pc}$). The association of the stellar cluster 
+and the OB stars OS1a, OS2b and OS3a is well known. Accounting for the mass of 
+the OB stars (Table \ref{tab:stars}, \citeauthor{Shuping:2012ly}\citeyear{Shuping:2012ly}) 
+and a population of 36 PMS-stars within the cluster (based on the modal mass of 
+1\,M$_{\odot}$), we estimate that the total mass required to form this first generation 
+of stars was 76\,M$_{\odot}$ with a high-to-low stellar cluster mass ratio (the ratio of 
+OB stars to all other stars) of approximately 1:1. Allowing for a regional star-formation 
+efficiency (SFE) of 40\% \citep{Konyves:2015uq}, this would require 190\,M$_{\odot}$ 
+to form. This value is approximately 79\% of the total mass detected by SCUBA-2, 
+inferring that an upper limit of stellar cluster that could form in a second generation 
+would be at most 25\% more massive that the first generation cluster. 
+
+The bulk of the stellar cluster and \HII\ region lie in a cavity in the SCUBA-2 emission, 
+with the exception of the eastern end of the Dust Arc. In the previous section we argued 
+that such extreme proximity to the OB association, as opposed to the stellar cluster, 
+was a significant factor in the raised temperatures observed in the eastern Dust Arc. 
+Figure \ref{fig:w40ysos} shows how W40-SMM 1 and 5 contains a population of 
+protostars but also a significant density of PMS-stars. By definition, all PMS-stars will 
+have shed the majority, if not all of their pre-stellar envelopes and therefore we would 
+not anticipate that they would be embedded in a filament at this stage of their life. 
+Assuming that these PMS-stars are instead cluster members of OS1a would likely 
+place them inside \HII\ region surrounding this star and any embedding we observe 
+would likely be caused by chance for/background alignment of the Dust Arc with the 
+cluster.
+
+%An example of this stellar stratification comes when we examine the B4V star OS2b. 
+%This OB star is located within the body of W40-SMM 1, however it is not associated 
+%with a peak in SCUBA-2 emission which would be a signature of an envelope or disk. 
+%Neither do we find evidence that this B star is irradiating, or even ionising the dust 
+%around it as local dust temperatures of 31\,K are comparable to the clump mean. It is 
+%asier to explain OS2b as chance alignment of a cluster member and cloud, than as 
+%a member of the W40-SMM1 cloud. 
+
+HARP data is found to contain two clouds at 5\,km s$^{-1}$ and 10\,km s$^{-1}$ 
+that trace different morphological structures (Figure \ref{fig:2clouds}). The redshifted 
+filament starts in W40-N and traces a line from this cloud to the tip of the Dust Arc. 
+The emission from $^{12}$CO 3\hbox{--}2 is detected in SCUBA-2 850\,$\micron$ 
+and closely fits the HARP data, albeit at high SNRs, as shown in Figure \ref{fig:2clouds} 
+and \ref{fig:H70}. The red filament appears passes directly through the stellar cluster, 
+enveloping the location of OS1a and \HII\ region shown in Figure \ref{fig:H70}. 
+
+CO gas undergoes photodissociation in \HII\ regions and this would lead us to 
+believe that this filament is either shielding CO gas from the UV photons, or that 
+the gas is sufficiently in the foreground or background to the extent they are not 
+located within the \HII\ region. SCUBA-2 does not detect a significant dust filament 
+consistent with redshifted CO and therefore we discount the former premis. 
+Figure \ref{fig:H70} shows how clumps W40-SMM 12, 13, 20, 21, 23 and 39 are 
+consistent both with bright rimmed clouds (BRCs) observed in \emph{Herschel} 
+70\,$\micron$ data and also peaks of redshifted CO emission. This confirms that 
+the CO gas is within the nebulosity, but outside of the \HII\ region. This is consistent 
+with the findings of \cite{Shimoikura:2015kx} who concludes the redshifted filament 
+is a shell of heated CO gas swept up in the expanding shock wave of the around 
+the \HII\ region and we can conclude that many of the line-wing detections in Figure 
+\ref{fig:outflows} are likely caused by shocks as opposed to protostellar outflows. 
+
+The size of the \HII\ region is measured as 6\arcmin $\times$ 3\arcmin\ by 
+\cite{Sharpless:1959hc} and \cite{Vallee:1991zr}. Based on \emph{Herschel} 
+70\,$\micron$ data we measure the size of the wider nebulosity SH2-64 as 
+approximately 11\arcmin\ $\times$ 28\arcmin. Given that the CO gas filament 
+runs parallel to the major-axis of the \HII\ region, and assuming ellipsoidal 
+symmetry, we place a lower limit of distance of the redshifted emission at 
+0.22$\hbox{ pc}$ in the foreground/background relative to OS1a. BRCs are 
+found along the length of W40-N and the eastern Dust Arc and confirm that 
+they are located within the nebulosity. We find these features are located along 
+the `neck' of SH2-64. Assuming typical hourglass structure \citep{Rodney:2008ij} 
+for the larger nebulosity we can place an upper limit of the distance of OS1a to 
+the nearest edge of SH2-64 at 0.8$\hbox{ pc}$.
+
+The SGBS detects a significant number of free-floating Class II objects that 
+formed in the first generation of stars and have subsequently dispersed (Figure 
+\ref{fig:w40ysos}). However only one of these PMS-stars is detected as low mass 
+(less than 1\,M$_{\odot}$) disc by SCUBA-2. This implies that these PMS-stars 
+are sufficiently distant that their discs are too faint to be detected by the JCMT. 
+This is not the case of PMS-stars in the Serpens MWC 297 region which is 
+believed to be part of the less distant Aquila rift (250$\hbox{ pc}$). The 
+non-detection of PMS stellar discs in the W40 complex is further evidence 
+that this region is at greater distance than the Serpens South region.
+
+Based on the evidence presented and discussed, we conclude that the initial 
+phase of star-formation in the W40 complex used approximately 44\% of the 
+initial cloud mass available to produce three OB stars and a stellar clusters of 
+PMS-stars. This system lies offset, along the line of sight, from the Dust Arc and 
+W40-N by approximately 0.58 and 1.60$\hbox{ pc}$ such that the filaments 
+observed by SCUBA-2 lie outside of the \HII\ region, but within the larger 
+nebulosity SH2-64. 
+
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=0.55]{/Users/damian/Documents/Thesis_et_al/Papers/starformation_in_W40/W40images/20150904_YSOs.pdf}
+\caption{SCUBA-2 850\,$\micron$ flux density map. The 4 OB stars OS1a, 2a, 3a and IRS 5 are marked in yellow. YSOcs from our  composite catalogue are displayed. OB stars are marked in yellow, protostars (Class 0/I) are marked as green and PMS-stars (Class II/III) are marked as red. The black contour indicates the 5$\sigma$ level of the SCUBA-2 850\,$\micron$ flux. The FWHM of the YSO surface density (an effective size of the stellar cluster) is also shown.}
+\label{fig:w40ysos}
+\end{center}
+\end{figure*}
+
+
+
+\subsection{Second generation star-formation}
+
+Secondly we consider the current generation of stars that are forming in the W40 
+complex. Nominally these are where dense cores (Table \ref{tab:dense}) are found 
+within the filaments and clouds. We find that 13 out of 33 of our dense cores contain 
+a protostar and the remaining cores are likely starless. 
+
+W40-S resembles a typical star-forming filament that has undergone collapse and 
+fragmentation into a row of clouds such as Chamaeleon region \citep{Boulanger:1998fk, 
+Young:2005ly, Belloche:2011fk}. At this stage the morphology of the clouds resemble 
+a filament running SE to NW that has undergone collapse and fragmentation into four 
+major sub-clouds. A and C have column densities in excess of 60$\times$10$^{21}$ 
+H$_{2}$ cm$^{-2}$, over twice that of B and D. SGBS has not detected any protostars 
+within any of these clouds, inferring that they are starless. Assuming a SFE of 40\% 
+\citep{Konyves:2015uq}, we estimate that clouds A and C will go onto form stars of 
+between 1 to 2\,M$_{\odot}$. At present the temperatures of B and D are around 20\,K, 
+whereas A and C have a mean temperature of 15\,K. If B and D were to cool sufficiently 
+they could collapse and form stars. All four clouds in W40-S have a mean mass of 
+6$\pm$1\,M$_{\odot}$, but exactly what has caused A and C to begin collapse 
+whilst B and D remain stable remains an open question.
+
+W40-N is a large and fairly continuous cloud with nine dense cores. It has a comparable 
+mass, temperature and number of dense cores to the Dust Arc. Four out of nine contain 
+a protostar in W40-N and five out of nine contain a protostar in the Dust Arc and we 
+therefore conclude that they are at a similar stage of evolution. Many of the dense cores 
+in W40-N have corresponding BRCs (Figure \ref{fig:H70}). Exposure to radiation pressure 
+from OS1a may have triggered the star-formation process in these cores, whereas those 
+clumps less exposed have yet to become Jeans unstable and start collapsing. However, 
+we cannot rule out the possibility that these dense cores existed prior to massive stars, 
+and that the radiation from OS1a has cleared the low density extremities of the envelope 
+to expose the cores. 
+
+We therefore conclude that, like W40-S, W40-N is in the process of forming its first 
+generation of stars, yet unlike W40-S, W40-N does not appear to be fragmented into 
+starless clouds, perhaps as a result of the larger scale merger of two massive filaments 
+\citep{Mallick:2013kx}. There is 73$\pm$5\,M$_{\odot}$ of dust and gas available to form 
+a new star cluster with up to one accompanying massive star. However it is important to 
+note that the future path of star-formation in W40-N will be greatly influenced by the 
+development of OS1a and its \HII\ region.
+
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.35]{/Users/damian/Documents/Thesis_et_al/Papers/starformation_in_W40/W40images/20150908_SMM1.pdf}
+\caption{Archival Herschel 70\,$\micron$ data. Magenta contours (560, 570, 580, 590, 600, 610, 620 mag.) show a number of 2MASS point sources embedded within the eastern Dust Arc (shown in the yellow SCUBA-2 850\,$\micron$ 5, 10, 20, 40, 60, 80$\sigma$ contours with circle markers at the peaks of the W40-SMM1 and 5 clumps). Cyan crosses show the four peaks in Archival AUI/NRAO 3.6\,cm map (contours at 0.01, 0.016 and 0.021\,Jy/beam). The Rodriquez et al. 2010 YSO `VLA3' is also shown.} 
+\label{fig:SMM1}
+\end{centering}
+\end{figure} 
+
+The Dust Arc is a very complex filament and its nature is much debated. Our discussion 
+of star-formation the Dust Arc is split into the relatively simple western Dust Arc and the 
+more complex eastern Dust Arc. 
+
+The western Dust Arc leads from W40-SMM 31 southeast towards W40-SMM 11 and includes 
+the B1 star IRS 5 which appears to be producing a secondary nebulosity (visible in \emph{Herschel} 
+70\,$\micron$ data, Figure \ref{fig:H70}, that is consistent with H$\alpha$ emission presented in 
+\cite{Mallick:2013kx}). A population of Class 0/I protostars are observed in the western Dust Arc 
+\citep{Maury:2011ys}, some of which coincide with dense cores W40-SMM 2, 3, 4 and 6. 
+Typical mass of each star-forming clump is 9\,M$_{\odot}$ with the most massive clump (W40-SMM 3, 
+17$\pm$3\,M$_{\odot}$) having the potential to form a B-type star. This filament lies well outside 
+of the main stellar cluster associated with OS1a and has a with a YSO density of 22 YSO$\hbox{ 
+pc$^{-2}$}$, is comparable to W40-N. 
+
+Some of the most potent outflows we detect are found in the western Dust Arc. Figure 
+\ref{fig:outflows} shows the outflow B5-4 subtending 3\arcmin\ (0.43$\hbox{ pc}$) in 
+length from the the protostar W40-MM5 \citep{Maury:2011ys} in W40-SMM3 supporting 
+the detection of Class 0 objects in the western Dust Arc. As discussed in Section 6.1, 
+the size of these line-wings are not particularly exceptional and given a clump mass of 
+12.5$\pm$2.6\,M$_{\odot}$ we would anticipate that low-to-intermediate mass star-formation 
+to be occurring. W40-SMM2 is the only significant clump in the western Dust Arc that 
+does not have a protostar recorded in our composite YSO catalogue. No significant CO 
+line-wing emission is detected, confirming that this clump is starless. 
+
+Despite its classification as a B1V star, we do not include IRS 5 in the main OB association 
+for the following reasons. Firstly, it has no corresponding \HII\ region that is detected at 
+21\,cm by the VLA (Figure \ref{fig:21cm}). Its own nebulosity appears not only much smaller 
+than OS1a (2.75\arcmin\ compared 11\arcmin) suggesting that it is considerably less 
+evolved, but also that it appears as a distinct bubble within SH2-64. The distances 
+measured by \cite{Shuping:2012ly} places IRS 5 in the foreground, relative to the OB 
+association, and in all likelihood outside of the main nebulosity. Typical `chevron' shaped 
+BRCs from the secondary nebulosity are observed pointing back towards IRS 5 (as 
+opposed to OS1a, W40-SMM7 Figure \ref{fig:H70}) in the western Dust Arc. We therefore 
+conclude that the western Dust Arc is also outside of the nebulosity, though the connection 
+to the eastern Dust Arc confirms that the total line of sight distance between OS1a and 
+IRS 5 is of the order 1$\hbox{ pc}$. Likewise BRCs in the eastern Dust Arc confirm that 
+this filament lies within the nebulosity produced by OS1a.
+
+The eastern Dust Arc is a very complex region of star-formation running from W40-SMM 19 to 14 
+in Figure \ref{fig:clumps}. We have discussed how there is evidence for two cloud components in 
+the HARP data and how emission from W40-SMM 1 is the brightest across \emph{Herschel}, SCUBA-2 
+and VLA wavebands. We have summarised how we believe this region to lie close to, but outside 
+the main stellar cluster and \HII\ region around the OB association.
+
+Significant heating is observed around the outside of the clumps in the eastern Dust Arc (see 
+insert Figure \ref{fig:temp}) and all the clumps (excluding W40-SMM 19) are Jeans stable. A 
+mean clump temperature of 35$\pm$5\,K is the highest of all clumps in the W40 complex. Such 
+high temperatures, as a result of exposure to radiative feedback from OS1a, are leading to 
+increased stability of the clouds, making gravitational collapse due to (lack of) thermal support 
+less likely. 
+
+$^{12}$CO 3\hbox{--}2  (Figure \ref{fig:outflows}) shows many line-wing sources to the north 
+and south of W40-SMM1 from both the 5 and 10\,km s$^{-1}$ clouds. Given that this clump 
+contains four protostars (Table \ref{tab:dense}) with a further one in W40-SMM5, it is not possible 
+to assign individual outflows to protostars, or to rule out that the line-wings could be caused by 
+shocked gas swept up in a shell where the \HII\ region interacts with the filament. The absence 
+of CO line-wing sources in the vicinity of the YSOs near OS2b does suggest that either; these 
+are particularly low mass protostars with weak outflows, that the majority of the $^{12}$CO 
+3\hbox{--}2 has been photo-ionised by the \HII\ region or that protostars detected here are 
+false detections. 
+
+Compact radio sources in part of the eastern Dust Arc are observed by \cite{Rodriguez:2010bs} 
+and are plotted in Figure \ref{fig:3_6cm} where they are aligned with the lower resolution archival 
+AUI/NRAO 3.6\,cm data and the 2MASS source catalogue. \cite{Rodriguez:2010bs} does not cover 
+the four brightest peaks in the AUI/NRAO 3.6\,cm data that lie to the south west, referred to as 
+VLAa, b, c and d (Figure \ref{fig:SMM1}). These objects are orders of magnitude more bright than 
+the \cite{Rodriguez:2010bs} sources and appear in close proximity to strong 850\,$\micron$ emission. 
+Examining the 2MASS source catalogue we find that J18312171-0206416 is consistent with the 
+location of VLAc. J18312144-0206228 is misaligned from VLAa and b by an average of 6.5\arcsec\ 
+whilst J18312211-0206593 is misaligned from VLAd by 5\arcsec. Each 2MASS source is deeply 
+reddened, consistent with an embedded YSO suggesting that these could be young massive 
+protostars. Examining the 70\,$\micron$ data, where the blackbody spectrum of a star is at its 
+peak, FIR emission is brightest in W40-SMM1 around the location of J18312144-0206228. 
+There is also significant emission from location of J18312171-0206416 but not from 
+J18312211-0206593 as shown in Figure \ref{fig:SMM1}. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.30]{/Users/damian/Documents/Thesis_et_al/Papers/starformation_in_W40/W40images/20150821_jeansresults.pdf}
+\caption{Jeans stability as a function of column density. Exterior periphery clumps (defined as having a mean \emph{Herschel} 70\,$\micron$ flux of less than 1000\,MJy/Sr) are marked in blue, interior clumps within the nebulosity SH2-64 are marked in red. The unweighted linear regression fit to each population is marked as a line of the same colour.}
+\label{fig:jeans}
+\end{center}
+\end{figure}
+
+We interpret bright \emph{Herschel} 70\,$\micron$ emission consistent with bright free-free emission 
+as heated dust and dense, ionised hydrogen along the surface of the filament detected in SCUBA-2. There are two 
+potential scenarios that could be providing this. Firstly, this is a shock/ionisation front from where the 
+OS1a \HII\ region is interacting with the eastern Dust Arc \citep{Vallee:1991zr}. Using \cite{Kurtz:1994cr}'s 
+Equation 4 we calculate a Lyman photon density of 4.0$\times$10$^{46}$\,s$^{-1}$ required to 
+produce a total flux density of 0.167\,Jy for all four unidentified VLA sources at 3.6\,cm. We compare 
+this value to the Lyman photon density produced by OS1a, a 09.5v star which is the primary ionising 
+source of the \HII\ region. We assume a minimum distance of 3\arcmin, consistent with \cite{Vallee:1991zr}, 
+and calculate that the proposed ionisation would be exposed to at most 2.1\% Lyman photons produced by 
+OS1a at this distance, corresponding to a Lyman photon density of at least 1.67$\times$10$^{46}$\,s$^{-1}$. 
+The shortfall in photon density is equivalent to that of a single B0.5 star.
+
+The second scenario proposes that the free-free emission detected is produced by a second 
+generation of massive star-formation blistering from the eastern Dust Arc. This claim is supported 
+by the detection of deeply reddened 2MASS objects which coincide with the peak in \emph{Herschel} 
+70\,$\micron$ emission, and by the shortfall in Lyman photons provided by OS1a indicating further 
+massive stars are required to ionise all the gas observed. \cite{Pirogov:2013ys} observes CS 2$\hbox{ --}$1 
+line emission and finds evidence of infalling motion in the eastern Dust Arc and concludes that massive 
+star formation is probably occurring. $^{12}$CO 3\hbox{--}2 is heavily affected by self-absorption in this 
+complex region so a search for outflows and line-wings is of no further help here (Figure \ref{fig:outflows}). 
+Assuming the 1:1 high-to-low stellar cluster mass ratio would allocate approximately 18$\pm$3\,M$_{\odot}$s 
+of material available to form massive star which, given a SFE of 40\%, would be sufficient to form an 
+B0.5 protostar as proposed.
+
+Having weighed up the evidence we conclude that the majority of the 3.6\,cm flux detected in W40-SMM1 
+is likely caused by ionisation from OS1a where the high density filament interacts with the boundary of the 
+\HII\ region. However there is a case to be made for the formation of at least one massive star within the 
+filament (most likely J18312171-0206416), albeit extremely embedded. Further high resolution radio 
+imaging of this region is required to confirm whether the radio emission is amorphous or ultra-compact 
+in nature. 
+
+With regard to the Dust Arc as a whole, we conclude that we are observing a diverse filament 
+that is in the early stages of star-formation. The filament could be of the order one$\hbox{ pc}$ in 
+length, running from near the interior of the SH2-64, where dust is heated by the OB association 
+and massive stars may be forming, to beyond the nebulosity where IRS 5 has formed alongside 
+a number of dense cores. 
+
+Finally, in addition to a second generation of stars forming in the major clouds in the W40 complex, 
+there are many isolated clouds, some of which are forming stars. The vast majority of these are low 
+mass, low column density and rarely contain YSOs. Two notable exceptions are W40-SMM 10 and 
+16, which are the two most massive and dense cores in the sample of isolated clouds. It is likely that 
+these are fragmented clouds of the filaments feeding the complex that have become sufficiently cool 
+that they can collapse and likely form a small cluster of medium to low mass stars.   
+
+\subsection{What evidence is there of radiative feedback influencing star-formation in the W40 complex?}
+
+Evidence from the Serpens MWC 297 region suggests that radiative feedback from massive 
+stars can raise the temperature and potentially suppress star-formation in neighbouring clumps 
+\citep{Rumble:2015vn}. In the prior sections we have concluded that there are several sources 
+of internal and external heating in the W40 complex. It is extremely difficult to disentangle these 
+mechanisms in the eastern Dust Arc, but we can confirm that the dust clouds here are being 
+heated, and we proceed to address the question of whether or not this is influencing star-formation. 
+
+We conclude that the eastern Dust Arc is positioned outside of the \HII\ region, but inside of the 
+nebulosity SH2-64. There is evidence to suggest that a single B0.5 star may be forming, 
+in addition to a small number of low mass protostars and starless clouds, in keeping with a 
+high-to-low stellar cluster mass ratio of 1:1 as observed in the star cluster around OS1a. Raised 
+temperatures mean the clumps in the eastern Dust Arc are a factor of two from Jeans instability so 
+these clumps would need to cool significantly before collapse and further star-formation can occur. 
+Given the impending expansion of the \HII\ region around OS1a and any additional massive stars, 
+this seems an unlikely scenario.
+
+In contrast, the more massive clumps in the western Dust Arc are borderline Jeans unstable. We 
+find that five dense cores have formed, three of which contain protostars. We conclude that in the 
+past these clumps were sufficiently cool as to induce collapse. Subsequent radiative heating by 
+IRS 5 may have warmed the less dense, outer layers of these cores, though this nebulosity is still 
+in its infancy. An alternative explanation could be that pressure exerted on the filament by the 
+radiative bubble triggered the collapse of sub-critical cores. Such an argument would forego 
+the requirement for pre-existing over-densities in a filament. However, we observe density peaks 
+along the length of the filament, not just limited to where the radiative bubble of IRS 5 is interacting 
+with it, and therefore we believe this alternative explanation to be less valid.
+
+Given a common CO gas velocity (Figure \ref{fig:CO}) we have reason to believe that the Dust 
+Arc, as a whole, is a continuous filament, and therefore we might expect it to evolve on 
+similar timescales. In the east we observe a number of low-mass protostars with no significant 
+CO outflows (Figure \ref{fig:outflows}) or SCUBA-2 peaks (Figure \ref{fig:w40ysos}) suggesting that 
+these objects are more evolved, potentially Class I objects. In the west the protostars are typically 
+found at the centre of dense cores and we identify associated outflows, suggesting that these 
+protostars are less evolved, Class 0 objects. These findings fit with those of  \cite{Maury:2011ys}, 
+\cite{Mallick:2013kx} and \cite{Pirogov:2013ys} who conclude that the eastern Dust Arc is more 
+evolved than the western end. 
+
+We find that the eastern filament appears largely stable whereas the west of the Dust Arc is less 
+stable and appears to be cooling and fragmenting into star-forming dense cores, behaviour that 
+is typical for filaments, as observed in W40-S. We believe that we may be observing two stages 
+in the evolution of the Dust Arc. In the first phase, prior to the maturity of OS1a, the filament cooled 
+and began to collapse. In the second stage, radiative feedback and interaction from the \HII\ region 
+is heating the filament in the east, increasing stability and potentially preventing further fragmentation 
+of collapse of the low-to-intermediate density dust clouds. In the west the clumps have continued to 
+evolve relatively unperturbed, prior to IRS 5 reaching maturity. 
+
+We further examine the impact of radiative feedback from the OB association on the global 
+sample of clumps in the W40 complex by comparing the stability of the population inside the 
+nebulosity to the outside. The limit of the nebulosity is defined as where the mean 70\,$\micron$ 
+flux is less than 1000\,MJy/Sr and these populations plotted in Figure \ref{fig:jeans}. A degree 
+of correlation is expected as both Jeans stability and column density are derived from our flux 
+and temperature data. Two correlations are observed with a clear divergence between the two 
+clump populations. Clumps with the same peak column densities found within the nebulosity 
+are more likely to be stable than those on outside.
+
+We conclude that Figure \ref{fig:jeans} provides direct evidence that radiative heating from 
+the OB association is directly influencing the stability and the star-formation within SH2-64. 
+We note that whilst the divergence is prominent amongst clumps with high column densities, 
+the two populations have similar distributions below 55$\times$10$^{21}$ H$_{2}$ cm$^{-2}$. 
+This supports our conclusions that the influence of radiative heating on clump stability is more 
+prominent where collapse has already begun, and that photons are proficient at heating the 
+low density outer envelope but much less effective at heating the dense interior of a core.  
+
+%[THESIS ONLY]\\
+%\emph{Herschel} 70\,$\micron$ data traces IR emission from warm dust. Whilst the positive 
+%correlation in Figure \ref{fig:scatter}b of \emph{Herschel} flux with SCUBA-2 dust temperature
+%confirms that warm dust is detected across the IR spectrum, we note that these flux bands 
+%probe different temperature ranges, which are associated with different structure. For example, 
+%W40-SMM 12 and 14 have comparable mean 70\,$\micron$ flux at 2500\,MJy/Sr but divergent 
+%temperatures of 21$\pm$3 and 36$\pm$6\,K. We interpret the significant spread of results above 
+%1,000\,MJy/Sr as evidence that, in some cases, 70\,$\micron$ flux may just be coming from the 
+%exterior layers of the clump, leaving the dense core relatively cool. 
+
+%The shorter wavelength \emph{Herschel} 70\,$\micron$ data identifies higher temperatures which are more 
+%prevalent in low to medium density in the ISM. The longer SCUBA-2 wavelengths detects cool, 
+%medium to high density structure in the ISM.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+
+We observed the W40 complex with SCUBA-2 at 450 and 850\,$\micron$ as part of the JCMT 
+GBS of nearby star-forming regions. The observations covers four, 30\arcmin\ diameter PONG 
+regions that were subsequently mosaiced together. The $^{12}$CO 3\hbox{--}2 line at 
+345.796\,GHz was observed separately using HARP. The observations cover two sets of four 
+basket-weaving scan maps covering an area of approximately 7\arcmin$\times$18\arcmin\ 
+centred on RA(J2000) = 18:31:29.0, Dec.(J2000) = -02:03:45.4. HARP data was used to run 
+a CO subtraction from the SCUBA-2 850\,$\micron$ map. Archival radio data from \cite{Condon:1998kx} 
+and \cite{Rodriguez:2010bs} are examined to asses the large and small scale free-free 
+contribution of the massive stars in the W40 complex OB association to both SCUBA-2 bands.
+
+By taking the ratio of SCUBA-2 fluxes, for constant dust spectral index, $\beta$ = 1.8, we produce 
+maps of dust temperature and column density and calculate the Jeans stability of submillimetre 
+clumps, as identified by the clump-finding algorithm \texttt{fellwalker}. Our method uses a model 
+beam convolution kernel which convolves the 450\,$\micron$ map up to the 850\,$\micron$ 
+resolution of 14.6\arcsec. We examine clump temperatures, in conjunction with our 
+composite YSO candidate catalogue, to draw conclusions about whether there is evidence 
+that dust is being heated, whether this is caused by internal or external mechanisms and what 
+implications this has for star-formation in the region. Throughout this paper we refer to the Dust 
+Arc, W40-N, W40-S and isolated clumps as various morphological features of the W40 complex.
+
+Our key results on the clouds are as follows:
+
+\begin{enumerate}
+\item We find evidence for two velocity clouds (at 5\,km s$^{-1}$ and 10\,km s$^{-1}$) in the 
+HARP data that trace different structure within the W40 complex. $^{12}$CO 3\hbox{--}2 
+contamination of the 850\,$\micron$ band ranges between 3 and 10\% in the majority of the 
+filaments and in a minority of areas reaches up to 20\%. Removing the $^{12}$CO 3\hbox{--}2 
+contamination significantly increases the calculated dust temperatures.
+
+\item There is evidence for five confirmed and seven candidate outflows in the W40 
+complex. The most significant outflow has a line-wing of 8.7\,km s$^{-1}$ which is relatively 
+weak compared to those in the nearby Serpens Main region \citep{Graves:2010mb}. 
+Due to the complex nature of the region it is difficult to distinguish between protostellar 
+outflows and shocked shell material around the \HII\ region. We note that dense clouds at 
+7\,km s$^{-1}$ are extincting $^{12}$CO 3\hbox{--}2 line emission and as a result at most 
+50\% of outflows will be detected. 
+
+\item Large scale free-free emission from an existing \HII\ region (spectral index of 
+$\alpha_{\mathrm{ff}}$ = -0.1) powered by the primary ionising star OS1a contributes 
+0.5\% of flux at 450\,$\micron$ and 5\% at 850\,$\micron$. 
+
+\item The contribution of small scale free-free emission from \UCHII\ regions around six 
+massive stars (spectral index of $\alpha_{\mathrm{ff}}$ = 0.6 to 1.0) is analysed. Free-free 
+emission from OS2a contributes 9 and 12\% at 450 and 850\,$\micron$ whilst the OS1a 
+cluster contributes 62\% at 850\,$\micron$ and was not detected at 450\,$\micron$. Free-free 
+emission for both large and small scale sources was found to have a non-negligible, if limited 
+impact on dust temperature, often within the calculated uncertainties. 
+
+\item 82 clumps were detected by \texttt{fellwalker}. 21 of these were found to have at least one 
+protostar embedded within them. Clump temperature ranges from 10 to 36\,K. The mean temperature 
+of clumps in the Dust Arc, W40-N, W40-S is 25$\pm$4, 20$\pm$4 and 17$\pm$3\,K. The mean 
+temperature of the isolated clumps is 15$\pm$2\,K. This matches the literature values \citep {Johnstone:2000fk} 
+and those observed in Serpens MWC 297 by \cite{Rumble:2015vn}.
+
+\item We find that clump temperature correlates with proximity to OS1a and the \HII\ region. 
+We conclude that external radiative feedback from the OB association is raising the temperature 
+of the clumps. There is no evidence that embedded protostars are internally heating the 
+filaments on a micro or macroscopic scale, though external influences may be masking this. 
+As a result of external radiative feedback the eastern Dust Arc has exceptionally high temperatures 
+(mean 35$\pm$5\,K) and Jeans stable clouds (mean M/M$_{\mathrm{J}}$ = 0.43). 
+
+\item It is estimated that 190\,M$_{\odot}$ of material was required for the first generation 
+of star-formation in the W40 complex. The high-to-low cluster mass ratio (OB stars to other 
+cluster members) is approximately 1:1. 239$\pm$9\,M$_{\odot}$ remain placing an upper 
+limit on the second generation of stars of 25\% more than the first generation. The Dust Arc 
+is the most massive cloud at 87$\pm$6\,M$_{\odot}$, followed by W40-N at 
+73$\pm$5\,M$_{\odot}$ and W40-S at 31$\pm$3\,M$_{\odot}$. 
+
+\item 33 dense cores (volume density greater than 10$^{5}$ cm$^{-3}$ and effective radius 
+greater than 0.05$\hbox{ pc}$) are identified, 39\% of which contain embedded Class 0/I 
+protostars. Nine dense cores are found in the Dust Arc, nine in W40-N and four in W40-S 
+suggesting that the filaments are evolving under similar timescales. Bright rimmed clouds 
+(BRCs) are observed in \emph{Herschel} 70\,$\micron$ data along the length of the eastern 
+Dust Arc and W40-N having been formed by the OS1a, confirming that these filaments lie outside of the 
+\HII\ region but inside the nebulosity of SH2-64. BRCs are also observed in the western Dust 
+Arc. However these are formed by the secondary nebulosity around the young B1V star IRS 5 
+which we consider to be outside of SH2-64.
+
+\item We observe that W40-SMM1 in the eastern Dust Arc has peak flux across all bands we 
+study. We interpret this as where an \HII\ region is interacting with a dense filament. We find that 
+the Lyman photon density from OS1a is insufficient to power this entirely and suggest that at 
+least one reddened and deeply embedded 2MASS source may be a young B0.5ve star to 
+accommodate this shortfall.
+
+\item We find the global population of clumps within the nebulosity SH2-64 are more stable, 
+as a function of peak column density, than those outside. We believe there is sufficient 
+evidence to argue that partial radiative heating of the Dust Arc (internally and/or externally) 
+has influenced the evolution of stars in the filament, favouring massive star growth in the 
+warm east and fragmentation in the cool west. 
+
+\end{enumerate}
+
+The W40 complex represents a high-mass star-forming region with a significant cluster of evolved 
+PMS-stars and massive filaments forming new protostars from dense, starless clouds. The region 
+is complex and requires careful study to appreciate which radiative mechanisms, from external 
+and internal sources, are heating clumps of gas and dust. The region is dominated by an OB 
+association that is powering an \HII\ region. In the near future we can expect this \HII\ region to 
+expand and envelop many of surrounding filaments. Within a few Myrs we can expect OS1a to 
+go supernova. This event will have a cataclysmic impact on star-formation within the region. Any 
+filament mass that has not been converted into stars, or eroded by the \HII\ region, will likely be 
+destroyed at this point, bringing an end to star-formation in the W40 complex in its current format.  
